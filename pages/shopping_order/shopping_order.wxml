@@ -1,0 +1,52 @@
+<!--index1.wxml-->
+<view class="thread">
+    <view class="thread1"></view>
+    <view class="thread2"></view>
+    <view class="thread3"></view>
+</view>
+<view class="product" bindtap="intoPath" data-path="/pages/shopping_order_deatil/shopping_order_deatil">
+    <view class="product_box w710 flexRowBetween">
+        <view class="product_left">
+            <image src="/images/product.png"></image>
+        </view>
+        <view class="product_right">
+            <view class="product_detail">
+                <view class="font32 color1 product_top">空间+导示</view>
+                <view class="font24 color2">2018-09-09</view>
+                <view class="font30 color2 product_price flexRowBetween">
+                    <view class="price_left">¥556</view>
+                    <view class="submit_info font30 color">未成交</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="thread">
+        <view class="thread1"></view>
+        <view class="thread2"></view>
+        <view class="thread3"></view>
+    </view>
+</view>
+<view class="product"  bindtap="intoPath" data-path="/pages/shopping_order_deatil/shopping_order_deatil">
+    <view class="product_box w710 flexRowBetween">
+        <view class="product_left">
+            <image src="/images/product.png"></image>
+        </view>
+        <view class="product_right">
+            <view class="product_detail">
+                <view class="font32 color1 product_top">空间+导示</view>
+                <view class="font24 color2">2018-09-09</view>
+                <view class="font30 color2 product_price flexRowBetween">
+                    <view class="price_left">¥556</view>
+                    <view class="submit_info font30 color">已成交</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="thread">
+        <view class="thread1"></view>
+        <view class="thread2"></view>
+        <view class="thread3"></view>
+    </view>
+</view>
+
+

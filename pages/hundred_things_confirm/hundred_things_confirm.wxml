@@ -1,0 +1,24 @@
+<!--index2.wxml-->
+<view class="thread">
+    <view class="thread1"></view>
+    <view class="thread2"></view>
+    <view class="thread3"></view>
+</view>
+<button class="submit_info" bindtap="intoPath" data-path="/pages/hundred_things_infor/hundred_things_infor">一起分享一瓶美酒 认证</button>
+<view class="things_img">
+    <image src="/images/things.jpg"></image>
+</view>
+<view class="things_time flex">
+    <view class="things_tlt font28">时间</view>
+    <view class="things_right flex font28">
+        <view class="thing1 color1">2018年</view>
+        <view class="thing1 color1" style="text-align: center;">10月</view>
+        <view class="thing1 color1" style="text-align: center;">04月</view>
+    </view>
+</view>
+<view class="things_time flex">
+    <view class="things_tlt font28">地点</view>
+    <view class="things_right flex font28 color1">
+        家里
+    </view>
+</view>

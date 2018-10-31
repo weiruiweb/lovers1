@@ -1,0 +1,136 @@
+{
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.2.2",
+	"appid": "wx212611f012b9cf1d",
+	"projectname": "%E6%83%85%E4%BE%A3%E8%A3%85",
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 15,
+			"list": [
+				{
+					"id": -1,
+					"name": "index",
+					"pathName": "pages/index/index",
+					"query": ""
+				},
+				{
+					"id": 1,
+					"name": "档案",
+					"pathName": "pages/file/file",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "商城",
+					"pathName": "pages/shopping/shopping",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "商城1",
+					"pathName": "pages/shopping_order/shopping_order",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "详情",
+					"pathName": "pages/shopping_order_deatil/shopping_order_deatil",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "地址",
+					"pathName": "pages/shopping_address/shopping_address",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "购物车",
+					"pathName": "pages/shopping_cart/shopping_cart",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "完成100件小事",
+					"pathName": "pages/hundred_things/hundred_things",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "完成100件小事认证",
+					"pathName": "pages/hundred_things_confirm/hundred_things_confirm",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "完成100件小事认证信息网三",
+					"pathName": "pages/hundred_things_infor/hundred_things_infor",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "添加事件",
+					"pathName": "pages/file_thing_add/file_thing_add",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "添加事件详情",
+					"pathName": "pages/file_thing_detail/file_thing_detail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "档案统计",
+					"pathName": "pages/file_statistics/file_statistics",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "吐槽详情",
+					"pathName": "pages/index_complain_detail/index_complain_detail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "原谅他",
+					"pathName": "pages/forgive/forgive",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "原谅他",
+					"pathName": "pages/shopping_order/shopping_order"
+				}
+			]
+		}
+	}
+}

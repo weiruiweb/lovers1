@@ -1,0 +1,38 @@
+/**index.wxss**/
+
+@import "../../wxParse/wxParse.wxss"
+.tings_tlt{
+	font-size:42rpx;
+	margin-top:118rpx;
+}
+.address{
+	margin-bottom:60rpx;
+}
+.address text{
+	margin-right:30rpx;
+}
+.mood image{
+	width:126rpx;
+	height:126rpx;
+}
+.mood{
+	margin:106rpx 0 230rpx;
+	text-align:center;
+}
+.things_img{
+	flex-wrap: wrap;
+}
+.things_item{
+	width:50%;
+	height:324rpx;
+	border-radius:20rpx;
+	text-align: center;
+	margin-bottom:50rpx;
+}
+.things_item image{
+	width:324rpx;
+	height:100%;
+	margin:0 auto;
+	border-radius:20rpx;
+	box-shadow: 0 0 2rpx #000;
+}

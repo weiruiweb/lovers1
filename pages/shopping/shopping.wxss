@@ -1,0 +1,210 @@
+/**index.wxss**/
+
+@import "../../wxParse/wxParse.wxss"; 
+.page-body image{
+	width:100%;
+	height:400rpx;
+}
+swiper{
+	height:400rpx;
+}
+.swiper-block{
+  height: 400rpx;
+  width: 100%;
+}
+.swiper-item{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  overflow:unset;
+}
+.slide-image{
+  height:330rpx;
+  width: 520rpx;
+  border-radius: 9rpx;
+  box-shadow: 0px 0px 30rpx rgba(0, 0,0,.2); 
+  margin: 0rpx 30rpx;
+  z-index: 1;  
+}
+.active{
+  transform: scale(1.14);
+  transition:all .2s ease-in 0s;
+  z-index: 20; 
+}
+
+.dots{ 
+  display: flex; 
+  justify-content: center;
+  width:100%;
+  height:40rpx;
+  align-items: center; 
+} 
+.dots .dot{ 
+  margin: 0 12rpx; 
+  width:40rpx;
+  height:40rpx;
+  border-radius: 50%; 
+} 
+.dot .dot_in{
+	width: 20rpx; 
+  height: 20rpx; 
+  background: #633535; 
+  border-radius: 50%; 
+  transition: all .6s; 
+}
+.dots .dot .active{ 
+  width: 20rpx; 
+  background: #fd6464; 
+  border:4rpx solid  #633535;
+}
+.sort{
+	width:100%;
+	height:150rpx;
+	margin-top: 46rpx;
+}
+.sort_item{
+	width:20%;
+	height:150rpx;
+	text-align: center;
+}
+.sort_item image{
+	width:50rpx;
+	height:50rpx;
+	margin:0 auto;
+}
+.sort_in{
+	width: 78rpx;
+	height:78rpx;
+	border-radius: 50%;
+	margin:0 auto;
+}
+.sort_top{
+	height:108rpx;
+	width:100%;
+	text-align: center;
+}
+.sort_bottom{
+	height:42rpx;
+	width:100%;
+	position: relative;
+}
+.bottom_in{
+	width: 100%;
+	height:42rpx;
+	position: absolute;
+	left: 0;
+	top:0;
+}
+.bottom_in .circle{
+	width:24rpx;
+	height:24rpx;
+	background: #fd6464;
+	border-radius: 50%;
+	border:solid 8rpx #633535;
+	margin:6rpx auto 0 auto;
+}
+.shopping{
+	width:86%;
+	padding:0 7%;
+}
+.shopping_list{
+	width:92%;
+	padding:0 4%;
+	height:200rpx;
+	margin-top:100rpx;
+	box-shadow: 0 0 20rpx #000;
+	border-radius: 30rpx;
+}
+.shooping_left{
+	width:45%;
+	position: relative;
+	top:-64rpx;
+}
+.shooping_right{
+	width:55%;
+}
+.product_img{
+	width:234rpx;
+	height:234rpx;
+	border-radius: 50%;
+	border:solid 6rpx #fe6565;
+	position: absolute;
+	top:-84rpx;
+	overflow: hidden;
+}
+.product_img image{
+	width:100%;
+	height:100%;
+}
+.price{
+	font-size: 32rpx;
+}
+.more{
+	margin-top: 20rpx;
+}
+.more_small{
+	width:10rpx;
+	height:10rpx;
+	background:#fe6565;
+	border-radius: 50%;
+	float: right;
+	margin-left:10rpx;
+}
+/***********************悬浮菜单*********************/
+.menu{
+	width:266rpx;
+	height:300rpx;
+	position: absolute;
+	left:0;
+	top:10%;
+	z-index: 999;
+}
+.menu_cont{
+	margin-left:11%;
+	position: relative;
+	width:89%;
+	height:100%;
+}
+.menu_click{
+	width:78rpx;
+	height:78rpx;
+	position: absolute;
+	top:38%;
+	left:0;
+}
+.menu_click image{
+	width:78rpx;
+	height:78rpx;
+}
+.menu_icon{
+	width:60rpx;
+	height: 60rpx;
+}
+.menu_icon image{
+	width:60rpx;
+	height:60rpx;
+}
+.cart{
+	position: absolute;
+	right:30%;
+	top:0;
+}
+.order{
+	position: absolute;
+	top:40%;
+	right:0;
+}
+.address{
+	position: absolute;
+	right:30%;
+	bottom: 0;
+}
+.mask{
+	width:100%;
+	min-height: 100%;
+	background: rgba(0,0,0,0.5);
+	position: absolute;
+	left: 0;
+	top:0;
+}

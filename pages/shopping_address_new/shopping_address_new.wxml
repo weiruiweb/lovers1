@@ -1,0 +1,20 @@
+<!--index3.wxml-->
+<view class="thread">
+    <view class="thread1"></view>
+    <view class="thread2"></view>
+    <view class="thread3"></view>
+</view>
+<view class="address_new">
+    <view class="w690">
+        <view class="address_list bg flex">
+            <view class="address_list_cont">
+                <view class="font32 color1">吴佳丽</view>
+                <view class="font28 color1">山西省西安市雁塔区</view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="add_address">
+    <image src="/images/increase.png"></image>
+    <view class="font28 color2">新增地址</view>
+</view>

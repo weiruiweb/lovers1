@@ -1,0 +1,148 @@
+<!--index1.wxml-->
+<swiper  class="swiper-block"  previous-margin="90rpx" next-margin="90rpx" current="0"  autoplay="{{autoplay}}"
+        interval="{{interval}}" duration="{{duration}}" bindchange="swiperChange" circular="{{circular}} ">
+
+    <block wx:for="{{background}}" wx:index="{{index}}">
+        <swiper-item class="swiper-item">
+            <image mode="aspectFill" src="{{item}}" class="slide-image {{swiperIndex == index ? 'active' : ''}}"/>
+        </swiper-item>
+    </block>
+</swiper>
+<view class="dots"> 
+    <block wx:for="{{background}}" wx:key="unique"> 
+        <view class="dot flex">
+            <view class="dot_in {{index == swiperIndex ? ' active' : ''}}"></view>
+        </view> 
+    </block> 
+</view>
+<view class="sort flex">
+    <view class="sort_item" data-id="0" bindtap="sort">
+        <view class="sort_top">
+            <view class="sort_in flex" style="{{currentId==0?'background: #fe6565':''}}">
+                <image src="/images/shopping_ixon1_03.png"></image>
+            </view>
+            <view class="font24 color2">情侣装</view>
+        </view>
+        <view class="sort_bottom">
+            <view class="bottom_in" style="{{currentId == 0?'display: block':'display: none'}}">
+                <view class="circle"></view>
+            </view>
+        </view>
+    </view>
+    <view class="sort_item" data-id="1" bindtap="sort">
+         <view class="sort_top">
+        <view class="sort_in flex" style="{{currentId == 1?'background: #fe6565':''}}">
+                <image src="/images/shopping_ixon2_03.png"></image>
+            </view>
+            <view class="font24 color2">韩版</view>
+        </view>
+        <view class="sort_bottom">
+            <view class="bottom_in"  style="{{currentId == 1?'display: block':'display: none'}}">
+                <view class="circle"></view>
+            </view>
+        </view>
+    </view>
+    <view class="sort_item"  data-id="2" bindtap="sort">
+         <view class="sort_top">
+            <view class="sort_in flex" style="{{currentId == 2?'background: #fe6565':''}}">
+                <image src="/images/shopping_ixon3_03.png"></image>
+            </view>
+            <view class="font24 color2">亲子装</view>
+        </view>
+        <view class="sort_bottom">
+            <view class="bottom_in" style="{{currentId == 2?'display: block':'display: none'}}">
+                <view class="circle"></view>
+            </view>
+        </view>
+    </view>
+    <view class="sort_item"  data-id="3" bindtap="sort">
+        <view class="sort_top">
+            <view class="sort_in flex" style="{{currentId == 3?'background: #fe6565':''}}">
+                <image src="/images/shopping_ixon4_03.png"></image>
+            </view>
+            <view class="font24 color2" >饰品</view>
+        </view>
+        <view class="sort_bottom">
+            <view class="bottom_in" style="{{currentId == 3?'display: block':'display: none'}}">
+                <view class="circle"></view>
+            </view>
+        </view>
+    </view>
+    <view class="sort_item"  data-id="4" bindtap="sort">
+        <view class="sort_top">
+            <view class="sort_in flex"  style="{{currentId == 4?'background: #fe6565':''}}">
+                <image src="/images/shopping_ixon5.png"></image>
+            </view>
+            <view class="font24 color2">其他</view>
+        </view>
+        <view class="sort_bottom">
+            <view class="bottom_in" style="{{currentId == 4?'display: block':'display: none'}}">
+                <view class="circle"></view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="shopping">
+    <view class="shopping_list flex">
+        <view class="shooping_left">
+            <view class="product_img">
+                <image src="/images/product.png"></image>
+            </view>
+        </view>
+        <view class="shooping_right">
+            <view class="price color">¥300</view>
+            <view class="title font28 avoidOverflow">小动物管理员情侣装</view>
+            <view class="detail font24 avoidOverflow">2018新款短袖t恤女不一样的情侣T秋天上衣</view>
+            <view class="more" bindtap="bindtap" data-path="/pages/shopping_order/shopping_order">
+                <view class="more_small"></view>
+                <view class="more_small"></view>
+                <view class="more_small"></view>
+            </view>
+        </view>
+    </view>
+    <view class="shopping_list flex">
+        <view class="shooping_left">
+            <view class="product_img">
+                <image src="/images/product.png"></image>
+            </view>
+        </view>
+        <view class="shooping_right">
+            <view class="price color">¥300</view>
+            <view class="title font28 avoidOverflow">小动物管理员情侣装</view>
+            <view class="detail font24 avoidOverflow">2018新款短袖t恤女不一样的情侣T秋天上衣</view>
+            <view class="more" bindtap="bindtap" data-path="/pages/shopping_order/shopping_order">
+                <view class="more_small"></view>
+                <view class="more_small"></view>
+                <view class="more_small"></view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="menu">
+    <view class="menu_cont">
+        <view class="menu_click">
+            <image src="/images/menu_btn.png"></image>
+        </view>
+        <view class="menu_icon cart" bindtap="intoPath" data-path="/pages/shopping_cart/shopping_cart">
+            <image src="/images/shopping.png"></image>
+        </view>
+        <view class="menu_icon order"><image src="/images/order.png"></image></view>
+        <view class="menu_icon address" bindtap="intoPath" data-path="/pages/shopping_address/shopping_address"><image src="/images/address.png"></image></view>
+    </view>
+</view>
+<view class="mask"></view>
+<view style="width:100%;height:180rpx;"></view>
+<view class="navbar">
+    <view class="navbar_box">
+        <image src="/images/navbar3.png" class="navbar_bg"></image>
+        <view class="navbar_cont flex">
+            <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/index/index">
+            </view>
+            <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/file/file">
+            </view>
+            <view class="navbar_item">
+            </view>
+        </view>
+    </view>
+</view>
+

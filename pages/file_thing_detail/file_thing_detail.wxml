@@ -1,0 +1,31 @@
+<!--index2.wxml-->
+<view class="thread">
+    <view class="thread1"></view>
+    <view class="thread2"></view>
+    <view class="thread3"></view>
+</view>
+<view class="w690">
+    <view class="tings_tlt color1">
+        就是那个啥
+    </view>
+    <view class="font24 color address">
+        <text>2019.09.08</text><text>家里</text>
+    </view>
+    <view class="font24 color1">我觉得一直爱着一个人是一件挺有意思的事，爱你二十岁的青涩，爱你三十岁的野心，爱你四十岁的胡须，爱你五十岁白发，爱你六十岁的洒脱和坦荡，爱你七十岁笨重的步伐，希望到八十岁我还在，还能爱你，总之想一直爱你。</view>
+    <view class="mood">
+        <image src="/images/mood6@2x.png"></image>
+        <view class="font24 color2">超级开心</view>
+    </view>
+
+</view>
+<view class="things_img flex w710">
+    <view class="things_item">
+        <image src="/images/product.png"></image>
+    </view>
+    <view class="things_item">
+        <image src="/images/product.png"></image>
+    </view>
+    <view class="things_item">
+        <image src="/images/product.png"></image>
+    </view>
+</view>

@@ -1,0 +1,45 @@
+/**index.wxss**/
+
+@import "../../wxParse/wxParse.wxss"; 
+
+.address{
+	width:100%;
+}
+.address_cont{
+	padding-left:4.5%;
+	width:95.5%
+}
+.address_list{
+	width:100%;
+	height:66rpx;
+	margin-top:120rpx;
+}
+.address_left{
+	width:32%;
+}
+.address_left image{
+	width:50rpx;
+	height:50rpx;
+}
+.address_right{
+	width:68%
+}
+.address_icon{
+	width:50%;
+	text-align:center;
+}
+.address_right input{
+	width:100%;
+	height:40rpx;
+	border-bottom:solid 1px #ff7070;
+	line-height:40rpx;
+	color:#4c4c4c;
+}
+.submit_info{
+	width:470rpx;
+	height:68rpx;
+	line-height:68rpx;
+	margin:120rpx auto 0 auto;
+	border-radius:50rpx;
+	letter-spacing:30rpx;
+}

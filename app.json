@@ -1,0 +1,28 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/file/file",
+    "pages/shopping/shopping",
+    "pages/shopping_cart/shopping_cart",
+    "pages/shopping_order/shopping_order",
+    "pages/shopping_order_deatil/shopping_order_deatil",
+    "pages/shopping_address/shopping_address",
+    "pages/shopping_address_new/shopping_address_new",
+    "pages/hundred_things/hundred_things",
+    "pages/hundred_things_confirm/hundred_things_confirm",
+    "pages/hundred_things_infor/hundred_things_infor",
+    "pages/file_thing_add/file_thing_add",
+    "pages/file_thing_detail/file_thing_detail",
+    "pages/file_statistics/file_statistics",
+    "pages/index_complain/index_complain",
+    "pages/index_complain_detail/index_complain_detail",
+    "pages/forgive/forgive",
+    "pages/forgive_things_infor/forgive_things_infor"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fe6565",
+    "navigationBarTitleText": "首页",
+    "navigationBarTextStyle": "#222"
+  }
+}

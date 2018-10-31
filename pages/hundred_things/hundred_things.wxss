@@ -1,0 +1,82 @@
+/**index.wxss**/
+
+@import "../../wxParse/wxParse.wxss"
+
+.tab{
+	height:216rpx;
+}
+.tab_item{
+	width:33.33%;
+	text-align:center;
+	height:54rpx;
+	line-height:54rpx;
+	color:#482e2e;
+}
+.tab_click{
+	width:192rpx;
+	height:58rpx;
+	text-align: center;
+	line-height:58rpx;
+	border-radius: 30rpx;
+	border:solid 1px #482e2e;
+	margin:0 auto;
+	color:#482e2e;
+}
+.tab_this{
+	color:#ff6b6b;
+	border:solid 1px #ff6b6b;
+}
+.hundred_things{
+	width:100%;
+}
+.hundred_item{
+	width:25%;
+	height:156rpx;
+	margin-bottom:22rpx;
+}
+.things_item{
+	width:156rpx;
+	height:156rpx;
+	border-radius: 20rpx;
+	box-shadow:0 0 10rpx #000;
+	margin:0 auto;
+}
+.hundred_box{
+	flex-wrap: wrap;
+}
+.things_top{
+	width:100%;
+	height:55.5%;
+	text-align: center;
+}
+.things_bottom{
+	width:80%;
+	height:43.5%;
+	text-align: center;
+	margin:0 auto;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	word-break: break-all;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2; 
+}
+.things_top image{
+	width:44rpx;
+	height:38rpx;
+	margin:0 auto;
+}
+.circle1{
+	width:78rpx;
+	height:78rpx;
+	background: #4e2f2f;
+	border-radius: 50%;
+	margin:0 auto;
+}
+.circle2{
+	width:66rpx;
+	height:66rpx;
+	border-radius: 50%;
+	background: #713939;
+	margin:0 auto;
+}

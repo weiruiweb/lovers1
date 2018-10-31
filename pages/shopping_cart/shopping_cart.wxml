@@ -1,0 +1,43 @@
+<!--index2.wxml-->
+<view class="shopping">
+    <view class="W710 shopping_box flex">
+        <view class="select">
+            <image src="/images/select.png"></image>
+        </view>
+        <view class="shopping_img">
+            <image src="/images/product.jpg"></image>
+        </view>
+        <view class="shopping_detail">
+            <view class="shopping_name font30 color1">产品名称</view>
+            <view class="shopping_txt font24  color2 avoidOverflow"><text>男白</text><text>女黑</text></view>
+            <view class="shopping_number font28 flex">
+                <view class="shopping_price color flex">¥8999</view>
+                <view class="number_handle flex">
+                    <view class="add flex"><image src="/images/left.png"></image></view>
+                    <view class="add_cont"><view class="add_number">0</view></view>
+                    <view class="add flex"><image src="/images/right.png"></image></view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="W710 shopping_box flex">
+        <view class="select">
+            <image src="/images/select_a.png"></image>
+        </view>
+        <view class="shopping_img">
+            <image src="/images/product.jpg"></image>
+        </view>
+        <view class="shopping_detail">
+            <view class="shopping_name font30 color1">产品名称</view>
+            <view class="shopping_txt font24  color2 avoidOverflow"><text>男白</text><text>女黑</text></view>
+            <view class="shopping_number font28 flex">
+                <view class="shopping_price color flex">¥8999</view>
+                <view class="number_handle flex">
+                    <view class="add flex"><image src="/images/left.png"></image></view>
+                    <view class="add_cont"><view class="add_number">0</view></view>
+                    <view class="add flex"><image src="/images/right.png"></image></view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

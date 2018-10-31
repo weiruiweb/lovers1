@@ -1,0 +1,89 @@
+<!--index2.wxml-->
+<view class="thread">
+    <view class="thread1"></view>
+    <view class="thread2"></view>
+    <view class="thread3"></view>
+</view>
+<view class="statistics">
+   <view class="statistics_cont">
+        <view class="heart1 flex">
+           <view class="heart2 flex">
+                <image src="/images/heart.png"></image>
+            </view>
+        </view>
+        <view class="statistics_list flex" id="record1">
+            <view class="statistics_left">
+            </view>
+            <view class="statistics_right flex">
+                <view class="statistics_circle">
+                    <view class="circle"></view>
+                </view>
+                <view class="statistics_descreption">
+                    <view class="font24 color1">不开心的是记录下,来我绝不原谅他</view>
+                    <view class="statistics_number color">开心 1698条</view>
+                </view>
+            </view>
+        </view>
+        <view class="statistics_list flex"  id="record2">
+            <view class="statistics_right statis_left">
+                <view class="statistics_circle">
+                    <view class="circle"></view>
+                </view>
+                <view class="statistics_descreption">
+                    <view class="font24 color1 statis_tlt">不开心的是记录下,来我绝不原谅他</view>
+                    <view class="statistics_number color">开心 1698条</view>
+                </view>
+            </view>
+            <view class="statistics_left flex"> 
+            </view>
+        </view>
+        <view class="statistics_list flex"  id="record3">
+            <view class="statistics_left">
+            </view>
+            <view class="statistics_right flex">
+                <view class="statistics_circle">
+                    <view class="circle"></view>
+                </view>
+                <view class="statistics_descreption">
+                    <view class="font24 color1">不开心的是记录下,来我绝不原谅他</view>
+                    <view class="statistics_number color">开心 1698条</view>
+                </view>
+            </view>
+        </view>
+        <view class="statistics_list flex"  id="record4">
+            <view class="statistics_right statis_left">
+                <view class="statistics_circle">
+                    <view class="circle"></view>
+                </view>
+                <view class="statistics_descreption">
+                    <view class="font24 color1">不开心的是记录下,来我绝不原谅他</view>
+                    <view class="statistics_number color">开心 1698条</view>
+                </view>
+            </view>
+            <view class="statistics_left flex"> 
+            </view>
+        </view>
+        <view class="statistics_list flex"  id="record5">
+            <view class="statistics_left">
+            </view>
+            <view class="statistics_right flex">
+                <view class="statistics_circle">
+                    <view class="circle"></view>
+                </view>
+                <view class="statistics_descreption">
+                    <view class="font24 color1">不开心的是记录下,来我绝不原谅他</view>
+                    <view class="statistics_number color">开心 1698条</view>
+                </view>
+            </view>
+        </view>
+        <view class="heart3 flex">
+           <view class="heart4 flex">
+                <view class="heart5 flex"></view>
+            </view>
+        </view>
+        <view class="record_end color">总结</view>
+        <view class="record_des font28 color1">两个人的生活总是充满了磕绊
+磕绊后的我们终将会迎来一生的幸福</view>
+    </view> 
+
+</view>

@@ -1,0 +1,28 @@
+/**index.wxss**/
+
+@import "../../wxParse/wxParse.wxss"; 
+.address_new{
+	width:100%;
+}
+.address_list{
+	width:100%;
+	height:146rpx;
+	box-shadow:0 0 2rpx #000;
+	border-radius:30rpx;
+	margin-top:56rpx;
+}
+.address_list_cont{
+	width:75%;
+	height:80rpx;
+	margin:0 auto;
+	text-align:center;
+}
+.add_address{
+	margin-top:66rpx;
+	width:100%;
+	text-align:center;
+}
+.add_address image{
+	width:72rpx;
+	height:72rpx;
+}

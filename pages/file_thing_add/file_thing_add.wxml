@@ -1,0 +1,107 @@
+<!--index2.wxml-->
+<view class="thread">
+    <view class="thread1"></view>
+    <view class="thread2"></view>
+    <view class="thread3"></view>
+</view>
+<view class="w690 flex" style="margin-top: 50rpx;">
+    <view class="color font30" style="margin-right: 20rpx;">●</view>
+    <view class="font24 color9">标点处必填</view>
+</view>
+<view class="w690 things_time flex">
+    <view class="things_tlt font28 flex"><view class="color font30" style="margin-right: 20rpx;">●</view>主题</view>
+    <view class="things_right flex font28 color1">
+        <input placeholder="这就是那个啥"></input>
+    </view>
+</view>
+<view class="w690 things_time flex">
+    <view class="things_tlt font28 flex">
+        <view class="color font30" style="margin-right: 20rpx;">●</view>时间</view>
+    <view class="things_right flexRowBetween font28" style="border:none">
+        <view class="thing1 color1 flexRowBetween">
+            <view class="font28 color1">2018</view>
+            <image src="/images/up_icon.png"></image>
+        </view>
+        <view class="years font28 color1">年</view>
+        <view class="thing1 color1 flexRowBetween">
+            <view class="font28 color1">04</view>
+            <image src="/images/up_icon.png"></image>
+        </view>
+         <view class="years font28 color1">月</view>
+        <view class="thing1 color1 flexRowBetween">
+            <view class="font28 color1">18</view>
+            <image src="/images/up_icon.png"></image>
+        </view>
+         <view class="years font28 color1">日</view>
+    </view>
+</view>
+<view class="w690 things_time flex">
+    <view class="things_tlt font28 flex"><view class="color font30" style="margin-right: 20rpx;">●</view>地点</view>
+    <view class="things_right flex font28 color1">
+        <input placeholder="家里"></input>
+    </view>
+</view>
+<view class="w690 flex" style="margin-top: 50rpx;">
+    <view class="color font30" style="margin-right: 20rpx;">●</view>
+    <view class="font24 color9">心情</view>
+</view>
+<view class="mood flex">
+    <view class="mood_item" data-id="0" bindtap="mood">
+        <view class="mood_img">
+            <image src="{{mood == 0?'/images/Forgive111@2x.png':'/images/mood1@2x.png'}}"></image>
+            <view class="font28 mood_txt">超开心</view>
+        </view>
+    </view>
+    <view class="mood_item" data-id="1" bindtap="mood">
+        <view class="mood_img">
+            <image src="{{mood == 1?'/images/Forgive111@2x.png':'/images/mood4@2x.png'}}"></image>
+            <view class="font28 mood_txt">开心</view>
+        </view>
+    </view>
+    <view class="mood_item"  data-id="2" bindtap="mood">
+        <view class="mood_img">
+             <image src="{{mood == 2?'/images/Forgive111@2x.png':'/images/mood5@2x.png'}}"></image>
+            <view class="font28 mood_txt">没心情</view>
+        </view>
+    </view>
+    <view class="mood_item"  data-id="3" bindtap="mood">
+        <view class="mood_img">
+            <image src="{{mood == 3?'/images/Forgive111@2x.png':'/images/mood2@2x.png'}}"></image>
+            <view class="font28 mood_txt">难过</view>
+        </view>
+    </view>
+    <view class="mood_item"  data-id="4" bindtap="mood">
+        <view class="mood_img">
+            <image src="{{mood == 4?'/images/Forgive111@2x.png':'/images/mood3@2x.png'}}"></image>
+            <view class="font28 mood_txt">哭泣</view>
+        </view>
+    </view>
+    <view class="mood_item"  data-id="5" bindtap="mood">
+        <view class="mood_img">
+            <image src="{{mood == 5?'/images/Forgive111@2x.png':'/images/mood3@2x.png'}}"></image>
+            <view class="font28 mood_txt">愤怒</view>
+        </view>
+    </view>
+</view>
+<view class="w690 flex"  style="margin-top: 50rpx;">
+    <view class="color font30" style="margin-right: 20rpx;">●</view>
+    <view class="font24 color9">上传照片</view>
+</view>
+<view class="uplode">
+    <image src="/images/upload.png"></image>
+</view>
+<view class="w690 flex" style="margin-top: 50rpx;">
+    <view class="color font30" style="margin-right: 20rpx;">●</view>
+    <view class="font24 color9">描述</view>
+</view>
+<view class="descreption">
+    <textarea bindfocus="hide" bindblur="show">
+    </textarea>
+    <image src="{{is_hidden?'/images/penceil.png':''}}"></image>
+</view>
+<view style="width:100%;height:100rpx;"></view>
+<view class="confirm">
+    <button class="color1">
+        发布
+    </button>
+</view>

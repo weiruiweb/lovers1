@@ -1,0 +1,51 @@
+<!--index2.wxml-->
+<view class="thread">
+    <view class="thread1"></view>
+    <view class="thread2"></view>
+    <view class="thread3"></view>
+</view>
+<button class="submit_info">一起分享一瓶美酒 认证</button>
+<view class="w690 flex">
+    <view class="color font30" style="margin-right: 20rpx;">●</view>
+    <view class="font24 color9">标点处必填</view>
+</view>
+<view class="w690 flex"  style="margin-top: 120rpx;">
+    <view class="color font30" style="margin-right: 20rpx;">●</view>
+    <view class="font24 color9">上传照片</view>
+</view>
+<view class="uplode">
+    <image src="/images/upload.png"></image>
+</view>
+
+<view class="w690 things_time flex">
+    <view class="things_tlt font28 flex">
+        <view class="color font30" style="margin-right: 20rpx;">●</view>时间</view>
+    <view class="things_right flexRowBetween font28">
+        <view class="thing1 color1 flexRowBetween">
+            <view class="font28 color1">2018</view>
+            <image src="/images/up_icon.png"></image>
+        </view>
+        <view class="years font28 color1">年</view>
+        <view class="thing1 color1 flexRowBetween">
+            <view class="font28 color1">04</view>
+            <image src="/images/up_icon.png"></image>
+        </view>
+         <view class="years font28 color1">月</view>
+        <view class="thing1 color1 flexRowBetween">
+            <view class="font28 color1">18</view>
+            <image src="/images/up_icon.png"></image>
+        </view>
+         <view class="years font28 color1">日</view>
+    </view>
+</view>
+<view class="w690 things_time flex">
+    <view class="things_tlt font28 flex"><view class="color font30" style="margin-right: 20rpx;">●</view>地点</view>
+    <view class="things_right flex font28 color1">
+        <input placeholder="家里"></input>
+    </view>
+</view>
+<view class="confirm">
+    <button class="color1">
+        确认
+    </button>
+</view>

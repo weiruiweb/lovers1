@@ -1,0 +1,125 @@
+/**index.wxss**/
+@import "../../wxParse/wxParse.wxss";
+
+.lovers_img_box{
+	padding:0 10%;
+	width:80%;
+	height:346rpx;
+}
+.lovers_img_cont{
+	width:100%;
+	height:216rpx;
+	text-align: center;
+	display: flex;
+}
+.lovers_img{
+	width:30%;
+}
+.lovers_center{
+	width:40%;
+	height:162rpx;
+}
+.lovers_thread{
+	width:100%;
+	height:80rpx;
+}
+/**************************添加图像*************************/
+.img_in image{
+	width:126rpx;
+	height:126rpx;
+	border-radius:50%;
+	margin:0 auto;
+}
+.img_in{
+	width:146rpx;
+	height:146rpx;
+	border-radius: 50%;
+	margin:0 auto;
+	overflow:hidden;
+}
+.img_border{
+	border:solid 8rpx #fe6565;
+}
+.small_circle1{
+	width:30%;
+}
+.small_circle{
+	width: 37%;
+	padding:0 1.5%;
+	height:80rpx;
+}
+.circle1{
+	width:10rpx;
+	height:10rpx;
+	background:#633535;
+	border:solid 1px #6e3838;
+	border-radius: 50%;
+}
+.small_circle image{
+	width:42rpx;
+	height: 38rpx;
+	margin: 0 auto;
+}
+.circle2{
+	width:66rpx;
+	height:66rpx;
+	background: #713939;
+	border-radius: 50%;
+	margin:0 auto;
+}
+.circle3{
+	width:80rpx;
+	height:80rpx;
+	background: #4e2f2f;
+	border-radius: 50%;
+	text-align: center;
+}
+.lovers_datys{
+	width:192rpx;
+	height:52rpx;
+	border-radius: 20rpx;
+	line-height: 52rpx;
+	margin:0 auto 30rpx auto;
+}
+.add{
+	width:60rpx;
+	height: 60rpx;
+	float: right;
+	margin:40rpx 0;
+}
+.add image{
+	width:60rpx;
+	height:60rpx;
+}
+.heart2{
+	width:412rpx;
+	height:412rpx;
+	border-radius:50%;
+	background: rgba(254,101,101,0.4);
+	margin:0 auto;
+	text-align: center;
+}
+.heart1{
+	width:460rpx;
+	height:460rpx;
+	border-radius:50%;
+	background: rgba(250,136,136,0.4);
+	margin:80rpx auto;
+}
+.heart3{
+	width:360rpx;
+	height:360rpx;
+	border-radius:50%;
+	background: rgba(254,101,101,0.4);
+	margin:0 auto;
+	font-size:140rpx;
+	
+}
+.forgive_number{
+	width:100%;
+	text-align: center;
+}
+.forgive_num{
+	text-align: center;
+	margin-top:20rpx;
+}

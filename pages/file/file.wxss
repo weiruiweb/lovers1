@@ -1,0 +1,236 @@
+/**index.wxss**/
+
+@import "../../wxParse/wxParse.wxss"
+view{
+	margin:0;
+	padding:0;
+}
+.tabs{
+	width: 100%;
+	height:128rpx;
+	overflow: hidden;
+}
+.tabs_item{
+	width:25%;
+	text-align:center;
+	height:132rpx;
+	line-height:132rpx;
+}
+.tabs_this{
+	color:#e83632;
+	border-bottom:solid 1px #e83632;
+}
+.item_box{
+	width:144rpx;
+	height:96rpx;
+}
+.tab_txt{
+	width:100%;
+	height:36rpx;
+	line-height: 36rpx;
+	font-size: 30rpx;
+	color: #fff;
+}
+.item_box{
+	width:100%;
+	height:96rpx;
+	position: relative;
+}
+.orgin_img{
+	width: 100%;
+	height:96rpx;
+	position: absolute;
+	left:0;
+	top:0;
+}
+.tab_img1{
+	width:68rpx;
+	height:68rpx;
+	z-index: 999;
+}
+.tab_img2{
+	width:144rpx;
+	height:100%;
+}
+.file_all{
+	height:230rpx;
+}
+.file_all_cont{
+	width:100%;
+	height:136rpx;
+}
+.add{
+	width:60rpx;
+	height:60rpx;
+}
+.file_btn_box{
+	width:112rpx;
+	height:166rpx;
+}
+.file_btn{
+	width:112rpx;
+	height:112rpx;
+	border-right: 50%;
+}
+.file_btn image{
+	width:100%;
+	height:100%;
+}
+.mood{
+	width:100%;
+	height:140rpx;
+}
+.mood_item{
+	width:16.666%;
+	height:150rpx;
+	text-align: center;
+}
+.mood_item image{
+	width:80rpx;
+	height:80rpx;
+}
+.mood_txt{
+	color:#737373;
+	width:100%;
+	text-align: center;
+}
+.mood_img{
+	width:100%;
+	text-align: center;
+	height:108rpx;
+}
+.mood_up{
+	width:100%;
+	height:32rpx;
+	overflow: hidden;
+}
+.mood_up image{
+	width:24rpx;
+	height:100%;
+	margin:0 auto;
+}
+.mood_thing{
+	width:96%;
+	height:580rpx;
+	border:solid 2px #fe5b5b;
+	border-radius:40rpx;
+	background: #fff;
+	overflow:hidden;
+}
+.mood_left{
+	width:7.5%;
+	height:100%;
+}
+.mood_center{
+	width:85%;
+	height:100%;
+	flex-wrap: wrap;
+}
+.mood_right{
+	padding-top:17%;
+	position: relative;
+}
+.line1{
+	width:1rpx;
+	height:100%;
+	background: #666;
+	position: absolute;
+	top:17%;
+	left:48%;
+	z-index: 1;
+}
+.silde_icon{
+	width:40rpx;
+	height: 40rpx;
+	z-index: 999;
+	position: absolute;
+	left: 0;
+	top:17%;
+}
+.silde_icon image{
+	width:100%;
+	height:100%;
+}
+.mood_detail{
+	width:142rpx;
+	height:40rpx;
+	border-radius: 30rpx;
+	border:solid 1rpx #fe7474;
+	text-align: center;
+	line-height:40rpx;
+}
+.moode_box{
+	width:33.333%;
+	height:44rpx;
+	overflow: hidden;
+	margin-top:24rpx;
+	float: left;
+}
+
+/***************dialog*****************/
+.dialog{
+	width:100%;
+	position: fixed;
+	bottom: -100%;
+	height:970rpx;
+	transition: all 1s;
+}
+.lover_dialog{
+	width:530rpx;
+	height:970rpx;
+	margin:0 auto;
+	
+}
+.cp_confirm{
+	width:524rpx;
+	height:660rpx;
+	border-radius: 30rpx;
+	background: #fff;
+	border:solid 4rpx #fe5b5b;
+}
+
+.note{
+	margin-top:180rpx;
+}
+.cp_note{
+	width:86%;
+	margin:0 auto;
+	line-height:60rpx;
+	text-align: center;
+}
+.dialog .submit_info{
+	width:470rpx;
+	height:68rpx;
+	box-shadow: 0 0 10rpx #c6bebe;
+	border-radius: 50rpx;
+	line-height: 68rpx;
+	margin:100rpx auto;
+	border:none;
+}
+.close{
+	text-align: center;
+}
+.close image{
+	width:54rpx;
+	height:54rpx;
+	margin:20rpx auto;
+}
+.mask{
+	width:100%;
+	height: 100%;
+	overflow: hidden;
+	position: absolute;
+	left: 0;
+	top:0;
+	background: rgba(0,0,0,0.6);
+	transition: all 1s;
+}
+.heart1{
+	position:relative;
+	top:92rpx;
+}
+.heart1 image{
+	width:186rpx;
+	height:186rpx;
+	margin:0 auto;
+}

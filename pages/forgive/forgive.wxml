@@ -1,0 +1,60 @@
+<!--index.wxml-->
+<view class="mask" style="{{is_show||is_show2||is_show3?'display:block':'display:none'}}"></view>
+<view class="thread">
+    <view class="thread1"></view>
+    <view class="thread2"></view>
+    <view class="thread3"></view>
+</view>
+<view class="w690" style="height:100rpx;">
+    <view class="add" bindtap="intoPath" data-path="/pages/forgive_things_infor/forgive_things_infor">
+        <image src="/images/plus@2x.png"></image>
+    </view>
+</view>
+<view class="w690">
+     <view class="heart1 flex">
+       <view class="heart2 flex">
+            <view class="heart3 flex">
+                <view class="forgive_number color1">75</view>
+            </view>
+       </view> 
+    </view>
+    <view class="font32 color forgive_num">和你在一起道路上</view>
+    <view  class="font32 color forgive_num">我还能原谅你75次</view>
+</view>
+<view class="lovers_img_box flex">
+    <view class="lovers_img_cont">
+        <view class="lovers_img">
+            <view class="img_in img_border">
+                  <open-data type="userAvatarUrl"></open-data>
+            </view>
+            <view class="font28 color1" style="margin-top:20rpx;">抠脚大神</view>
+        </view>
+        <view class="lovers_center flex">
+            <view class="lovers_thread flex">
+                <view class="small_circle1 flexRowBetween">
+                    <view class="circle1"></view>
+                    <view class="circle1"></view>
+                    <view class="circle1"></view>
+                </view>
+                <view class="small_circle flex">
+                    <view class="circle3 flex">
+                        <view class="circle2 flex">
+                            <image src="/images/Support@3x.png"></image>
+                        </view>
+                    </view>
+                </view>
+                <view class="small_circle1 flexRowBetween">
+                    <view class="circle1"></view>
+                    <view class="circle1"></view>
+                    <view class="circle1"></view>
+                </view>
+            </view>
+        </view>
+        <view class="lovers_img">
+             <view class="img_in img_border">
+                <open-data type="userAvatarUrl"></open-data>
+            </view>
+            <view class="font28 color1" style="margin-top:20rpx;">抠脚大神</view>
+        </view>
+    </view>
+</view>

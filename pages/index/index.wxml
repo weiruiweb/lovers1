@@ -1,0 +1,292 @@
+<!--index.wxml-->
+<view class="mask" style="{{is_show||is_show2||is_show3?'display:block':'display:none'}}"></view>
+<view class="thread">
+    <view class="thread1"></view>
+    <view class="thread2"></view>
+    <view class="thread3"></view>
+</view>
+<view class="lovers_img_box flex">
+    <view class="lovers_img_cont">
+        <view class="lovers_img">
+            <view class="img_in img_border">
+                  <open-data type="userAvatarUrl"></open-data>
+            </view>
+            <view class="font28 color1" style="margin-top:20rpx;">抠脚大神</view>
+        </view>
+        <view class="lovers_center flex">
+            <view class="lovers_thread flex">
+                <view class="small_circle1 flexRowBetween">
+                    <view class="circle1"></view>
+                    <view class="circle1"></view>
+                    <view class="circle1"></view>
+                </view>
+                <view class="small_circle flex">
+                    <view class="circle3 flex">
+                        <view class="circle2 flex">
+                            <image src="/images/Support@3x.png"></image>
+                        </view>
+                    </view>
+                </view>
+                <view class="small_circle1 flexRowBetween">
+                    <view class="circle1"></view>
+                    <view class="circle1"></view>
+                    <view class="circle1"></view>
+                </view>
+            </view>
+        </view>
+        <view class="lovers_img">
+             <!-- <view class="img_in img_border">
+                <open-data type="userAvatarUrl"></open-data>
+            </view> -->
+            <!-- 点击添加对方 -->
+            <view class="img_in flex" bindtap="add">
+                <image src="/images/img_no.png"></image>
+            </view>
+            <view class="font28 color1"  bindtap="add" style="margin-top:20rpx;">点击添加</view> 
+        </view>
+    </view>
+</view>
+<view class="lovers_datys submit_info font28">认证456天</view>
+<view class="thread" style="margin-top: 10rpx;">
+    <view class="thread1"></view>
+    <view class="thread2"></view>
+    <view class="thread3"></view>
+</view>
+<view class="menu flex">
+    <view class="menu_cont flex">
+        <view class="menu_item" bindtap="dialog3">
+            <image src="/images/menu1.png"></image>
+            <view class="font28 color2">原谅他0次</view>
+        </view>
+        <view class="menu_item" >
+            <image src="/images/menu2.png"></image>
+            <view class="font28 color2">爱情天平</view>
+        </view>
+        <view class="menu_item" bindtap="dialog2">
+            <image src="/images/menu3.png"></image>
+            <view class="font28 color2">100件小事</view>
+        </view>
+    </view>
+</view>
+<view class="thread">
+    <view class="thread1"></view>
+    <view class="thread2"></view>
+    <view class="thread3"></view>
+</view>
+<view class="great flexRowBetween" bindtap="intoPath" data-path="/pages/index_complain/index_complain">
+    <view class="great_left flex">
+        <view class="font30">
+            <view class="font30 color1">吐槽热门推荐</view>
+            <view class="color" style="font-size: 16rpx;">Popular reommendention</view>
+        </view>
+    </view>
+    <view class="great_right flex">
+        <view class="font28" style="text-align: center;width: 100%;">
+            <image src="/images/complaints.png"></image>
+            <view class="color2 font24">吐槽次数</view>
+        </view>
+    </view>
+</view>
+<view class="thread">
+    <view class="thread1"></view>
+    <view class="thread2"></view>
+    <view class="thread3"></view>
+</view>
+<view class="comment">
+    <view class="comment_list" bindtap="intoPath" data-path="/pages/index_complain_detail/index_complain_detail">
+        <view class="comment_top flex">
+            <view class="comment_img">
+                <view class="comment_user">
+                </view> 
+            </view>
+            <view class="comment_center">
+                    <view class="font30 color1 comment_text avoidOverflow">你男朋友通常“直男”到什么程度？</view>
+                    <view class="font24 color2 comment_text avoidOverflow">大家一起来讨论一下你的男朋友直男程度…</view>
+                    <view class="flex font22 color2 comment_text" style="margin-top: 10rpx;">
+                        <view class="comment_number  flex">
+                            <image src="/images/comment@3x.png"></image>
+                            <view>1265</view>
+                        </view>
+                        <view class="comment_number flex">
+                            <image src="/images/Support@3x.png"></image>
+                            <view>1265</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="comment_right">
+                    <image src="/images/More@2x.png"></image>
+                </view>
+        </view>
+        <view class="comment_bottom">
+            <view class="vertical_line">
+                <view class="line"></view>
+            </view>
+        </view>
+    </view>
+    <view class="comment_list"  bindtap="intoPath" data-path="/pages/index_complain_detail/index_complain_detail">
+        <view class="comment_top flex">
+            <view class="comment_img">
+                <view class="comment_user">
+                </view> 
+            </view>
+            <view class="comment_center">
+                    <view class="font30 color1 comment_text avoidOverflow">你男朋友通常“直男”到什么程度？</view>
+                    <view class="font24 color2 comment_text avoidOverflow">大家一起来讨论一下你的男朋友直男程度…</view>
+                    <view class="flex font22 color2 comment_text" style="margin-top: 10rpx;">
+                        <view class="comment_number  flex">
+                            <image src="/images/comment@3x.png"></image>
+                            <view>1265</view>
+                        </view>
+                        <view class="comment_number flex">
+                            <image src="/images/Support@3x.png"></image>
+                            <view>1265</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="comment_right">
+                    <image src="/images/More@2x.png"></image>
+                </view>
+        </view>
+        <view class="comment_bottom">
+            <view class="vertical_line">
+                <view class="line"></view>
+            </view>
+        </view>
+    </view>
+</view>
+<!-- <view  class="dialog" style="{{is_show?'position: absolute;top:10%':'position:fixed;bottom: -100%;'}}">
+    <view class="lover_dialog">
+        <view class="heart1 flex">
+           <view class="heart2 flex">
+            <view class="heart_box">
+                <view class="heart3 flex">
+                      <view class="heart4 flex"></view>
+                  </view>
+                  <view class="heart"><image src="/images/heart.png"></image></view>
+               </view> 
+            </view>
+        </view>
+        <view class="cp_confirm">
+            <view class="confirm_tlt color font32">CP认证</view>
+            <view class="cp_note font28">好友一旦确定选择后将不能进行修改
+    是否选择好友发送给对方并完成双方</view>
+            <button class="submit_info">选择好友并认证</button>
+        </view>
+        <view class="close" bindtap="close"><image src="/images/close.png"></image></view>
+    </view>
+</view> -->
+<!-- 被邀请对象弹出框 -->
+<!-- <view  class="dialog1" style="{{is_show?'position: absolute;top:10%':'position:fixed;bottom: -100%;'}}">
+    <view class="lover_dialog">
+        <view class="heart1 flex">
+           <view class="heart2 flex">
+            <view class="heart_box">
+                <view class="heart3 flex">
+                      <view class="heart4 flex"></view>
+                  </view>
+                  <view class="heart"><image src="/images/heart.png"></image></view>
+               </view> 
+            </view>
+        </view>
+        <view class="cp_confirm">
+            <view class="confirm_tlt color font32" style="margin-top: 90rpx;">沉默是一种美德</view>
+            <view class="confirm_tlt color font32">
+                        但是在喜欢的人面前沉默</view>
+                 <view class="confirm_tlt color font32">
+                        就是一种懦弱</view>
+            <view class="cp_note font28" style="margin-top: 30rpx">您的好友“抠脚大汉”邀请您认证CP</view>
+            <view class="cp_note font28">一起入驻《情侣就要装》</view>
+            <view class="cp_note font28">是否确认对方为对的人</view>
+            <view class="confirm_btn flex">
+                <view class="btn_left">
+                    <button class="submit_info">答应</button>
+                </view>
+                <view class="btn_left">
+                    <button class="submit_info">拒绝</button>
+                </view>
+            </view>
+            <view class="font28 color" style="text-align: center;">成CP后该平台暂不支持更换CP</view>
+        </view>
+        <view class="close" bindtap="close"><image src="/images/close.png"></image></view>
+    </view>
+</view> -->
+<view  class="dialog2" style="{{is_show2?'position: absolute;top:10%':'position:fixed;bottom: -100%;'}}">
+    <view class="lover_dialog">
+        <view class="heart1 flex">
+           <view class="heart2 flex">
+            <view class="heart_box">
+                <view class="heart3 flex">
+                      <view class="heart4 flex"></view>
+                  </view>
+                  <view class="heart"><image src="/images/heart.png"></image></view>
+               </view> 
+            </view>
+        </view>
+        <view class="cp_confirm">
+            <view class="confirm_tlt color font32" style="margin-top: 90rpx;">你敢挑战吗？</view>
+            <view class="cp_note font28" style="margin-top: 30rpx">情侣必做100件温馨小事</view>
+            <view class="cp_note font28">全部完成即可获得10倍红包祝福</view>
+            <view class="confirm_btn flex" bindtap="intoPath" data-path="/pages/hundred_things/hundred_things">
+                <view class="btn_left">
+                    <button class="submit_info btn_border" style="width:238rpx">支付5.20元参与</button>
+                </view>
+                <view class="btn_left">
+                    <button class="submit_info btn_border" style="background: none;color:#666;">不参与</button>
+                </view>
+            </view>
+            
+            <!-- 支付成功后的弹框 -->
+            <!-- <view class="confirm_tlt color font32" style="margin-top: 90rpx;height:100rpx;line-height: 100rpx;">支付成功</view>
+            <view class="success">
+                <image src="/images/success.png"></image>
+            </view>
+            <view>
+                <view class="cp_note font28" style="margin-top: 30rpx">请尽快通知您的ta</view>
+                <view class="cp_note font28">共同参与</view>
+            </view> -->
+        </view>
+        <view class="close" bindtap="close"><image src="/images/close.png"></image></view>
+    </view>
+</view>
+<view  class="dialog3" style="{{is_show3?'position: absolute;top:10%':'position:fixed;bottom: -100%;'}}">
+    <view class="lover_dialog">
+        <view class="heart1 flex">
+           <view class="heart2 flex">
+            <view class="heart_box">
+                <view class="heart3 flex">
+                      <view class="heart4 flex"></view>
+                  </view>
+                  <view class="heart"><image src="/images/heart.png"></image></view>
+               </view> 
+            </view>
+        </view>
+        <view class="cp_confirm">
+            <view class="color font32" style="margin-top:130rpx;text-align:center;">原谅他7次太少</view>
+            <view class="color font32" style="text-align:center;">70个7次会太多</view>
+            <view class="font24 color6 cp_note" style="margin-top: 50rpx;line-height: 50rpx;">一个正常人的忍耐力，可以原谅伤害他的77次。挖鼻大婶 你是否愿意给 抠脚大汉 77次机会原谅他77次</view>
+            <view class="confirm_btn flex" bindtap="intoPath" data-path="/pages/forgive/forgive" style="margin-top: 50rpx;">
+                <view class="btn_left">
+                    <button class="submit_info btn_border">参与</button>
+                </view>
+                <view class="btn_left">
+                    <button class="submit_info btn_border" style="background: none;color:#666;">取消</button>
+                </view>
+            </view>
+        </view>
+        <view class="close" bindtap="close"><image src="/images/close.png"></image></view>
+    </view>
+</view>
+<view style="width:100%;height:180rpx;"></view>
+<view class="navbar">
+    <view class="navbar_box">
+        <image src="/images/navbar1.png" class="navbar_bg"></image>
+        <view class="navbar_cont flex">
+            <view class="navbar_item">
+            </view>
+            <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/file/file">
+            </view>
+            <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/shopping/shopping">
+            </view>
+        </view>
+    </view>
+</view>

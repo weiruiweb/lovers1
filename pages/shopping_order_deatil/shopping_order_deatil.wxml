@@ -1,0 +1,64 @@
+<!--index1.wxml-->
+<view class="page-body">
+    <view class="page-section page-section-spacing swiper">
+      <swiper
+        indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" bindchange="swiperChange"  circular="{{circular}}" vertical="{{vertical}}"
+        interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{background}}" wx:index="{{index}}">
+        <swiper-item class="swiper-item">
+            <image mode="aspectFill" src="{{item}}" class="slide-image {{swiperIndex == index ? 'active' : ''}}"/>
+        </swiper-item>
+    </block>
+      </swiper>
+    </view>
+</view>
+<view class="dots"> 
+    <block wx:for="{{background}}" wx:key="unique"> 
+        <view class="dot flex">
+            <view class="dot_in {{index == swiperIndex ? ' active' : ''}}"></view>
+        </view> 
+    </block> 
+</view>
+<view class="clothes">
+    <view class="clothes_cont">
+        <view class="clothes_price">
+            <text class="txt1 color">¥325</text><text class="txt2 font30">348</text>
+        </view>
+        <view class="font30 color1 clothes_tit">PROD小动物管理员情侣装</view>
+        <view class="font22 color2">2018新款短袖t恤女不一样的情侣T秋天上衣</view>
+    </view>
+</view>
+<view class="thread">
+    <view class="thread1"></view>
+    <view class="thread2"></view>
+    <view class="thread3"></view>
+</view>
+<view class="buy_number">
+    <view class="buy_number_cont flexRowBetween">
+        <view class="number_tlt color1 font24">规格数量选择</view>
+        <view class="choose_icon"><image src="/images/next_page.png"></image></view>
+    </view>
+</view>
+<view class="thread">
+    <view class="thread1"></view>
+    <view class="thread2"></view>
+    <view class="thread3"></view>
+</view>
+<view class="buy_btn">
+    <view class="thread">
+        <view class="thread1"></view>
+        <view class="thread2"></view>
+        <view class="thread3"></view>
+    </view>
+    <view class="buy_btn_cont flex">
+        <view class="purchase flex">
+            <view class="buy_left"><image src="/images/cart.png"></image></view>
+            <view class="buy_right flex">
+                <view class="add_cart">
+                    <view class="add_cart_cont font28 color1 bg">加入购物车</view>
+                </view>
+                <view class="buy_now font28 bg" style="color:##B64343">立即购买</view>
+            </view>
+        </view>
+    </view>
+</view>

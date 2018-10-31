@@ -1,0 +1,80 @@
+/**index.wxss**/
+
+@import "../../wxParse/wxParse.wxss"; 
+.shopping{
+	width:85%;
+	padding:0 7.5%;
+	height:152rpx;
+}
+.select{
+	width:8.5%;
+}
+.select image{
+	width:30rpx;
+	height:30rpx;
+}
+.shopping_box{
+	width:100%;
+	height:152rpx;
+	margin-top: 50rpx;
+}
+.shopping_img{
+	width:26%
+}
+.shopping_detail{
+	width:65.5%;
+	height:152rpx;
+}
+.shopping_img image{
+	width:152rpx;
+	height:152rpx;
+}
+.shopping_name{
+	width:100%;
+	height:33%;
+}
+.shopping_txt{
+	width:100%;
+	height:33.5%;
+}
+.shopping_number{
+	width:100%;
+	height:33.5%;
+}
+.shopping_price{
+	width:60%;
+	height:100%;
+	font-size:36rpx;
+}
+.number_handle{
+	width:40%;
+	height:100%;
+}
+.number_handle .add{
+	width:30%;
+	height:100%;
+	text-align:center;
+}
+.number_handle .add_cont{
+	width:40%;
+	height:100%;
+	text-align:center;
+	box-sizing: border-box;
+}
+.add_number{
+	width:46rpx;
+	height:46rpx;
+	border:solid 4rpx #633535;
+	border-radius: 50%;
+	margin:0 auto;
+	line-height: 46rpx;
+	text-align: center;
+}
+.shopping_txt text{
+	margin-right:20rpx;
+}
+.add image{
+	width:24rpx;
+	height:26rpx;
+	margin:0 auto;
+}

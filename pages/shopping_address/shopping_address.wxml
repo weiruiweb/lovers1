@@ -1,0 +1,61 @@
+<!--index3.wxml-->
+<view class="address">
+    <view class="address_cont">
+        <view class="address_list flex">
+            <view class="address_left">
+                <view class="address_icon">
+                    <image src="/images/address.png"></image>
+                    <view class="font24 color2">联系人</view>
+                </view>
+            </view>
+            <view class="address_right">
+                <input class="font28" placeholder="联系人"></input>
+            </view>
+        </view>
+        <view class="address_list flex">
+            <view class="address_left">
+                <view class="address_icon">
+                    <image src="/images/address.png"></image>
+                    <view class="font24 color2">电话号码</view>
+                </view>
+            </view>
+            <view class="address_right">
+                <input class="font28" placeholder="11位手机号"></input>
+            </view>
+        </view>
+        <view class="address_list flex">
+            <view class="address_left">
+                <view class="address_icon">
+                    <image src="/images/address.png"></image>
+                    <view class="font24 color2">选择地区</view>
+                </view>
+            </view>
+            <view class="address_right">
+                <input class="font28" placeholder="选择地区"></input>
+            </view>
+        </view>
+        <view class="address_list flex">
+            <view class="address_left">
+                <view class="address_icon">
+                    <image src="/images/address.png"></image>
+                    <view class="font24 color2">详细地址</view>
+                </view>
+            </view>
+            <view class="address_right">
+                <input class="font28" placeholder="街道门牌号"></input>
+            </view>
+        </view>
+        <view class="address_list flex">
+            <view class="address_left">
+                <view class="address_icon">
+                    <image src="/images/address.png"></image>
+                    <view class="font24 color2">邮政编码</view>
+                </view>
+            </view>
+            <view class="address_right">
+                <input class="font28" placeholder="所属地区邮政编码"></input>
+            </view>
+        </view>
+    </view>
+</view>
+<button class="submit_info" bindtap="intoPath" data-path="/pages/shopping_address_new/shopping_address_new">完成</button>

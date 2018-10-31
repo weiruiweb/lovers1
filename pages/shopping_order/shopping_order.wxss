@@ -1,0 +1,48 @@
+/**index.wxss**/
+
+@import "../../wxParse/wxParse.wxss"; 
+.product_box{
+	height:230rpx;
+}
+.product_detail{
+	width:100%;
+	height:140rpx;
+}
+.product_left{
+	width:27.5%;
+	height:156rpx;
+}
+.product_left image{
+	width:156rpx;
+	height:156rpx;
+	border-radius: 20rpx;
+}
+.product_right{
+	width:72.5%;
+	height:156rpx;
+}
+.product_price{
+	width:100%;
+}
+.test{
+	height:100%;
+	display:flex;
+	flex-flow: row wrap;
+	align-content:space-between;
+}
+.product_price{
+	width:100%;
+	height:50%;
+}
+.product_top{
+	height:40%;
+}
+.submit_info{
+	width:120rpx;
+	height:46rpx;
+	line-height: 46rpx;
+	border-radius: 30rpx;
+	background: none;
+	border: solid 1px #fe6565;
+	color:#fe6565;
+}
