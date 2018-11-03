@@ -10,14 +10,17 @@
         <image src="/images/plus@2x.png"></image>
     </view>
 </view>
+<view style="clear: both;"></view>
 <view class="w690">
-     <view class="heart1 flex">
-       <view class="heart2 flex">
-            <view class="heart3 flex">
-                <view class="forgive_number color1">75</view>
+    <view class="heart_cont flex">
+        <view class="heart3"> 
+            <view class = 'circle left-circle' style="{{rotate}}"></view>
+            <view class = 'circle right-circle'></view>
+            <view class="forgive_number color1 flex">
+                <view style="margin:0 auto;font-size:100rpx;" class="color1">{{percent}}</view>
             </view>
-       </view> 
-    </view>
+        </view>
+   </view> 
     <view class="font32 color forgive_num">和你在一起道路上</view>
     <view  class="font32 color forgive_num">我还能原谅你75次</view>
 </view>
@@ -37,10 +40,8 @@
                     <view class="circle1"></view>
                 </view>
                 <view class="small_circle flex">
-                    <view class="circle3 flex">
-                        <view class="circle2 flex">
-                            <image src="/images/Support@3x.png"></image>
-                        </view>
+                    <view class="circle2 flex">
+                        <image src="/images/Support@3x.png"></image>
                     </view>
                 </view>
                 <view class="small_circle1 flexRowBetween">

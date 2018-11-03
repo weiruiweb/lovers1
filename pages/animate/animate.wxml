@@ -1,0 +1,14 @@
+
+<view class = 'progress-bar'>
+  <view class = 'circle left-circle' style="{{rotate}}">
+  </view>
+  <view class = 'circle right-circle'>
+  </view>
+</view>
+
+<view class = 'overlay'>
+    {{percent}}%
+</view>
+
+/***************横行进度条********************/
+

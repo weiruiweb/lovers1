@@ -1,0 +1,70 @@
+/**index.wxss**/
+
+@import "../../wxParse/wxParse.wxss"
+/*******************圆环进度条不带百分比*********************/
+.progress-bar {
+  position: absolute;
+  width: 300px;    
+  height: 300px;  
+  border-radius: 100%;
+  background-color: opacity;
+  clip: rect(0px, 300px, 300px, 150px);
+  -webkit-animation: 0.01s 3.2s linear removeClip;
+  -webkit-animation-fill-mode: forwards;
+}
+
+.circle {
+  width: inherit;
+  height: inherit;
+  border-radius: 100%;
+  position: absolute; 
+  clip: rect(0px,150px,300px,0px);  
+  background-color: teal;
+}
+
+.left-circle {
+ /* -webkit-animation: 6s linear left-spin;*/
+ transition: all 1;
+  -webkit-animation-fill-mode: forwards;
+}
+
+.right-circle {
+  -webkit-animation: 3s linear right-spin;
+  -webkit-animation-fill-mode: forwards;
+} 
+
+.overlay{
+  position: absolute;
+  margin: 20px;
+  border-radius: 100%;
+  width: 260px;
+  height: 260px;
+  background-color: #FE6464;
+  background-color: opacity;  /***********扇形************/
+}
+
+@-webkit-keyframes left-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes right-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(180deg);
+  }
+}
+
+@-webkit-keyframes removeClip {
+  to {
+    clip: rect(auto, auto, auto, auto);
+  }
+}
+
+/******************环形进度条**********************/

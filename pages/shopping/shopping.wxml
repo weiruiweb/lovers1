@@ -4,7 +4,7 @@
 
     <block wx:for="{{background}}" wx:index="{{index}}">
         <swiper-item class="swiper-item">
-            <image mode="aspectFill" src="{{item}}" class="slide-image {{swiperIndex == index ? 'active' : ''}}"/>
+            <image  src="{{item}}" mode="aspectFill" class="slide-image {{swiperIndex == index ? 'active' : ''}}"/>
         </swiper-item>
     </block>
 </swiper>
@@ -83,7 +83,7 @@
     </view>
 </view>
 <view class="shopping">
-    <view class="shopping_list flex">
+    <view class="shopping_list flex" bindtap="intoPath" data-path="/pages/shopping_order_deatil/shopping_order_deatil">
         <view class="shooping_left">
             <view class="product_img">
                 <image src="/images/product.png"></image>
@@ -100,7 +100,7 @@
             </view>
         </view>
     </view>
-    <view class="shopping_list flex">
+    <view class="shopping_list flex"  bindtap="intoPath" data-path="/pages/shopping_order_deatil/shopping_order_deatil">
         <view class="shooping_left">
             <view class="product_img">
                 <image src="/images/product.png"></image>
@@ -118,19 +118,19 @@
         </view>
     </view>
 </view>
-<view class="menu">
-    <view class="menu_cont">
-        <view class="menu_click">
-            <image src="/images/menu_btn.png"></image>
-        </view>
-        <view class="menu_icon cart" bindtap="intoPath" data-path="/pages/shopping_cart/shopping_cart">
-            <image src="/images/shopping.png"></image>
-        </view>
-        <view class="menu_icon order"><image src="/images/order.png"></image></view>
-        <view class="menu_icon address" bindtap="intoPath" data-path="/pages/shopping_address/shopping_address"><image src="/images/address.png"></image></view>
-    </view>
-</view>
-<view class="mask"></view>
+<view class='menus' wx:if='{{!bcgImgAreaShow}}'>
+    <image src="/images/shopping.png" animation="{{animationOne}}" class="menu" bindtap="intoPath" data-path="/pages/shopping_cart/shopping_cart" style='top:{{pos.top}}px;left:{{pos.left}}px;'>
+        
+    </image>
+    <image src="/images/order.png" animation="{{animationTwo}}" class="menu" bindtap="intoPath" data-path="/pages/shopping_order/shopping_order" style='top:{{pos.top}}px;left:{{pos.left}}px;'>
+        
+    </image>
+    <image src="/images/address.png" animation="{{animationThree}}" class="menu" bindtap="intoPath" data-path="/pages/shopping_address_new/shopping_address_new"  style='top:{{pos.top}}px;left:{{pos.left}}px;'>
+        
+    </image>
+    <image src="/images/menu_btn.png" animation="{{animationMain}}" class="menu main" bindtap="menuMain" catchtouchmove='menuMainMove' style='top:{{pos.top}}px;right:{{pos.right}}px;'></image>
+  </view>
+<view class="mask" style="{{hasPopped?'display: block':'display:none'}}"></view>
 <view style="width:100%;height:180rpx;"></view>
 <view class="navbar">
     <view class="navbar_box">

@@ -116,36 +116,69 @@ view{
 	border-radius:40rpx;
 	background: #fff;
 	overflow:hidden;
+	position:relative;
+}
+.move_line{
+	width:100%;
+	height:100%;
+	position: relative;
+}
+.move_line .line1{
+	width:1rpx;
+	height:100%;
+	margin:0 auto;
+	background: #666;
+}
+.mood_right{
+	position: absolute;
+	top:40rpx;
+	height:500rpx;
+	right:20rpx;
+	z-index: 999;
 }
 .mood_left{
 	width:7.5%;
-	height:100%;
+	height:500rpx;
 }
 .mood_center{
 	width:85%;
 	height:100%;
 	flex-wrap: wrap;
 }
-.mood_right{
+/*.mood_right{
 	padding-top:17%;
 	position: relative;
-}
-.line1{
-	width:1rpx;
-	height:100%;
-	background: #666;
-	position: absolute;
-	top:17%;
-	left:48%;
-	z-index: 1;
-}
+}*/
 .silde_icon{
-	width:40rpx;
-	height: 40rpx;
+	width:100%;
+	height: 24rpx;
 	z-index: 999;
 	position: absolute;
-	left: 0;
+	left:0;
 	top:17%;
+}
+.silde_circle{
+	width:24rpx;
+	height:24rpx;
+	border-radius: 50%;
+	background: #fd6464;
+	-webkit-animation: ripple1 1.2s linear infinite;
+  	animation: ripple1 1.2s linear infinite;
+  	margin:0 auto;
+}
+@keyframes ripple1{
+	0%{
+		box-shadow: 0 0 0 6rpx rgba(254,101,101, 0.2);
+		transform:scale3d(1,1,1);
+	}
+	50%{
+		box-shadow: 0 0 0 16rpx rgba(254,101,101, 0.2);
+		transform:scale3d(1.1,1.1,1.1);
+	}
+	100%{
+		box-shadow: 0 0 0 6rpx rgba(254,101,101, 0.2);
+		transform:scale3d(0.8,0.8,0.8);
+	}
 }
 .silde_icon image{
 	width:100%;

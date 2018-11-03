@@ -14,7 +14,7 @@
         </view>
     </view>
 </view>
-<view class="add_address">
+<view class="add_address" bindtap="intoPath" data-path="/pages/shopping_address/shopping_address">
     <image src="/images/increase.png"></image>
     <view class="font28 color2">新增地址</view>
 </view>

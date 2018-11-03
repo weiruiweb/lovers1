@@ -62,8 +62,8 @@
 	-webkit-line-clamp: 2; 
 }
 .things_top image{
-	width:44rpx;
-	height:38rpx;
+	width:40rpx;
+	height:34rpx;
 	margin:0 auto;
 }
 .circle1{
@@ -74,9 +74,25 @@
 	margin:0 auto;
 }
 .circle2{
-	width:66rpx;
-	height:66rpx;
+	width:56rpx;
+	height:56rpx;
 	border-radius: 50%;
-	background: #713939;
+	background:rgba(254,101,101, 0.6);
 	margin:0 auto;
+	transition: all 1s;
+	animation: ripple1 1s linear infinite;
+}
+@keyframes ripple1{
+	0%{
+		box-shadow: 0 0 0 4rpx rgba(254,101,101, 0.2);
+		transform:scale3d(1,1,1);
+	}
+	50%{
+		box-shadow: 0 0 0 10rpx rgba(254,101,101, 0.2);
+		transform:scale3d(1.1,1.1,1.1);
+	}
+	100%{
+		box-shadow: 0 0 0 4rpx rgba(254,101,101, 0.2);
+		transform:scale3d(0.8,0.8,0.8);
+	}
 }

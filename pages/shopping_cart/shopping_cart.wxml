@@ -41,3 +41,13 @@
         </view>
     </view>
 </view>
+<view class="settlement flex">
+    <view class="settlement_left bg flexRowBetween">
+        <image src="/images/select1.png"></image>
+        <text class="font24 color1">全选</text>
+        <view class="font24 color1">合计：¥899</view>
+    </view>
+    <view class="settlement_right bg">
+        <text class="font28 color1">结算</text><text class="font28 color1">(20)</text>
+    </view>
+</view>

@@ -20,10 +20,8 @@
         <view class="hundred_item" bindtap="intoPath" data-path="/pages/hundred_things_confirm/hundred_things_confirm">
             <view class="things_item">
                 <view class="things_top flex">
-                    <view class="circle1 flex">
-                        <view class="circle2  flex">
-                            <image src="/images/heart.png"></image>
-                        </view>
+                    <view class="circle2  flex">
+                        <image src="/images/heart.png"></image>
                     </view>
                 </view>
                 <view class="things_bottom font24 color1 flex">一起跨年倒计时一起跨年倒计时</view>
@@ -32,10 +30,8 @@
         <view class="hundred_item"  bindtap="intoPath" data-path="/pages/hundred_things_confirm/hundred_things_confirm">
             <view class="things_item">
                 <view class="things_top flex">
-                    <view class="circle1 flex">
-                        <view class="circle2  flex">
-                            <image src="/images/heart.png"></image>
-                        </view>
+                    <view class="circle2  flex">
+                        <image src="/images/heart.png"></image>
                     </view>
                 </view>
                 <view class="things_bottom font24 color1 flex">一起跨年倒计时一起跨年倒计时</view>
@@ -44,10 +40,8 @@
         <view class="hundred_item"  bindtap="intoPath" data-path="/pages/hundred_things_confirm/hundred_things_confirm">
             <view class="things_item">
                 <view class="things_top flex">
-                    <view class="circle1 flex">
-                        <view class="circle2  flex">
-                            <image src="/images/heart.png"></image>
-                        </view>
+                    <view class="circle2  flex">
+                        <image src="/images/heart.png"></image>
                     </view>
                 </view>
                 <view class="things_bottom font24 color1 flex">一起跨年倒计时一起跨年倒计时</view>

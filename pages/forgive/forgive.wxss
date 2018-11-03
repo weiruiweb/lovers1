@@ -2,7 +2,7 @@
 @import "../../wxParse/wxParse.wxss";
 
 .lovers_img_box{
-	padding:0 10%;
+	padding:10% 10%;
 	width:80%;
 	height:346rpx;
 }
@@ -41,10 +41,10 @@
 	border:solid 8rpx #fe6565;
 }
 .small_circle1{
-	width:30%;
+	width:25%;
 }
 .small_circle{
-	width: 37%;
+	width: 47%;
 	padding:0 1.5%;
 	height:80rpx;
 }
@@ -66,13 +66,22 @@
 	background: #713939;
 	border-radius: 50%;
 	margin:0 auto;
+	transition: all 1s;
+	animation: ripple1 1s linear infinite;
 }
-.circle3{
-	width:80rpx;
-	height:80rpx;
-	background: #4e2f2f;
-	border-radius: 50%;
-	text-align: center;
+@keyframes ripple1{
+	0%{
+		box-shadow: 0 0 0 4rpx rgba(254,101,101, 0.2);
+		transform:scale3d(1,1,1);
+	}
+	50%{
+		box-shadow: 0 0 0 10rpx rgba(254,101,101, 0.2);
+		transform:scale3d(1.1,1.1,1.1);
+	}
+	100%{
+		box-shadow: 0 0 0 4rpx rgba(254,101,101, 0.2);
+		transform:scale3d(0.8,0.8,0.8);
+	}
 }
 .lovers_datys{
 	width:192rpx;
@@ -92,28 +101,51 @@
 	height:60rpx;
 }
 .heart2{
-	width:412rpx;
-	height:412rpx;
-	border-radius:50%;
-	background: rgba(254,101,101,0.4);
-	margin:0 auto;
-	text-align: center;
-}
-.heart1{
-	width:460rpx;
-	height:460rpx;
-	border-radius:50%;
-	background: rgba(250,136,136,0.4);
-	margin:80rpx auto;
-}
-.heart3{
 	width:360rpx;
 	height:360rpx;
 	border-radius:50%;
 	background: rgba(254,101,101,0.4);
+	margin:30rpx auto 150rpx auto;
+	text-align: center;
+	/*transition: all 1s;
+	animation: ripple2 1s linear infinite;*/
+}
+.forgive_number{
 	margin:0 auto;
-	font-size:140rpx;
-	
+}
+@keyframes ripple2{
+	0%{
+		box-shadow: 0 0 0 10rpx rgba(254,101,101, 0.2);
+		transform:scale3d(1,1,1);
+	}
+	50%{
+		box-shadow: 0 0 0 30rpx rgba(254,101,101, 0.2);
+		transform:scale3d(1.1,1.1,1.1);
+	}
+	100%{
+		box-shadow: 0 0 0 10rpx rgba(254,101,101, 0.2);
+		transform:scale3d(0.8,0.8,0.8);
+	}
+}
+.heart_cont{
+	width:170px;
+	height:170px;
+	margin:0 auto 90rpx auto;
+	background: rgba(254,101,101,0.4);
+	border-radius: 50%;
+	transition: all 1s;
+	animation: ripple2 1s linear infinite;
+}
+.heart3{
+	position:relative;
+	width:150px;
+	height:150px;
+	margin:0 auto;
+	border-radius:100%;
+	background: rgba(254,101,101,0.4);
+	clip:rect(0px, 150px, 150px, 75px);
+	-webkit-animation:0.001s linear removeClip;
+	-webkit-animation-fill-mode:forwards;
 }
 .forgive_number{
 	width:100%;
@@ -122,4 +154,54 @@
 .forgive_num{
 	text-align: center;
 	margin-top:20rpx;
+}
+/*****环形进度条动画******/
+.circle {
+  width: inherit;
+  height: inherit;
+  border-radius: 100%;
+  position: absolute; 
+  clip: rect(0px,75px,150px,0px);  
+  background-color: #fff;
+}
+.left-circle {
+ /* -webkit-animation: 6s linear left-spin;*/
+ transition: all 1;
+  -webkit-animation-fill-mode: forwards;
+}
+.right-circle {
+  -webkit-animation: 3s linear right-spin;
+  -webkit-animation-fill-mode: forwards;
+} 
+.forgive_number{
+  position: relative;
+  margin: 6px;
+  border-radius: 50%;
+  width: 138px;
+  height: 138px;
+  background-color: #FE6464;
+  /*background-color: opacity;*/  /***********扇形************/
+}
+@-webkit-keyframes left-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes right-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(180deg);
+  }
+}
+
+@-webkit-keyframes removeClip {
+  to {
+    clip: rect(auto, auto, auto, auto);
+  }
 }

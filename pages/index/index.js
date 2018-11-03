@@ -6,6 +6,7 @@ const app = getApp();
 Page({
   data: {
     is_show:false,
+    is_show:false,
     is_show2:false,
     is_show3:false,
   },
@@ -17,6 +18,13 @@ Page({
       is_show:is_show
     })
     console.log(is_show);
+  },
+  dialog1(e){
+    const self = this;
+    var is_show1 = !this.data.is_show1
+    this.setData({
+      is_show1:is_show1
+    })
   },
   dialog2(e){
     const self = this;

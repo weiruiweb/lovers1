@@ -78,3 +78,33 @@
 	height:26rpx;
 	margin:0 auto;
 }
+.settlement{
+	width:400rpx;
+	height:68rpx;
+	position: fixed;
+	right:0;
+	bottom: 20%;
+	border-radius: 50rpx 0 0 50rpx;
+	overflow: hidden;
+}
+.settlement_left{
+	width:58%;
+	height:100%;
+	padding:0 1%;
+}
+.settlement_right{
+	width:38%;
+	height:100%;
+	margin-left: 1%;
+	text-align: center;
+}
+.settlement_left image{
+	width:36rpx;
+	height:36rpx;
+}
+.settlement_left text{
+	margin:0 6rpx;
+}
+.settlement_right text{
+	margin:0 6rpx;
+}

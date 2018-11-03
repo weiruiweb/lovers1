@@ -21,11 +21,9 @@
                     <view class="circle1"></view>
                 </view>
                 <view class="small_circle flex">
-                    <view class="circle3 flex">
                         <view class="circle2 flex">
                             <image src="/images/Support@3x.png"></image>
                         </view>
-                    </view>
                 </view>
                 <view class="small_circle1 flexRowBetween">
                     <view class="circle1"></view>
@@ -58,7 +56,7 @@
             <image src="/images/menu1.png"></image>
             <view class="font28 color2">原谅他0次</view>
         </view>
-        <view class="menu_item" >
+        <view class="menu_item" bindtap="intoPath" data-path="/pages/balance/balance">
             <image src="/images/menu2.png"></image>
             <view class="font28 color2">爱情天平</view>
         </view>
@@ -154,17 +152,13 @@
         </view>
     </view>
 </view>
-<!-- <view  class="dialog" style="{{is_show?'position: absolute;top:10%':'position:fixed;bottom: -100%;'}}">
+<view  class="dialog" style="{{is_show?'position: absolute;top:10%':'position:fixed;bottom: -100%;'}}">
     <view class="lover_dialog">
         <view class="heart1 flex">
-           <view class="heart2 flex">
             <view class="heart_box">
-                <view class="heart3 flex">
-                      <view class="heart4 flex"></view>
-                  </view>
-                  <view class="heart"><image src="/images/heart.png"></image></view>
-               </view> 
-            </view>
+                <view class="heart4 flex"></view>
+                <view class="heart"><image src="/images/heart.png"></image></view>
+            </view> 
         </view>
         <view class="cp_confirm">
             <view class="confirm_tlt color font32">CP认证</view>
@@ -174,9 +168,9 @@
         </view>
         <view class="close" bindtap="close"><image src="/images/close.png"></image></view>
     </view>
-</view> -->
+</view>
 <!-- 被邀请对象弹出框 -->
-<!-- <view  class="dialog1" style="{{is_show?'position: absolute;top:10%':'position:fixed;bottom: -100%;'}}">
+<!-- <view  class="dialog1" style="{{is_show1?'position: absolute;top:10%':'position:fixed;bottom: -100%;'}}">
     <view class="lover_dialog">
         <view class="heart1 flex">
            <view class="heart2 flex">
@@ -213,14 +207,10 @@
 <view  class="dialog2" style="{{is_show2?'position: absolute;top:10%':'position:fixed;bottom: -100%;'}}">
     <view class="lover_dialog">
         <view class="heart1 flex">
-           <view class="heart2 flex">
             <view class="heart_box">
-                <view class="heart3 flex">
-                      <view class="heart4 flex"></view>
-                  </view>
-                  <view class="heart"><image src="/images/heart.png"></image></view>
-               </view> 
-            </view>
+                <view class="heart4 flex"></view>
+                <view class="heart"><image src="/images/heart.png"></image></view>
+            </view> 
         </view>
         <view class="cp_confirm">
             <view class="confirm_tlt color font32" style="margin-top: 90rpx;">你敢挑战吗？</view>
@@ -251,14 +241,10 @@
 <view  class="dialog3" style="{{is_show3?'position: absolute;top:10%':'position:fixed;bottom: -100%;'}}">
     <view class="lover_dialog">
         <view class="heart1 flex">
-           <view class="heart2 flex">
             <view class="heart_box">
-                <view class="heart3 flex">
-                      <view class="heart4 flex"></view>
-                  </view>
-                  <view class="heart"><image src="/images/heart.png"></image></view>
-               </view> 
-            </view>
+                <view class="heart4 flex"></view>
+                <view class="heart"><image src="/images/heart.png"></image></view>
+            </view> 
         </view>
         <view class="cp_confirm">
             <view class="color font32" style="margin-top:130rpx;text-align:center;">原谅他7次太少</view>

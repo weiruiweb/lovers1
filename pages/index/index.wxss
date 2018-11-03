@@ -41,12 +41,13 @@
 	border:solid 8rpx #fe6565;
 }
 .small_circle1{
-	width:30%;
+	width:26%;
 }
 .small_circle{
-	width: 37%;
+	width: 41%;
 	padding:0 1.5%;
 	height:80rpx;
+	margin:0 auto;
 }
 .circle1{
 	width:10rpx;
@@ -59,21 +60,29 @@
 	width:42rpx;
 	height: 38rpx;
 	margin: 0 auto;
+	transition: all 1s;
+	animation: beat 1s linear infinite;
 }
 .circle2{
-	width:66rpx;
-	height:66rpx;
-	background: #713939;
+	width:60rpx;
+	height:60rpx;
+	background: rgba(254,101,101, 0.4);
 	border-radius: 50%;
 	margin:0 auto;
+	transition: all 1s;
+	animation: ripple1 1s linear infinite;
+	z-index:1;
 }
-.circle3{
+/*.circle3{
 	width:80rpx;
 	height:80rpx;
 	background: #4e2f2f;
 	border-radius: 50%;
 	text-align: center;
-}
+	transition: all 1s;
+	animation: ripple1 1.5s linear infinite;
+	margin:0 auto;
+}*/
 .lovers_datys{
 	width:192rpx;
 	height:52rpx;
@@ -141,6 +150,9 @@
 	border-left: dashed 1px #ff6d6d; 
 	margin:0 auto;
 }
+.comment{
+	margin-top:50rpx;
+}
 .comment_img{
 	width:21%;
 	height:100%;
@@ -181,6 +193,7 @@
 	bottom: -100%;
 	height:970rpx;
 	transition: all 1s;
+	z-index: 999;
 }
 .dialog1{
 	width:100%;
@@ -188,6 +201,7 @@
 	bottom: -100%;
 	height:970rpx;
 	transition: all 1s;
+	z-index: 999;
 }
 .dialog2{
 	width:100%;
@@ -195,6 +209,7 @@
 	bottom: -100%;
 	height:970rpx;
 	transition: all 1s;
+	z-index: 999;
 }
 .dialog3{
 	width:100%;
@@ -202,6 +217,7 @@
 	bottom: -100%;
 	height:970rpx;
 	transition: all 1s;
+	z-index: 999;
 }
 .lover_dialog{
 	width:530rpx;
@@ -210,23 +226,16 @@
 	
 }
 
-.heart2{
+.heart1{
 	width:144rpx;
 	height:144rpx;
 	border-radius:50%;
-	background: rgba(254,101,101,0.4);
-	margin:0 auto;
-	text-align: center;
-}
-.heart1{
-	width:178rpx;
-	height:178rpx;
-	border-radius:50%;
-	background: rgba(250,136,136,0.4);
+	background: rgba(250,136,136,0.6);
 	margin:0 auto;
 	position: relative;
 	top:89rpx;
-
+	-webkit-animation: ripple2 1s linear infinite;
+  		animation: ripple2 1s linear infinite;
 }
 .heart3{
 	width:80rpx;
@@ -239,13 +248,16 @@
 	width:60rpx;
 	height:60rpx;
 	border-radius:50%;
-	background: rgba(250,136,136,0.4);
+	background: rgba(254,101,101,0.5);
 	margin:0 auto;
+	transition: all 1s;
+	-webkit-animation: ripple3 1.5s linear infinite;
+  		animation: ripple3 1.5s linear infinite;
 }
 .heart{
 	position: absolute;
 	left:0;
-	top:22rpx;
+	top:18rpx;
 	width:100%;
 	height:100%;
 }
@@ -265,6 +277,7 @@
 	border-radius: 30rpx;
 	background: #fff;
 	border:solid 4rpx #fe5b5b;
+	transition: all 1s;
 }
 .confirm_tlt{
 	width:100%;
@@ -307,8 +320,9 @@ button{
 	position: absolute;
 	left: 0;
 	top:0;
-	background: rgba(0,0,0,0.6);
+	background: rgba(0,0,0,0.9);
 	transition: all 1s;
+	z-index: 9;
 }
 .btn_left{
 	width:50%;
@@ -343,4 +357,108 @@ button{
 	width:240rpx;
 	height:240rpx;
 	margin:0 auto;
+}
+/********************circle动效*********************/
+.circle-ripple {
+  background-color: #fe6565;
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  transition: all 1s;
+  animation: ripple 0.8s linear infinite;
+}
+.ripple{
+  text-decoration: none;
+  color: #fff;
+  width: 12px;
+  height: 12px;
+  background-color: rgba(254,101,101);
+  margin: 0 auto;
+  border-radius: 100px;
+  transition: all 2s;
+  -webkit-animation: ripple .7s linear infinite;
+  animation: ripple .7s linear infinite;
+}
+/*@-webkit-keyframes ripple{
+  0%{
+    box-shadow: 0 0 0 0 rgba(254,101,101, 0.3),
+     0 0 0 10px rgba(254,101,101, 0.3), 
+     0 0 0 30px rgba(254,101,101, 0.3), 
+     0 0 0 60px rgba(254,101,101, 0.3)
+	}
+  100%{
+    box-shadow: 0 0 0 10px rgba(254,101,101, 0.3), 
+    0 0 0 30px rgba(254,101,101, 0.3), 
+    0 0 0 60px rgba(254,101,101, 0.3), 
+    0 0 0 90px rgba(254,101,101, 0)
+}
+}
+*/
+@keyframes ripple{
+  0% {
+    box-shadow: 0 0 0 0 rgba(254,101,101, 0.3),
+                0 0 0 30rpx rgba(254,101,101, 0.3),
+                0 0 0 60rpx rgba(254,101,101, 0.3),
+                0 0 0 90rpx rgba(254,101,101, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 0 30rpx rgba(254,101,101, 0.3),
+                0 0 0 60rpx rgba(254,101,101, 0.3),
+                0 0 0 90rpx rgba(254,101,101, 0.3),
+                0 0 0 120rpx rgba(254,101,101, 0.3,);
+  }
+  100% {
+    box-shadow: 0 0 0 0rpx rgba(254,101,101, 0.3),
+                0 0 0 20rpx rgba(254,101,101, 0.3),
+                0 0 0 50rpx rgba(254,101,101, 0.3),
+                0 0 0 80rpx rgba(254,101,101, 0.3,);
+  }
+}
+@keyframes ripple1{
+	0%{
+		box-shadow: 0 0 0 10rpx rgba(254,101,101, 0.2);
+		transform:scale3d(1,1,1);
+	}
+	50%{
+		box-shadow: 0 0 0 20rpx rgba(254,101,101, 0.2);
+		transform:scale3d(1.1,1.1,1.1);
+	}
+	100%{
+		box-shadow: 0 0 0 10rpx rgba(254,101,101, 0.2);
+		transform:scale3d(0.8,0.8,0.8);
+	}
+}
+@keyframes ripple2{
+	0%{
+		box-shadow: 0 0 0 10rpx rgba(254,101,101, 0.2);
+		transform:scale3d(1,1,1);
+	}
+	50%{
+		box-shadow: 0 0 0 32rpx rgba(254,101,101, 0.2);
+		transform:scale3d(1.1,1.1,1.1);
+	}
+	100%{
+		box-shadow: 0 0 0 10rpx rgba(254,101,101, 0.2);
+		transform:scale3d(0.8,0.8,0.8);
+	}
+}
+@keyframes ripple3{
+	0%{
+		box-shadow: 0 0 0 4rpx rgba(254,101,101, 0.3);
+		transform:scale3d(1,1,1);
+	}
+	50%{
+		box-shadow: 0 0 0 16rpx rgba(254,101,101, 0.3);
+		transform:scale3d(1.1,1.1,1.1);
+	}
+	100%{
+		box-shadow: 0 0 0 4rpx rgba(254,101,101, 0.3);
+		transform:scale3d(1,1,1);
+	}
+}
+/*********************小心心***********************/
+@keyframes beat {
+    0% {transform: scale(0.8,0.8);}
+    50% {transform: scale(1,1);}
+    100% {transform: scale(0.7,0.7);}
 }

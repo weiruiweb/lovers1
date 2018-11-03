@@ -8,8 +8,26 @@ Page({
     is_show:false,
     is_show2:false,
     is_show3:false,
+    percent:0,
+    rotate:0,
   },
-  //事件处理函数
+  onLoad(options) {
+    const self = this;
+    var num = 0;
+    var t = setInterval(function(){
+      num++;
+      var rotateNum = num * 4.4;
+      var style= '-webkit-transform:rotate('+rotateNum+'deg);transform:rotate('+rotateNum+'deg);';
+      self.setData({
+          percent:num,
+          rotate:style,
+       })
+      
+      if(num==75){
+          clearInterval(t);
+        }      
+      },60);
+  },
   add(e){
     const self = this;
     var is_show = !this.data.is_show
@@ -40,10 +58,6 @@ Page({
       is_show2:false,
       is_show3:false,
     })
-  },
-  onLoad(options) {
-    const self = this;
-
   },
   intoPath(e){
     const self = this;

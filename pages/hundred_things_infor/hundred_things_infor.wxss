@@ -78,3 +78,89 @@
 	height:100%;
 	border-radius: 0;
 }
+.uploader_item{
+	width:240rpx;
+	height:240rpx;
+	border-radius: 50%;
+	overflow: hidden;
+}
+.uploader_item image{
+	width:100%;
+	height:100%;
+}
+/***************上传进度动画*****************/
+.upload_box{
+	position:relative;
+	width:130px;
+	height:130px;
+	margin:0 auto;
+	border-radius:100%;
+	background: rgba(254,101,101,0.2);
+	clip:rect(0px, 130px, 130px, 65px);
+	-webkit-animation:0.001s linear removeClip;
+	-webkit-animation-fill-mode:forwards;
+}
+.circle {
+  width: inherit;
+  height: inherit;
+  border-radius: 100%;
+  position: absolute; 
+  clip: rect(0px,65px,130px,0px);  
+  background-color: #FE6565;
+}
+.left-circle {
+ transition: all 1;
+  -webkit-animation-fill-mode: forwards;
+}
+.right-circle {
+  -webkit-animation: 3s linear right-spin;
+  -webkit-animation-fill-mode: forwards;
+} 
+.forgive_number{
+  position: relative;
+  margin: 5px;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  background-color: #FE6464;
+}
+@-webkit-keyframes left-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes right-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(180deg);
+  }
+}
+
+@-webkit-keyframes removeClip {
+  to {
+    clip: rect(auto, auto, auto, auto);
+  }
+}
+.percent{
+	width:220rpx;
+	height:220rpx;
+	position: absolute;
+	left:0;
+	top:0;
+	border-radius: 50%;
+	z-index:999;
+	text-align: center;
+	background: rgba(0,0,0,0.5);
+}
+.percent_number{
+	width:100%;
+	text-align: center;
+	color:#fff;
+
+}

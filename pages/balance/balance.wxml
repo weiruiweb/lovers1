@@ -1,0 +1,21 @@
+<!--index2.wxml-->
+<view class="thread">
+    <view class="thread1"></view>
+    <view class="thread2"></view>
+    <view class="thread3"></view>
+</view>
+<view class="balance" wx:if="{{!is_show}}">
+    <view class="font30 color">我们放下自尊、放下骄傲、放下任性</view>
+    <view class="font30 color">只因...</view>
+    <view class="font30 color">我们放不下一个人</view>
+</view>
+<view class="thread_cont" bindtap="banlance_create">
+    <view class="thread_center">
+        <view class="vertical_thread" style="{{is_show?'opacity: 1;height:890rpx;':''}}">
+        <view class="thread_bg {{is_show?'move_up':''}}"></view>
+        </view>
+        <image src="/images/balance.png" class="{{is_show?'move_up':''}}"></image>
+    </view>
+    <view wx:if="{{is_show}}" class="font28 color" style="text-align: center;margin-top:20rpx;">生成中...</view>
+    <view wx:else class="font28 color" style="text-align: center;margin-top:20rpx;">立即生成</view>
+</view>

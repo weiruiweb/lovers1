@@ -97,43 +97,124 @@
 </view>
 <view class="w690">
     <view class="mood_thing">
-        <view style="width:96%;height:100%;padding:0 2%;" class="flex">
-            <view class="mood_left"></view>
-            <view class="mood_center">
-                <view class="moode_box" bindtap="intoPath" data-path="/pages/file_thing_detail/file_thing_detail">
-                    <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
-                </view>
-                <view class="moode_box" bindtap="intoPath" data-path="/pages/file_thing_detail/file_thing_detail">
-                    <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
-                </view>
-                <view class="moode_box" bindtap="intoPath" data-path="/pages/file_thing_detail/file_thing_detail">
-                    <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
-                </view>
-                <view class="moode_box">
-                    <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
-                </view>
-                <view class="moode_box">
-                    <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
-                </view>
-                <view class="moode_box">
-                    <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
-                </view>
-                <view class="moode_box">
-                    <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
-                </view>
-                <view class="moode_box">
-                    <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
+        <scroll-view scroll-Y style="height:580rpx;" scroll-with-animation="true">
+            <view style="width:96%;height:100%;padding:0 2%;" class="flex">
+                <view class="mood_left"></view>
+                <view class="mood_center">
+                    <view class="moode_box" bindtap="intoPath" data-path="/pages/file_thing_detail/file_thing_detail">
+                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
+                    </view>
+                    <view class="moode_box" bindtap="intoPath" data-path="/pages/file_thing_detail/file_thing_detail">
+                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
+                    </view>
+                    <view class="moode_box" bindtap="intoPath" data-path="/pages/file_thing_detail/file_thing_detail">
+                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
+                    </view>
+                    <view class="moode_box">
+                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
+                    </view>
+                    <view class="moode_box">
+                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
+                    </view>
+                    <view class="moode_box">
+                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
+                    </view>
+                    <view class="moode_box">
+                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
+                    </view>
+                    <view class="moode_box">
+                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
+                    </view>
+                    <view class="moode_box">
+                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
+                    </view>
+                    <view class="moode_box">
+                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
+                    </view>
+                    <view class="moode_box">
+                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
+                    </view>
+                    <view class="moode_box">
+                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
+                    </view>
+                    <view class="moode_box">
+                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
+                    </view>
+                    <view class="moode_box">
+                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
+                    </view>
+                    <view class="moode_box">
+                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
+                    </view>
+                    <view class="moode_box">
+                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
+                    </view>
+                    <view class="moode_box">
+                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
+                    </view>
+                    <view class="moode_box">
+                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
+                    </view>
+                    <view class="moode_box" bindtap="intoPath" data-path="/pages/file_thing_detail/file_thing_detail">
+                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
+                    </view>
+                    <view class="moode_box" bindtap="intoPath" data-path="/pages/file_thing_detail/file_thing_detail">
+                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
+                    </view>
+                    <view class="moode_box" bindtap="intoPath" data-path="/pages/file_thing_detail/file_thing_detail">
+                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
+                    </view>
+                    <view class="moode_box">
+                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
+                    </view>
+                    <view class="moode_box">
+                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
+                    </view>
+                    <view class="moode_box">
+                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
+                    </view>
+                    <view class="moode_box">
+                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
+                    </view>
+                    <view class="moode_box">
+                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
+                    </view>
+                    <view class="moode_box">
+                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
+                    </view>
+                    <view class="moode_box">
+                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
+                    </view>
+                    <view class="moode_box">
+                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
+                    </view>
+                    <view class="moode_box">
+                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
+                    </view>
+                    <view class="moode_box">
+                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
+                    </view>
+                    <view class="moode_box">
+                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
+                    </view>
+                    <view class="moode_box">
+                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
+                    </view>
                 </view>
             </view>
-            <view class="mood_left mood_right">
+        </scroll-view>
+        <view class="mood_left mood_right">
+            <view class="move_line">
                 <view class="line1"></view>
-                <view class="silde_icon"><image src="/images/Slide@2x.png"></image></view>
+                <view class="silde_icon">
+                    <view class="silde_circle"></view>
+                </view>
             </view>
         </view>
     </view>
 </view>
 <view class="mask" style="{{is_show?'display:block':'display:none'}}"></view>
-<view  class="dialog" style="{{is_show?'position: absolute;top:10%':'position:fixed;bottom: -100%;'}}">
+<view  class="dialog" style="{{is_show?'position: absolute;top:5%':'position:fixed;bottom: -100%;'}}">
     <view class="lover_dialog">
         <view class="heart1 flex">
            <image src="/images/Statistics1@2x.png"></image>

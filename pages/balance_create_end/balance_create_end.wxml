@@ -1,0 +1,22 @@
+<!--index2.wxml-->
+<view class="thread">
+    <view class="thread1"></view>
+    <view class="thread2"></view>
+    <view class="thread3"></view>
+</view>
+<view class="w690">
+	<view class="balance_cont">
+		<view class="balance_create">
+			<view class="balance_img">
+				<image src="/images/things.jpg"></image>
+			</view>
+			<image src="/images/balance.png" class="balance_img1"></image>
+			<view class="create_word font28">
+				<view>天苍苍路漫漫，工作生活别太忙</view>
+				<view>春意浓春光灿，享受自然心舒畅</view>
+				<view>甜蜜蜜喜洋洋，互敬互爱美名扬</view>
+				<view style="padding-left:20rpx;">爱相随爱常在，幸福爱情久又长！</view>
+			</view>
+		</view>
+	</view>
+</view>

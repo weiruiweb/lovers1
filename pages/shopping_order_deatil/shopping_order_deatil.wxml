@@ -1,25 +1,36 @@
 <!--index1.wxml-->
-<view class="page-body">
-    <view class="page-section page-section-spacing swiper">
-      <swiper
-        indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" bindchange="swiperChange"  circular="{{circular}}" vertical="{{vertical}}"
-        interval="{{interval}}" duration="{{duration}}">
-        <block wx:for="{{background}}" wx:index="{{index}}">
-        <swiper-item class="swiper-item">
-            <image mode="aspectFill" src="{{item}}" class="slide-image {{swiperIndex == index ? 'active' : ''}}"/>
-        </swiper-item>
-    </block>
+<view id="content">
+  <!--banner-->
+    <view class="swiper-container">
+      <swiper autoplay="auto" interval="5000" duration="500" current="{{swiperCurrent}}" circular="{{circular}}" bindchange="swiperChange" class="swiper">
+        <block wx:for="{{slider}}" wx:key="unique">
+          <swiper-item data-id="{{item.id}}" data-url="{{item.linkUrl}}" class="dot{{index == swiperCurrent ? ' active' : ''}}" bindtap="chuangEvents" id="{{index}}">
+            <image src="{{item.picUrl}}" mode="aspectFill" class="img"></image>
+            <span>{{item.index+1}}</span>
+          </swiper-item>
+        </block>
       </swiper>
+        <scroll-view scroll-x class="scroll-header">
+        <swiper autoplay="auto" interval="5000" display-multiple-items="4" duration="500" current="{{dotsCurrent}}" circular="{{circular}}" bindchange="dotsChange">
+          <block wx:for="{{slider}}" wx:key="unique">
+            <swiper-item data-id="{{item.id}}" class="" bindtap="chuangEvent" id="{{index}}" style="width:160rpx;height:160rpx;">
+              <image src="{{item.picUrl}}" class="imgs"></image>
+              <view class="{{index == swiperCurrent ?'circle':''}}" style="width:20rpx;height:20rpx;background:#fe6565;">4674687486747684685466868</view>
+            </swiper-item>
+          </block>
+        </swiper>
+      </scroll-view>
+      <view class="dots"> 
+        <block wx:for="{{slider}}" wx:key="unique"> 
+            <view class="dot flex">
+                <view class="dot_in {{index == swiperCurrent ? ' active' : ''}}"></view>
+            </view> 
+        </block> 
+      </view>
     </view>
 </view>
-<view class="dots"> 
-    <block wx:for="{{background}}" wx:key="unique"> 
-        <view class="dot flex">
-            <view class="dot_in {{index == swiperIndex ? ' active' : ''}}"></view>
-        </view> 
-    </block> 
-</view>
-<view class="clothes">
+
+<view class="clothes w690">
     <view class="clothes_cont">
         <view class="clothes_price">
             <text class="txt1 color">¥325</text><text class="txt2 font30">348</text>
@@ -33,16 +44,11 @@
     <view class="thread2"></view>
     <view class="thread3"></view>
 </view>
-<view class="buy_number">
+<view class="buy_number" bindtap="intoPath" data-path="/pages/shopping_order_choose/shopping_order_choose">
     <view class="buy_number_cont flexRowBetween">
         <view class="number_tlt color1 font24">规格数量选择</view>
         <view class="choose_icon"><image src="/images/next_page.png"></image></view>
     </view>
-</view>
-<view class="thread">
-    <view class="thread1"></view>
-    <view class="thread2"></view>
-    <view class="thread3"></view>
 </view>
 <view class="buy_btn">
     <view class="thread">
@@ -57,7 +63,7 @@
                 <view class="add_cart">
                     <view class="add_cart_cont font28 color1 bg">加入购物车</view>
                 </view>
-                <view class="buy_now font28 bg" style="color:##B64343">立即购买</view>
+                <view class="buy_now font28 bg color1">立即购买</view>
             </view>
         </view>
     </view>

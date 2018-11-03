@@ -1,0 +1,35 @@
+<!--index2.wxml-->
+<view class="thread">
+    <view class="thread1"></view>
+    <view class="thread2"></view>
+    <view class="thread3"></view>
+</view>
+<view class="heart_box">
+    <view class="line3 flex">
+        <image src="/images/line3.png"></image>
+    </view>
+    <view class="line1 flex">
+        <image src="/images/line1.png"></image>
+    </view>
+    <view class="line2 flex">
+        <image src="/images/line2.png"></image>
+    </view>
+    <view class="heart flex">
+        <image src="/images/loading.png" class="heart_img"></image>
+    </view>
+</view>
+<view class="p60">
+    <view class="lovers">
+        <view class="wx_name">
+            <image src="/images/lover_txt.png"></image>
+        </view>
+        <view class="lovers_txt flexRowBetween">
+            <view class="font24 color">L</view>
+            <view class="font24 color">o</view>
+            <view class="font24 color">v</view>
+            <view class="font24 color">e</view>
+            <view class="font24 color">r</view>
+            <view class="font24 color">s</view>
+        </view>
+    </view>
+</view>

@@ -4,22 +4,20 @@
     <view class="thread2"></view>
     <view class="thread3"></view>
 </view>
-<view class="w690 flex">
+<view class="w720 flex" style="margin-top: 50rpx;">
     <view class="color font30" style="margin-right: 20rpx;">●</view>
     <view class="font24 color9">标点处必填</view>
 </view>
-<view class="w690 flex"  style="margin-top: 120rpx;">
-    <view class="color font30" style="margin-right: 20rpx;">●</view>
-    <view class="font24 color9">上传照片</view>
+<view class="w720 things_time flex">
+    <view class="things_tlt font28 flex"><view class="color font30" style="margin-right: 20rpx;">●</view>主题</view>
+    <view class="things_right flex font28 color1">
+        <input placeholder="这就是那个啥"></input>
+    </view>
 </view>
-<view class="uplode">
-    <image src="/images/upload.png"></image>
-</view>
-
-<view class="w690 things_time flex">
+<view class="w720 things_time flex">
     <view class="things_tlt font28 flex">
         <view class="color font30" style="margin-right: 20rpx;">●</view>时间</view>
-    <view class="things_right flexRowBetween font28">
+    <view class="things_right flexRowBetween font28" style="border:none">
         <view class="thing1 color1 flexRowBetween">
             <view class="font28 color1">2018</view>
             <image src="/images/up_icon.png"></image>
@@ -37,14 +35,43 @@
          <view class="years font28 color1">日</view>
     </view>
 </view>
-<view class="w690 things_time flex">
-    <view class="things_tlt font28 flex"><view class="color font30" style="margin-right: 20rpx;">●</view>地点</view>
+<view class="w720 things_time flex">
+    <view class="things_tlt font28 flex">
+        <view class="color font30" style="margin-right: 20rpx;">●</view>地点
+    </view>
     <view class="things_right flex font28 color1">
         <input placeholder="家里"></input>
     </view>
 </view>
+<view class="w720 things_time flex">
+    <view class="things_tlt font28">
+        <view class="flex">
+            <view class="color font30" style="margin-right: 20rpx;">●</view>心情
+        </view>
+    </view>
+    <view class="things_right font28 color1" style="border:none">
+        <image src="/images/Forgive111@2x.png" class="mode_icon"></image>
+    </view>
+</view>
+<view class="w720 flex"  style="margin-top: 50rpx;">
+    <view class="color font30" style="margin-right: 20rpx;"></view>
+    <view class="font24 color9">添加照片</view>
+</view>
+<view class="uplode">
+    <image src="/images/upload.png"></image>
+</view>
+<view class="w720 flex" style="margin-top: 50rpx;">
+    <view class="color font30" style="margin-right: 20rpx;">●</view>
+    <view class="font24 color9">描述</view>
+</view>
+<view class="descreption">
+    <textarea bindfocus="hide" bindblur="show">
+    </textarea>
+    <image src="{{is_hidden?'/images/penceil.png':''}}"></image>
+</view>
+<view style="width:100%;height:100rpx;"></view>
 <view class="confirm">
     <button class="color1">
-        确认
+        发布
     </button>
 </view>

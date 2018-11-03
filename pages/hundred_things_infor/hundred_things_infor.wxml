@@ -13,8 +13,22 @@
     <view class="color font30" style="margin-right: 20rpx;">●</view>
     <view class="font24 color9">上传照片</view>
 </view>
-<view class="uplode">
-    <image src="/images/upload.png"></image>
+<view class="uplode flex" id="uploaderFiles">
+    <block  wx:for-items="{{files}}" wx:key="{{index}}">
+        <view class="upload_box">
+            <view class = 'circle left-circle' style="{{rotate}}"></view>
+            <view class = 'circle right-circle'></view>
+            <view class="uploader_item forgive_number" bindtap="previewImage" id="{{item}}">
+                <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+                <view class="color1 font32 percent flex" wx:if="{{percent <=99}}" >
+                    <view class="percent_number" style="text-align:center;">{{percent}}%</view>
+                </view>
+            </view> 
+        </view>
+    </block>
+    <view  class="uploader_item" bindtap="chooseImage" wx:if="{{files.length==0}}">
+        <image src="/images/upload.png"></image>
+    </view>
 </view>
 
 <view class="w690 things_time flex">

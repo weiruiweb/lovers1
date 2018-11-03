@@ -17,12 +17,18 @@
     "pages/index_complain/index_complain",
     "pages/index_complain_detail/index_complain_detail",
     "pages/forgive/forgive",
-    "pages/forgive_things_infor/forgive_things_infor"
+    "pages/forgive_things_infor/forgive_things_infor",
+    "pages/balance/balance",
+    "pages/balance_create/balance_create",
+    "pages/balance_create_end/balance_create_end",
+    "pages/shopping_order_choose/shopping_order_choose",
+    "pages/loading/loading",
+    "pages/file_statistics11/file_statistics11"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fe6565",
+    "navigationBarBackgroundColor": "#222",
     "navigationBarTitleText": "首页",
-    "navigationBarTextStyle": "#222"
+    "navigationBarTextStyle": "#fff"
   }
 }

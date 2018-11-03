@@ -8,28 +8,10 @@
 	width:100%;
 	height:700rpx;
 }
-swiper{
-	height:700rpx;
-}
 .swiper-block{
   height: 700rpx;
   width: 100%;
   position:relative;
-}
-.swiper-item{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  overflow:unset;
-}
-.slide-image{
-  height:100%;
-  width: 100%;
-  border-radius: 9rpx;
-  box-shadow: 0px 0px 30rpx rgba(0, 0,0,.2); 
-  margin: 0rpx 30rpx;
-  z-index: 1;  
 }
 .active{
   transform: scale(1.14);
@@ -59,21 +41,15 @@ swiper{
   margin:0 auto;
 }
 .dots .dot .active{ 
-  width: 20rpx; 
   background: #fd6464; 
-  border:4rpx solid  #633535;
-}
-.dots .active{ 
-  width: 20rpx; 
-  height:20rpx;
-  background: #fd6464; 
+  box-shadow: 0 0 16rpx #633535
 }
 .clothes{
 	width:100%;
 	height: 190rpx;
+	margin-top:110rpx;
 }
 .clothes_cont{
-	padding-left:8%;
 	margin-top: 20rpx;
 }
 .clothes_price .txt1{
@@ -106,6 +82,7 @@ swiper{
 	position: fixed;
 	left: 0;
 	bottom: 0;
+	background:#222;
 }
 .buy_btn_cont{
 	padding-left:4.5%;
@@ -142,4 +119,86 @@ swiper{
 	width:100%;
 	height:86rpx;
 	margin-top: 16rpx;
+}
+/*banner轮播  */
+#content{width:100%;height:700rpx;}
+.swiper-container {
+  position: relative;
+  width:100%;
+  height:700rpx;
+}
+ 
+.swiper-container .swiper {
+  height: 700rpx;
+  position: relative;
+}
+.swiper-container .swiper .img {
+  width: 100%;
+  height: 100%;
+}
+.dots swiper{
+	height:100%;
+}
+.swiper-container .small_carousel {
+  position: absolute;
+  height: 160px;
+  right: 0rpx;
+  width: 100%;
+  bottom:-80rpx;
+}
+.swiper-container .dotes {
+  position: absolute;
+  right: 40rpx;
+  bottom: 20rpx;
+  display: flex;
+  justify-content: center;
+}
+ 
+.swiper-container .dotes .dote {
+  margin: 0 10rpx;
+  width: 28rpx;
+  height: 28rpx;
+  background: #fff;
+  border-radius: 50%;
+  transition: all 0.6s;
+  font: 300 18rpx/28rpx "microsoft yahei";
+  text-align: center;
+}
+ 
+.swiper-container .dotes .dote.actives {
+  background: #f80;
+  color: #fff;
+}
+.small_carousel .swiper-item{
+	width:160rpx;
+	height:160rpx;
+}
+.scroll-header{
+	display: flex;
+	white-space: nowrap; 
+	width:80%;
+	position: absolute;
+	right:0;
+	bottom:-90rpx;
+	height:160rpx;
+}
+.scroll-header swiper-item{
+	width:160rpx;
+	height:160rpx;
+	text-align: center;
+	padding:0 10%;
+}
+.scroll-header image{
+	width:160rpx;
+	height:160rpx;
+}
+.scroll-header .active image{
+	border:solid 1px #fe6565;
+	box-sizing: border-box;
+}
+.circle{
+	width:50rpx;
+	height:50rpx;
+	background:#fe6565;
+	z-index:999;
 }

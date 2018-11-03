@@ -1,0 +1,15 @@
+<!--index2.wxml-->
+<view class="thread">
+    <view class="thread1"></view>
+    <view class="thread2"></view>
+    <view class="thread3"></view>
+</view>
+<view class="thread_cont">
+    <view class="thread_center" bindtap="intoPath" data-path="/pages/balance_create_end/balance_create_end">
+        <view class="vertical_thread">
+        	<view class="thread_bg"></view>
+        </view>
+        <image src="/images/balance.png"></image>
+    </view>
+    <view class="font28 color" style="text-align: center;margin-top:20rpx;">生成中...</view>
+</view>
