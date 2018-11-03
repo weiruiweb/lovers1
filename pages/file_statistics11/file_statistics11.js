@@ -12,6 +12,7 @@ Page({
    record:false,
    record1:false,
    record2:false,
+   web_scrollTop:0,
   },
   onLoad(options){
     
@@ -46,26 +47,29 @@ Page({
   lower(e){
     const self = this;
     self.setData({
-      record:true,
+      record3:true,
       record1:false,
-      record2:false,
     })
   },
 
   scroll(e){
     const self = this;
-    if(e.detail.scrollTop>70){
-       self.setData({
-        record1:true,
-        record:false,
-       })
-     }else if(e.detail.scrollTop>90){
+    self.setData({
+      web_scrollTop:e.detail.scrollTop
+    });
+    /*if(!self.data.settimeClock){
+      console.log('scroll')
+      self.data.settimeClock = setTimeout(function(){
         self.setData({
-          record1:false,
-          record:true,
-         })
-     }
-     console.log(e.detail.scrollTop)
+          web_scrollTop:e.detail.scrollTop
+        });
+        self.data.settimeClock='';
+      },1000);
+    };*/
+    
+    
+    
+     console.log(e.detail.scrollTop);
   },
   hide:function(e) {
      this.setData({
