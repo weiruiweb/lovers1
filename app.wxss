@@ -133,6 +133,7 @@ page{
 	color:#fff;
 	background:#fe6565;
 	border-radius:10rpx;
+	border:none;
 }
 .thread1{
 	width:100%;

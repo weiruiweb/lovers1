@@ -9,8 +9,18 @@ Page({
    currentId1:0,
    mood:0,
    is_show:false,
+   scrollTop:'',
   },
   //事件处理函数
+  scroll(e){
+    const self = this;
+    var top=e.detail.scrollTop;
+    var style = 'top:'+top+'px';
+    console.log(style);
+    self.setData({
+      scrollTop:style
+    });
+  },
   statistics(e){
     const self = this;
     var is_show = !this.data.is_show

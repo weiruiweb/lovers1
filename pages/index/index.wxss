@@ -162,6 +162,7 @@
 	height: 100rpx;
 	border-radius: 50%;
 	border:solid 4rpx #fe6565;
+	overflow:hidden;
 }
 .comment_center{
 	width:62%;

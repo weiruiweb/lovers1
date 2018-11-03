@@ -72,27 +72,27 @@
                     <view class="statistics_left">
                     </view>
                     <view class="statistics_circle">
-                        <view class="circle {{web_scrollTop>295&&web_scrollTop<395?'circle1':'circle2'}}">  
+                        <view class="circle {{web_scrollTop>245&&web_scrollTop<395?'circle1':'circle2'}}">  
                         </view>
                     </view>
                     <view class="statistics_right">
-                        <view class="{{web_scrollTop>295&&web_scrollTop<395?'text1':'text3'}}">我们生气过但
+                        <view class="{{web_scrollTop>245&&web_scrollTop<395?'text1':'text3'}}">我们生气过但
                         </view>
-                        <view class="{{web_scrollTop>295&&web_scrollTop<395?'text1':'text3'}}">我们一直在一起</view>
-                        <view class="{{web_scrollTop>295&&web_scrollTop<395?'text1':'text3'}}?'c_text1':'c_text3'}}">开心 1698条</view>
+                        <view class="{{web_scrollTop>245&&web_scrollTop<395?'text1':'text3'}}">我们一直在一起</view>
+                        <view class="{{web_scrollTop>245&&web_scrollTop<395?'c_text1':'c_text3'}}">开心 1698条</view>
                     </view>
                 </view>
                 <view class="statistics_list flex">
                     <view class="statistics_right statis_left">
-                        <view class="textR {{web_scrollTop>295&&web_scrollTop<495?'text2':'text4'}}">
+                        <view class="textR {{web_scrollTop>355?'text2':'text4'}}">
                             值得庆幸的是
                         </view>
-                        <view class="textR {{web_scrollTop>295&&web_scrollTop<495?'text2':'text4'}}">我们之间犯下的过错</view>
-                        <view class="textR  {{web_scrollTop>295&&web_scrollTop<495?'text2':'text4'}}">都是值得原谅的</view>
-                        <view class="textR {{web_scrollTop>495&&web_scrollTop<395?'c_text1':'c_text3'}}">开心 1698条</view>
+                        <view class="textR {{web_scrollTop>355?'text2':'text4'}}">我们之间犯下的过错</view>
+                        <view class="textR  {{web_scrollTop>355?'text2':'text4'}}">都是值得原谅的</view>
+                        <view class="textR {{web_scrollTop>385?'c_text1':'c_text3'}}">开心 1698条</view>
                     </view>
                     <view class="statistics_circle">
-                        <view class="circle {{web_scrollTop>395&&web_scrollTop<495?'circle1':'circle2'}}">  
+                        <view class="circle {{web_scrollTop>355?'circle2':'circle3'}}">  
                         </view>
                     </view>
                     <view class="statistics_left"> 

@@ -19,11 +19,25 @@ Page({
     swiperIndex:0,
     is_choose:0,
     is_choose1:0,
+    choose_size:0,
+    choose_size1:0,
   },
   choose_color(e){
     const self = this;
     self.setData({
       is_choose:e.currentTarget.dataset.id
+    })
+  },
+  choose_size(e){
+    const self = this;
+    self.setData({
+      choose_size:e.currentTarget.dataset.id
+    })
+  },
+  choose_size1(e){
+    const self = this;
+    self.setData({
+      choose_size1:e.currentTarget.dataset.id
     })
   },
   choose_color1(e){

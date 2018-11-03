@@ -8,6 +8,7 @@ view{
 .tabs{
 	width: 100%;
 	height:128rpx;
+	padding-top:10rpx;
 	overflow: hidden;
 }
 .tabs_item{
@@ -82,7 +83,7 @@ view{
 }
 .mood_item{
 	width:16.666%;
-	height:150rpx;
+	height:160rpx;
 	text-align: center;
 }
 .mood_item image{
@@ -97,26 +98,27 @@ view{
 .mood_img{
 	width:100%;
 	text-align: center;
-	height:108rpx;
+	height:120rpx;
 }
 .mood_up{
 	width:100%;
-	height:32rpx;
+	height:40rpx;
 	overflow: hidden;
 }
 .mood_up image{
-	width:24rpx;
-	height:100%;
+	width:28rpx;
+	height:30rpx;
 	margin:0 auto;
 }
 .mood_thing{
 	width:96%;
 	height:580rpx;
 	border:solid 2px #fe5b5b;
-	border-radius:40rpx;
-	background: #fff;
+	border-radius:0rpx 0rpx 40rpx 40rpx;
+	background:#fff;
 	overflow:hidden;
 	position:relative;
+	margin:4rpx auto;
 }
 .move_line{
 	width:100%;
@@ -138,7 +140,7 @@ view{
 }
 .mood_left{
 	width:7.5%;
-	height:500rpx;
+	height:400rpx;
 }
 .mood_center{
 	width:85%;
@@ -156,6 +158,7 @@ view{
 	position: absolute;
 	left:0;
 	top:17%;
+	transition:all 1s;
 }
 .silde_circle{
 	width:24rpx;

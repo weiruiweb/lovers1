@@ -149,9 +149,6 @@
 	font-size:22rpx;
 	color:#7a3c3c;
 }
-.statis_left>view{
-	float:right;
-}
 .statis_left .statistics_circle .circle{
 	float:right;
 }

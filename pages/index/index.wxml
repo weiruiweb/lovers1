@@ -95,6 +95,7 @@
         <view class="comment_top flex">
             <view class="comment_img">
                 <view class="comment_user">
+                    <open-data type="userAvatarUrl"></open-data>
                 </view> 
             </view>
             <view class="comment_center">
@@ -125,6 +126,7 @@
         <view class="comment_top flex">
             <view class="comment_img">
                 <view class="comment_user">
+                    <open-data type="userAvatarUrl"></open-data>
                 </view> 
             </view>
             <view class="comment_center">

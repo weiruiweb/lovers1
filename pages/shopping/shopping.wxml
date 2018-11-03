@@ -16,71 +16,78 @@
     </block> 
 </view>
 <view class="sort flex">
-    <view class="sort_item" data-id="0" bindtap="sort">
-        <view class="sort_top">
-            <view class="sort_in flex" style="{{currentId==0?'background: #fe6565':''}}">
-                <image src="/images/shopping_ixon1_03.png"></image>
+    <view class="sort_item flex" data-id="0" bindtap="sort">
+        <view style="width:100%;text-align: center;">
+            <view class="sort_top {{currentId==0?'slideUp':''}}">
+                <view class="sort_in flex" style="{{currentId==0?'background: #fe6565':''}}">
+                    <image src="/images/shopping_ixon1_03.png"></image>
+                </view>
+                <view class="font24 color2">情侣装</view>
             </view>
-            <view class="font24 color2">情侣装</view>
-        </view>
-        <view class="sort_bottom">
-            <view class="bottom_in" style="{{currentId == 0?'display: block':'display: none'}}">
-                <view class="circle"></view>
+            <view class="sort_bottom">
+                <view class="bottom_in">
+                    <view class="circle {{currentId==0?'slideRight':''}}"></view>
+                </view>
             </view>
         </view>
     </view>
     <view class="sort_item" data-id="1" bindtap="sort">
-         <view class="sort_top">
+         <view class="sort_top {{currentId==1?'slideUp':''}}">
         <view class="sort_in flex" style="{{currentId == 1?'background: #fe6565':''}}">
                 <image src="/images/shopping_ixon2_03.png"></image>
             </view>
             <view class="font24 color2">韩版</view>
         </view>
         <view class="sort_bottom">
-            <view class="bottom_in"  style="{{currentId == 1?'display: block':'display: none'}}">
-                <view class="circle"></view>
+            <view class="bottom_in">
+                <view class="circle {{currentId==1?'slideRight':''}}"></view>
             </view>
         </view>
     </view>
     <view class="sort_item"  data-id="2" bindtap="sort">
-         <view class="sort_top">
-            <view class="sort_in flex" style="{{currentId == 2?'background: #fe6565':''}}">
+         <view class="sort_top {{currentId==2?'slideUp':''}}">
+            <view class="sort_in flex">
                 <image src="/images/shopping_ixon3_03.png"></image>
             </view>
             <view class="font24 color2">亲子装</view>
         </view>
         <view class="sort_bottom">
-            <view class="bottom_in" style="{{currentId == 2?'display: block':'display: none'}}">
-                <view class="circle"></view>
+            <view class="bottom_in">
+                <view class="circle {{currentId==2?'slideRight':''}}"></view>
             </view>
         </view>
     </view>
     <view class="sort_item"  data-id="3" bindtap="sort">
-        <view class="sort_top">
+        <view class="sort_top {{currentId==3?'slideUp':''}}">
             <view class="sort_in flex" style="{{currentId == 3?'background: #fe6565':''}}">
                 <image src="/images/shopping_ixon4_03.png"></image>
             </view>
             <view class="font24 color2" >饰品</view>
         </view>
         <view class="sort_bottom">
-            <view class="bottom_in" style="{{currentId == 3?'display: block':'display: none'}}">
-                <view class="circle"></view>
+            <view class="bottom_in" s>
+                <view class="circle {{currentId==3?'slideRight':''}}"></view>
             </view>
         </view>
     </view>
     <view class="sort_item"  data-id="4" bindtap="sort">
-        <view class="sort_top">
+        <view class="sort_top {{currentId==4?'slideUp':''}}">
             <view class="sort_in flex"  style="{{currentId == 4?'background: #fe6565':''}}">
                 <image src="/images/shopping_ixon5.png"></image>
             </view>
             <view class="font24 color2">其他</view>
         </view>
         <view class="sort_bottom">
-            <view class="bottom_in" style="{{currentId == 4?'display: block':'display: none'}}">
-                <view class="circle"></view>
+            <view class="bottom_in">
+                <view class="circle {{currentId==4?'slideRight':''}}"></view>
             </view>
         </view>
     </view>
+</view>
+<view class="thread" style="position: relative;top:-22rpx;">
+    <view class="thread1"></view>
+    <view class="thread2"></view>
+    <view class="thread3"></view>
 </view>
 <view class="shopping">
     <view class="shopping_list flex" bindtap="intoPath" data-path="/pages/shopping_order_deatil/shopping_order_deatil">

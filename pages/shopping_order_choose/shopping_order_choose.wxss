@@ -196,7 +196,7 @@ swiper{
 	margin-bottom:60rpx;
 }
 .size_choose{
-	width:262rpx;
+	width:280rpx;
 	height:86rpx;
 }
 .clothes_size{
@@ -204,16 +204,31 @@ swiper{
 	margin-top:66rpx;
 }
 .choose_box{
-	width:262rpx;
-	height:44rpx;
+	width:280rpx;
+	height:56rpx;
 	border-radius:30rpx;
 	border:solid 1px #8b8b8b;
 }
 .size_item{
 	width:20%;
+	height:56rpx;
+	line-height:56rpx;
 	text-align: center;
 	font-size:24rpx;
 	color:#717171;
+	position:relative;
+}
+.choose_img{
+	position: absolute;
+	top:-50%;
+	left:0;
+	width:100%;
+	display: none;
+}
+.choose_img image{
+	width:66rpx;
+	height:88rpx;
+	margin:0 auto;
 }
 .number_handle{
 	width:28%;

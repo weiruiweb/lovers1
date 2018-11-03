@@ -46,7 +46,7 @@
                     </view>
                 </view>
                 <view class="color_left flex" style="text-align: right;">
-                    <view class="color_left_cont flex" style="margin-left:40%;">
+                    <view class="color_left_cont flex">
                         <image src="/images/mela.png"></image>
                         <view class="color_choose flex">
                             <view class="black" bindtap="choose_color1" data-id="0" style="{{is_choose1==0?'border:solid 1px #fe6565':''}}">
@@ -64,22 +64,72 @@
                     <view class="size_left">
                         <view class="size_choose flex">
                             <view class="choose_box flex">
-                                <view class="size_item">XS</view>
-                                <view class="size_item">S</view>
-                                <view class="size_item">M</view>
-                                <view class="size_item">L</view>
-                                <view class="size_item">XL</view>
+                                <view class="size_item" data-id="0" bindtap="choose_size1">
+                                    <view>XS</view>
+                                    <view class="choose_img" style="{{choose_size==0?'display: block;':'display:none'}}">
+                                        <image src="/images/mela.png"></image>
+                                    </view>
+                                </view>
+                                <view class="size_item" data-id="1" bindtap="choose_size">
+                                    <view>S</view>
+                                    <view class="choose_img" style="{{choose_size==1?'display: block;':'display:none'}}">
+                                        <image src="/images/mela.png"></image>
+                                    </view>
+                                </view>
+                                <view class="size_item" data-id="2" bindtap="choose_size">
+                                    <view>M</view>
+                                    <view class="choose_img" style="{{choose_size==2?'display: block;':'display:none'}}">
+                                        <image src="/images/mela.png"></image>
+                                    </view>
+                                </view>
+                                <view class="size_item" data-id="3" bindtap="choose_size">
+                                    <view>L</view>
+                                    <view class="choose_img" style="{{choose_size==3?'display: block;':'display:none'}}">
+                                        <image src="/images/mela.png"></image>
+                                    </view>
+                                </view>
+                                <view class="size_item" data-id="4" bindtap="choose_size">
+                                    <view>XL</view>
+                                    <view class="choose_img" style="{{choose_size==4?'display: block;':'display:none'}}">
+                                        <image src="/images/mela.png"></image>
+                                    </view>
+                                </view>
                             </view>
                         </view>
                     </view>
                     <view class="size_right ">
-                        <view class="size_choose flex" style="float: right;">
+                        <view class="size_choose flex">
                             <view class="choose_box flex">
-                                <view class="size_item">XS</view>
-                                <view class="size_item">S</view>
-                                <view class="size_item">M</view>
-                                <view class="size_item">L</view>
-                                <view class="size_item">XL</view>
+                                <view class="size_item" data-id="0" bindtap="choose_size1">
+                                    <view>XS</view>
+                                    <view class="choose_img" style="{{choose_size1==0?'display: block;':'display:none'}}">
+                                        <image src="/images/mela.png"></image>
+                                    </view>
+                                </view>
+                                <view class="size_item" data-id="1" bindtap="choose_size1">
+                                    <view>S</view>
+                                    <view class="choose_img" style="{{choose_size1==1?'display: block;':'display:none'}}">
+                                        <image src="/images/mela.png"></image>
+                                    </view>
+                                </view>
+                                <view class="size_item" data-id="2" bindtap="choose_size1">
+                                    <view>M</view>
+                                    <view class="choose_img" style="{{choose_size1==2?'display: block;':'display:none'}}">
+                                        <image src="/images/mela.png"></image>
+                                    </view>
+                                </view>
+                                <view class="size_item" data-id="3" bindtap="choose_size1">
+                                    <view>L</view>
+                                    <view class="choose_img" style="{{choose_size1==3?'display: block;':'display:none'}}">
+                                        <image src="/images/mela.png"></image>
+                                    </view>
+                                </view>
+                                <view class="size_item" data-id="4" bindtap="choose_size1">
+                                    <view>XL</view>
+                                    <view class="choose_img" style="{{choose_size1==4?'display: block;':'display:none'}}">
+                                        <image src="/images/mela.png"></image>
+                                    </view>
+                                </view>
                             </view>
                         </view>
                     </view>

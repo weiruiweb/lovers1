@@ -66,9 +66,6 @@ Page({
         self.data.settimeClock='';
       },1000);
     };*/
-    
-    
-    
      console.log(e.detail.scrollTop);
   },
   hide:function(e) {

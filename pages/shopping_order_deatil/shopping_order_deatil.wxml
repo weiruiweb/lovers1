@@ -14,8 +14,10 @@
         <swiper autoplay="auto" interval="5000" display-multiple-items="4" duration="500" current="{{dotsCurrent}}" circular="{{circular}}" bindchange="dotsChange">
           <block wx:for="{{slider}}" wx:key="unique">
             <swiper-item data-id="{{item.id}}" class="" bindtap="chuangEvent" id="{{index}}" style="width:160rpx;height:160rpx;">
+              <view class="small_img">
               <image src="{{item.picUrl}}" class="imgs"></image>
               <view class="{{index == swiperCurrent ?'circle':''}}" style="width:20rpx;height:20rpx;background:#fe6565;">4674687486747684685466868</view>
+            </view>
             </swiper-item>
           </block>
         </swiper>
@@ -48,6 +50,11 @@
     <view class="buy_number_cont flexRowBetween">
         <view class="number_tlt color1 font24">规格数量选择</view>
         <view class="choose_icon"><image src="/images/next_page.png"></image></view>
+    </view>
+    <view class="thread">
+        <view class="thread1"></view>
+        <view class="thread2"></view>
+        <view class="thread3"></view>
     </view>
 </view>
 <view class="buy_btn">
