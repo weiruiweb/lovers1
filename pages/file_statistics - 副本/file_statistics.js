@@ -9,10 +9,9 @@ Page({
    is_hidden:true,
    mood:0,
    is_scroll:false,
-   record:false,
    record1:false,
    record2:false,
-   web_scrollTop:0,
+   record3:false,
   },
   onLoad(options){
     
@@ -36,40 +35,24 @@ Page({
   //         }
   //     }).exec()
   // },
-  upper(e){
-    const self = this;
-    self.setData({
-      record:false,
-      record1:false,
-      record2:false,
-    })
-  },
-  lower(e){
-    const self = this;
-    self.setData({
-      record3:true,
-      record1:false,
-    })
-  },
-
   scroll(e){
     const self = this;
-    self.setData({
-      web_scrollTop:e.detail.scrollTop
-    });
-    /*if(!self.data.settimeClock){
-      console.log('scroll')
-      self.data.settimeClock = setTimeout(function(){
+    if(e.detail.scrollTop>90){
+       self.setData({
+        record1:true,
+        record2:false
+       })
+     }else if(e.detail.scrollTop>50){
+       self.setData({
+        record2:true,
+        record1:false,
+       })
+      }else{
         self.setData({
-          web_scrollTop:e.detail.scrollTop
-        });
-        self.data.settimeClock='';
-      },1000);
-    };*/
-    
-    
-    
-     console.log(e.detail.scrollTop);
+          record3:true
+         })
+      }
+      console.log(e.detail.scrollTop)
   },
   hide:function(e) {
      this.setData({

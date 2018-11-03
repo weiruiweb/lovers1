@@ -1,0 +1,116 @@
+<!--index2.wxml-->
+<view class="thread">
+    <view class="thread1"></view>
+    <view class="thread2"></view>
+    <view class="thread3"></view>
+</view>
+<view class="statistics">
+    <view class="heart_box">
+       <view class="heart2 flex">
+            <image src="/images/heart.png"></image>
+        </view>
+    </view>
+        <scroll-view scroll-Y class="scroll-header" scroll-with-animation="true" bindscroll="scroll" bindscrolltoupper="upper" bindscrolltolower="lower">
+            <view class="statistics_cont">
+                <view class="statistics_list flex" id="record1">
+                    <view class="statistics_left">
+                    </view>
+                    <view class="statistics_right flex">
+                        <view class="statistics_circle">
+                            <view class="circle"></view>
+                        </view>
+                        <view class="statistics_descreption" >
+                            <view class="font24 color1"  style="{{record1?'color:#bdbdbd;font-size:22rpx':''}}">2011.06.08 我们在一起</view>
+                            <view class="statistics_number color font36" style="{{record1?'color:#bc5151;font-size:24rpx':''}}">在一起2920天</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="statistics_list flex"  id="record2">
+                    <view class="statistics_right statis_left">
+                        <view class="statistics_circle">
+                            <view class="circle" ></view>
+                        </view>
+                        <view class="statistics_descreption">
+                            <view class="font24 textR record_1">在这些日子里</view>
+                            <view class="textR font30 record1">我们共有1698条</view>
+                        </view>
+                    </view>
+                    <view class="statistics_left flex"> 
+                    </view>
+                </view>
+                <view class="statistics_list flex" id="record3">
+                    <view class="statistics_left">
+                    </view>
+                    <view class="statistics_right flex">
+                        <view class="statistics_circle">
+                            <view class="circle"></view>
+                        </view>
+                        <view class="statistics_descreption" >
+                            <view class="font24 trans record_2" style="{{record1?'color:#fff;font-size:24rpx':''}}">
+                                和你在一起的日子里
+                            </view>
+                            <view class="font24 trans record_2" style="{{record1?'color:#fff;font-size:24rpx':''}}">总有一些瞬间让人难以忘怀</view>
+                            <view class="statistics_number record2 font24" style="{{record1?'color:#fd6464;font-size:36rpx':''}}">
+                                开心 1698条
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="statistics_list flex"  id="record4">
+                    <view class="statistics_right statis_left">
+                        <view class="statistics_circle">
+                            <view class="circle"></view>
+                        </view>
+                        <view class="statistics_descreption">
+                            <view class="font24 textR" style="{{record1?'color:#bdbdbd;':''}}">不开心的事情记录下来</view>
+                            <view class="font24 textR"style="{{record1?'color:#bdbdbd;':''}}">只是为了让我们互相成长</view>
+                            <view class="font24 color textR" style="{{record1?'color:#bc5151;font-size:32rpx':''}}">开心 1698条</view>
+                        </view>
+                    </view>
+                    <view class="statistics_left flex"> 
+                    </view>
+                </view>
+                <view class="statistics_list flex" id="record5">
+                    <view class="statistics_left">
+                    </view>
+                    <view class="statistics_right flex">
+                        <view class="statistics_circle">
+                            <view class="circle"></view>
+                        </view>
+                        <view class="statistics_descreption" >
+                            <view class="font24 record_3" style="{{record2?'color:#bdbdbd;':''}}">
+                                我们生气过但
+                            </view>
+                            <view class="font24 record_3" style="{{record2?'color:#bdbdbd;':''}}">我们一直在一起</view>
+                            <view class="font24 record3" style="{{record2?'color:#fd6464;font-size:32rpx':''}}">开心 1698条</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="statistics_list flex"  id="record6">
+                    <view class="statistics_right statis_left">
+                        <view class="statistics_circle">
+                            <view class="circle"></view>
+                        </view>
+                        <view class="statistics_descreption">
+                            <view class="font22 textR record_3" style="{{record2?'color:#fff;font-size:24rpx':''}}">
+                                值得庆幸的是
+                            </view>
+                            <view class="font22 textR record_3" style="{{record2?'color:#fff;font-size:24rpx':''}}">我们之间犯下的过错</view>
+                            <view class="font22 textR record_3" style="{{record2?'color:#fff;font-size:24rpx':''}}">都是值得原谅的</view>
+                            <view class="font22 color textR record3" style="{{record2?'color:#fd6464;font-size:36rpx':''}}">开心 1698条</view>
+                        </view>
+                    </view>
+                    <view class="statistics_left flex"> 
+                    </view>
+                </view>
+                
+            </view> 
+        </scroll-view>
+        <view class="heart4 flex">
+            <view class="heart5 flex"></view>
+        </view>
+        <view class="record_end color">总结</view>
+        <view class="record_des font28 color1">两个人的生活总是充满了磕绊
+磕绊后的我们终将会迎来一生的幸福</view>
+
+</view>
