@@ -112,7 +112,8 @@ view{
 }
 .mood_thing{
 	width:96%;
-	height:580rpx;
+	height:550rpx;
+	padding-bottom: 30rpx;
 	border:solid 2px #fe5b5b;
 	border-radius:0rpx 0rpx 40rpx 40rpx;
 	background:#fff;
@@ -140,7 +141,7 @@ view{
 }
 .mood_left{
 	width:7.5%;
-	height:400rpx;
+	height:500rpx;
 }
 .mood_center{
 	width:85%;

@@ -14,7 +14,7 @@ Page({
   //事件处理函数
   scroll(e){
     const self = this;
-    var top=e.detail.scrollTop;
+    var top=e.detail.scrollTop/2;
     var style = 'top:'+top+'px';
     console.log(style);
     self.setData({
