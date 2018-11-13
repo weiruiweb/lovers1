@@ -6,17 +6,7 @@ const token = new Token();
 
 Page({
   data: {
-    // background: ['/images/product.png', '/images/product.png', '/images/product.png', '/images/product.png', '/images/product.png'],
-    // indicatorDots: false,
-    // vertical: false,
-    // autoplay: true,
-    // circular: true,
-    // interval: 2000,
-    // duration: 500,
-    // previousMargin: 0,
-    // nextMargin: 0,
-    // currentId:0,
-    // swiperIndex:0,
+    isShow:false,
     slider: [],
     swiperCurrent: 3,
     slider: [
@@ -43,6 +33,10 @@ Page({
     circular: true,
     beforeColor: "white",//指示点颜色  
     afterColor: "coral",//当前选中的指示点颜色 
+    is_choose:0,
+    is_choose1:0,
+    choose_size:0,
+    choose_size1:0,
   },
 
   onLoad(options){
@@ -94,6 +88,43 @@ Page({
   chuangEvents: function (e) {
     this.setData({
       dotsCurrent: e.currentTarget.id
+    })
+  },
+  choose(e){
+    this.setData({
+      isShow:true
+    })
+  },
+  add_cart(e){
+    this.setData({
+      isShow:false
+    })
+  },
+  choose_color(e){
+    const self = this;
+    self.setData({
+      is_choose:e.currentTarget.dataset.id
+    })
+  },
+
+  choose_size(e){
+    const self = this;
+    self.setData({
+      choose_size:e.currentTarget.dataset.id
+    })
+  },
+
+  choose_size1(e){
+    const self = this;
+    self.setData({
+      choose_size1:e.currentTarget.dataset.id
+    })
+  },
+
+  choose_color1(e){
+    const self = this;
+    self.setData({
+      is_choose1:e.currentTarget.dataset.id
     })
   },
 

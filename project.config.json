@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 25,
+			"current": 27,
 			"list": [
 				{
 					"id": -1,
@@ -190,6 +190,17 @@
 					"name": "bind",
 					"pathName": "pages/index/index",
 					"query": "scene=UB05174230114095"
+				},
+				{
+					"id": -1,
+					"name": "详情",
+					"pathName": "pages/shopping_order_deatil/shopping_order_deatil",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "的范围",
+					"pathName": "pages/shopping_order_choose/shopping_order_choose"
 				}
 			]
 		}

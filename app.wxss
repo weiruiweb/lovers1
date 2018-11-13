@@ -7,10 +7,6 @@ page{
 view{
 	color:#666;
 }
-page{
-	width:100%;
-	min-height:100%;
-} 
 .flexRowBetween{
 	display:flex;
 	flex-direction:row;
