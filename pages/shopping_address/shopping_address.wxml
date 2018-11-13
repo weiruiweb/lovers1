@@ -9,7 +9,7 @@
                 </view>
             </view>
             <view class="address_right">
-                <input class="font28" placeholder="联系人"></input>
+                <input class="font28" placeholder="联系人" value="{{web_mainData.name}}"  data-key="name" bindblur="inputChange"></input>
             </view>
         </view>
         <view class="address_list flex">
@@ -20,7 +20,7 @@
                 </view>
             </view>
             <view class="address_right">
-                <input class="font28" placeholder="11位手机号"></input>
+                <input class="font28" placeholder="11位手机号" value="{{web_mainData.phone}}"  data-key="phone" bindblur="inputChange"></input>
             </view>
         </view>
         <view class="address_list flex">
@@ -30,8 +30,8 @@
                     <view class="font24 color2">选择地区</view>
                 </view>
             </view>
-            <view class="address_right">
-                <input class="font28" placeholder="选择地区"></input>
+            <view class="address_right" bindtap="chooseLocation">
+                <input class="font28" value="{{web_name}}"></input>
             </view>
         </view>
         <view class="address_list flex">
@@ -42,7 +42,7 @@
                 </view>
             </view>
             <view class="address_right">
-                <input class="font28" placeholder="街道门牌号"></input>
+                <input class="font28" placeholder="街道门牌号" value="{{web_mainData.detail}}"></input>
             </view>
         </view>
         <view class="address_list flex">
@@ -53,9 +53,9 @@
                 </view>
             </view>
             <view class="address_right">
-                <input class="font28" placeholder="所属地区邮政编码"></input>
+                <input class="font28" placeholder="所属地区邮政编码" value="{{web_mainData.phone}}"  data-key="phone" bindblur="inputChange"></input>
             </view>
         </view>
     </view>
 </view>
-<button class="submit_info" bindtap="intoPath" data-path="/pages/shopping_address_new/shopping_address_new">完成</button>
+<button class="submit_info" bindtap="intoPath" data-path="/pages/shopping_address_new/shopping_address_new"  bindtap="submit">完成</button>

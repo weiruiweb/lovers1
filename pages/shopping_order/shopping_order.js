@@ -1,52 +1,82 @@
 import {Api} from '../../utils/api.js';
-var api = new Api();
+const api = new Api();
 const app = getApp();
 import {Token} from '../../utils/token.js';
 const token = new Token();
 
+
+
 Page({
   data: {
-    background: ['/images/banner1.jpg', '/images/banner1.jpg', '/images/banner1.jpg', '/images/banner1.jpg', '/images/banner1.jpg'],
-    indicatorDots: false,
-    vertical: false,
-    autoplay: true,
-    circular: true,
-    interval: 2000,
-    duration: 500,
-    previousMargin: 0,
-    nextMargin: 0,
-    currentId:0,
-    swiperIndex:0,
-
-  },
-  swiperChange(e) {
-    const that = this;
-    that.setData({
-      swiperIndex: e.detail.current,
-    })
-  },
-  sort(e){
-    const that = this;
-    that.setData({
-      currentId:e.currentTarget.dataset.id
-    })
-  },
-  intoPath(e){
-    const self = this;
-    api.pathTo(api.getDataSet(e,'path'),'nav');
+    num:0,
+    mainData:[],
+    searchItem:{
+      type:1
+    },
   },
 
-  intoPathRedi(e){
+  onLoad(options){
     const self = this;
-    wx.navigateBack({
-      delta:1
-    })
+    if(!wx.getStorageSync('token')){
+      var token = new Token();
+      token.getUserInfo();
+    };
+    self.data.paginate = api.cloneForm(getApp().globalData.paginate);
+    self.getMainData();
+  },
+
+
+  getMainData(isNew){
+    const self = this;
+    if(isNew){
+      api.clearPageIndex(self);  
+    };
+    const postData = {};
+    postData.paginate = api.cloneForm(self.data.paginate);
+    postData.token = wx.getStorageSync('token');
+    postData.searchItem = api.cloneForm(self.data.searchItem)
+    postData.searchItem.thirdapp_id = api.cloneForm(getApp().globalData.thirdapp_id);
+    postData.order = {
+      create_time:'desc'
+    };
+
+    const callback = (res)=>{
+      if(res.solely_code==100000){
+        if(res.info.data.length>0){
+          self.data.mainData.push.apply(self.data.mainData,res.info.data);
+        
+        }else{
+          self.data.isLoadAll = true;
+          api.showToast('没有更多了','none');
+        };
+        wx.hideLoading();
+        self.setData({
+          web_mainData:self.data.mainData,
+        });  
+      }else{
+        api.showToast('网络故障','none')
+      }
+
+    };
+    api.orderGet(postData,callback);
+  },
+
+
+
+  
+  onReachBottom() {
+    const self = this;
+    if(!self.data.isLoadAll){
+      self.data.paginate.currentPage++;
+      self.getMainData();
+    };
   },
 
   intoPathRedirect(e){
     const self = this;
     api.pathTo(api.getDataSet(e,'path'),'redi');
   }, 
+
 })
 
   

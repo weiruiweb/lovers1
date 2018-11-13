@@ -4,16 +4,18 @@
     <view class="thread2"></view>
     <view class="thread3"></view>
 </view>
-<view class="address_new">
-    <view class="w690">
-        <view class="address_list bg flex">
-            <view class="address_list_cont">
-                <view class="font32 color1">吴佳丽</view>
-                <view class="font28 color1">山西省西安市雁塔区</view>
+<block wx:for="{{web_mainData}}" wx:key="id">
+    <view class="address_new">
+        <view class="w690">
+            <view class="address_list bg flex">
+                <view class="address_list_cont">
+                    <view class="font32 color1">{{item.name}}</view>
+                    <view class="font28 color1">{{item.province+item.city+item.country+item.detail}}</view>
+                </view>
             </view>
         </view>
     </view>
-</view>
+</block>
 <view class="add_address" bindtap="intoPath" data-path="/pages/shopping_address/shopping_address">
     <image src="/images/increase.png"></image>
     <view class="font28 color2">新增地址</view>

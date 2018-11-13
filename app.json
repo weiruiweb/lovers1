@@ -19,7 +19,6 @@
     "pages/forgive/forgive",
     "pages/forgive_things_infor/forgive_things_infor",
     "pages/balance/balance",
-    "pages/balance_create/balance_create",
     "pages/balance_create_end/balance_create_end",
     "pages/shopping_order_choose/shopping_order_choose",
     "pages/loading/loading"

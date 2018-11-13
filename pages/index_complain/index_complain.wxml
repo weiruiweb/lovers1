@@ -4,80 +4,50 @@
     <view class="thread2"></view>
     <view class="thread3"></view>
 </view>
+
 <view class="comment">
-    <view class="comment_list">
-        <view class="comment_top flex">
-            <view class="comment_img">
-                <view class="comment_user">
-                    <view class="img_in">
-                          <open-data type="userAvatarUrl"></open-data>
-                    </view>
-                </view> 
-            </view>
-            <view class="comment_center">
-                    <view class="font30 color1 comment_text avoidOverflow">你男朋友通常“直男”到什么程度？</view>
-                    <view class="font24 color2 comment_text avoidOverflow">大家一起来讨论一下你的男朋友直男程度…</view>
-                    <view class="flex font22 color2 comment_text" style="margin-top: 10rpx;">
-                        <view class="comment_number  flex">
-                            <image src="/images/comment@3x.png"></image>
-                            <view>1265</view>
+    <block wx:for="{{web_mainData}}" wx:key="id">
+        <view class="comment_list">
+            <view class="comment_top flex">
+                <view class="comment_img">
+                    <view class="comment_user">
+                        <view class="img_in">
+                            <image   src="{{item.mainImg[0].url}}" ></image>
                         </view>
-                        <view class="comment_number flex">
-                            <image src="/images/Support@3x.png"></image>
-                            <view>1265</view>
-                        </view>
-                    </view>
+                    </view> 
                 </view>
-                <view class="comment_right">
-                    <image src="/images/More@2x.png"></image>
-                </view>
-        </view>
-        <view class="comment_bottom">
-            <view class="vertical_line">
-                <view class="line"></view>
-            </view>
-        </view>
-    </view>
-    <view class="comment_list">
-        <view class="comment_top flex">
-            <view class="comment_img">
-                <view class="comment_user">
-                    <view class="img_in">
-                          <open-data type="userAvatarUrl"></open-data>
-                    </view>
-                </view> 
-            </view>
-            <view class="comment_center">
-                    <view class="font30 color1 comment_text avoidOverflow">你男朋友通常“直男”到什么程度？</view>
-                    <view class="font24 color2 comment_text avoidOverflow">大家一起来讨论一下你的男朋友直男程度…</view>
-                    <view class="flex font22 color2 comment_text" style="margin-top: 10rpx;">
-                        <view class="comment_number  flex">
-                            <image src="/images/comment@3x.png"></image>
-                            <view>1265</view>
-                        </view>
-                        <view class="comment_number flex">
-                            <image src="/images/Support@3x.png"></image>
-                            <view>1265</view>
+                <view class="comment_center">
+                        <view class="font30 color1 comment_text avoidOverflow">{{item.title}}</view>
+                        <view class="font24 color2 comment_text avoidOverflow">{{item.keywords}}</view>
+                        <view class="flex font22 color2 comment_text" style="margin-top: 10rpx;">
+                            <view class="comment_number  flex">
+                                <image src="/images/comment@3x.png"></image>
+                                <view>{{item.comCount.totalCount}}</view>
+                            </view>
+                            <view class="comment_number flex" bindtap="submitSupport" data-index="{{index}}"  data-id="{{item.id}}" data-log_id="{{item.isPraise.id?item.isPraise.id:''}}">
+                                <image src="{{item.isPraise.id?'/images/Support@3x.png':'/images/Support1@3x.png'}}"></image>
+                                <view>{{item.praiseCount.totalCount}}</view>
+                            </view>
                         </view>
                     </view>
+                    <view class="comment_right">
+                        <image src="/images/More@2x.png"></image>
+                    </view>
+            </view>
+            <view class="comment_bottom">
+                <view class="vertical_line">
+                    <view class="line"></view>
                 </view>
-                <view class="comment_right">
-                    <image src="/images/More@2x.png"></image>
-                </view>
-        </view>
-        <view class="comment_bottom">
-            <view class="vertical_line">
-                <view class="line"></view>
             </view>
         </view>
-    </view>
-    <view class="comment_list">
-        <view class="end">
-            <view class="heart1 flex">
-               <view class="heart2">
-                
-                </view> 
+        <view class="comment_list">
+            <view class="end">
+                <view class="heart1 flex">
+                   <view class="heart2">
+                    
+                    </view> 
+                </view>
             </view>
         </view>
-    </view>
+    </block>
 </view>

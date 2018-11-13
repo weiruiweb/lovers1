@@ -44,12 +44,31 @@ Page({
     beforeColor: "white",//指示点颜色  
     afterColor: "coral",//当前选中的指示点颜色 
   },
-  // swiperChange(e) {
-  //   const that = this;
-  //   that.setData({
-  //     swiperIndex: e.detail.current,
-  //   })
-  // },
+
+  onLoad(options){
+    const self = this;
+    self.data.id = options.id;
+    self.getMainData()
+  },
+
+  getMainData(){
+    const self = this;
+    const postData = {};
+    postData.searchItem = {
+      id:self.data.id
+    }
+    const callback = (res)=>{
+      if(res.info.data.length>0){
+        self.data.mainData = res.info.data[0]  
+      }
+      wx.hideLoading();
+      self.setData({
+        web_mainData:self.data.mainData,
+      });     
+    };
+    api.productGet(postData,callback);
+  },
+  
   //轮播图的切换事件 
   swiperChange: function (e) {
     //只要把切换后当前的index传给<swiper>组件的current属性即可 
@@ -57,18 +76,21 @@ Page({
       swiperCurrent: e.detail.current
     })
   },
+
   dotsChange: function (e) {
     //只要把切换后当前的index传给<swiper>组件的current属性即可 
     this.setData({
       dotsCurrent: e.detail.current
     })
   },
+
   //点击指示点切换 
   chuangEvent: function (e) {
     this.setData({
       swiperCurrent: e.currentTarget.id
     })
   },
+
   chuangEvents: function (e) {
     this.setData({
       dotsCurrent: e.currentTarget.id
@@ -80,7 +102,7 @@ Page({
     api.pathTo(api.getDataSet(e,'path'),'nav');
   },
 
-  intoPathRedi(e){
+  intoPathBack(e){
     const self = this;
     wx.navigateBack({
       delta:1

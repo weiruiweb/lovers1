@@ -10,9 +10,12 @@ Page({
     is_show3:false,
     percent:0,
     rotate:0,
+    mainData:[]
   },
+  
   onLoad(options) {
     const self = this;
+    self.getMainData();
     var num = 0;
     var t = setInterval(function(){
       num++;
@@ -23,11 +26,36 @@ Page({
           rotate:style,
        })
       
-      if(num==75){
+      if(num==77){
           clearInterval(t);
         }      
       },60);
   },
+
+  getMainData(){
+    const self = this;
+    const postData = {};
+    postData.token = wx.getStorageSync('token');
+    postData.searchItem = {
+      type:1,
+      thirdapp_id:getApp().globalData.thirdapp_id,
+      class:6,
+    };
+   
+    const callback = (res)=>{
+      if(res.info.data.length>0){
+        self.data.mainData.push.apply(self.data.mainData,res.info.data);
+      }
+      wx.hideLoading();
+      console.log(77-self.data.mainData.length)
+      self.setData({
+        web_countData:77-self.data.mainData.length,
+      });  
+    };
+    api.messageGet(postData,callback);
+  },
+
+
   add(e){
     const self = this;
     var is_show = !this.data.is_show

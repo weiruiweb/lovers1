@@ -31,26 +31,33 @@
     </view>
 </view>
 
-<view class="w690 things_time flex">
+
+<view class="section">
+  <picker mode="date"  start="2000-01-01" end="2050-01-01" bindchange="bindDateChange">
+    <view class="picker">
+      <view class="w690 things_time flex">
     <view class="things_tlt font28 flex">
         <view class="color font30" style="margin-right: 20rpx;">●</view>时间</view>
     <view class="things_right flexRowBetween font28">
         <view class="thing1 color1 flexRowBetween">
-            <view class="font28 color1">2018</view>
+            <view class="font28 color1">{{web_submitData.passage2[0]}}</view>
             <image src="/images/up_icon.png"></image>
         </view>
         <view class="years font28 color1">年</view>
         <view class="thing1 color1 flexRowBetween">
-            <view class="font28 color1">04</view>
+            <view class="font28 color1">{{web_submitData.passage2[1]}}</view>
             <image src="/images/up_icon.png"></image>
         </view>
          <view class="years font28 color1">月</view>
         <view class="thing1 color1 flexRowBetween">
-            <view class="font28 color1">18</view>
+            <view class="font28 color1">{{web_submitData.passage2[2]}}</view>
             <image src="/images/up_icon.png"></image>
         </view>
          <view class="years font28 color1">日</view>
+        </view>
     </view>
+    </view>
+  </picker>
 </view>
 <view class="w690 things_time flex">
     <view class="things_tlt font28 flex"><view class="color font30" style="margin-right: 20rpx;">●</view>地点</view>

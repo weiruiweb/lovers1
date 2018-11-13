@@ -30,6 +30,7 @@
         </view> 
     </block> 
 </view>
+
 <view class="product">
     <view class="product_cont">
         <view class="w690 clothes">

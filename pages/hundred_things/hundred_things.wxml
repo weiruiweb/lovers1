@@ -5,59 +5,30 @@
     <view class="thread3"></view>
 </view>
 <view class="tab font30 flexRowBetween">
-    <view class="tab_item" data-id="0" bindtap="tab">
-        <view class="tab_click font30 {{currentId == 0?'tab_this':''}}">全部</view>
+    <view class="tab_item" data-id="0" bindtap="menuClick">
+        <view class="tab_click font30 {{web_num == 0?'tab_this':''}}">全部</view>
     </view>
-    <view class="tab_item" data-id="1"  bindtap="tab">
-        <view class="tab_click font30 {{currentId == 1?'tab_this':''}}">已完成</view>
+    <view class="tab_item" data-id="1"  bindtap="menuClick">
+        <view class="tab_click font30 {{web_num == 1?'tab_this':''}}">已完成</view>
     </view>
-    <view class="tab_item" data-id="2"  bindtap="tab">
-        <view class="tab_click font30 {{currentId == 2?'tab_this':''}}">未完成</view>
+    <view class="tab_item" data-id="2"  bindtap="menuClick">
+        <view class="tab_click font30 {{web_num == 2?'tab_this':''}}">未完成</view>
     </view>
 </view>
+
 <view class="hundred_things">
     <view class="w710 hundred_box flex">
-        <view class="hundred_item" bindtap="intoPath" data-path="/pages/hundred_things_confirm/hundred_things_confirm">
-            <view class="things_item">
-                <view class="things_top flex">
-                    <view class="circle2  flex">
-                        <image src="/images/heart.png"></image>
+        <block wx:for="{{web_mainData}}" wx:key="id">
+            <view class="hundred_item"  bindtap="intoPath" data-path="/pages/hundred_things_infor/hundred_things_infor">
+                <view class="things_item">
+                    <view class="things_top flex">
+                        <view class="circle2  flex" >
+                            <image src="/images/heart.png"></image>
+                        </view>
                     </view>
+                    <view class="things_bottom font24 color1 flex">{{item.title}}</view>
                 </view>
-                <view class="things_bottom font24 color1 flex">一起跨年倒计时一起跨年倒计时</view>
             </view>
-        </view>
-        <view class="hundred_item"  bindtap="intoPath" data-path="/pages/hundred_things_confirm/hundred_things_confirm">
-            <view class="things_item">
-                <view class="things_top flex">
-                    <view class="circle2  flex">
-                        <image src="/images/heart.png"></image>
-                    </view>
-                </view>
-                <view class="things_bottom font24 color1 flex">一起跨年倒计时一起跨年倒计时</view>
-            </view>
-        </view>
-        <view class="hundred_item"  bindtap="intoPath" data-path="/pages/hundred_things_confirm/hundred_things_confirm">
-            <view class="things_item">
-                <view class="things_top flex">
-                    <view class="circle2  flex">
-                        <image src="/images/heart.png"></image>
-                    </view>
-                </view>
-                <view class="things_bottom font24 color1 flex">一起跨年倒计时一起跨年倒计时</view>
-            </view>
-        </view>
-        <view class="hundred_item">
-            <view class="things_item">
-                <view class="things_top flex"><image src="/images/heart1.png"></image></view>
-                <view class="things_bottom font24 color1 flex">一起跨年倒计时一起跨年倒计时</view>
-            </view>
-        </view>
-        <view class="hundred_item">
-            <view class="things_item">
-                <view class="things_top flex"><image src="/images/heart1.png"></image></view>
-                <view class="things_bottom font24 color1 flex">一起跨年倒计时一起跨年倒计时</view>
-            </view>
-        </view>
+        </block>
     </view>
 </view>

@@ -39,191 +39,76 @@
         </view>
     </view>
 </view>
+
 <view class="mood flex">
-    <view class="mood_item" data-id="0" bindtap="mood">
+    <view class="mood_item" data-id="0" bindtap="menuClick">
         <view class="mood_img">
-            <image src="{{mood == 0?'/images/mood1.png':'/images/mood1_a.png'}}"></image>
+            <image src="{{web_num == 0?'/images/mood1.png':'/images/mood1_a.png'}}"></image>
             <view class="font28 mood_txt">超开心</view>
         </view>
         <view class="mood_up flex">
-            <image src="{{mood == 0?'/images/up.png':''}}"></image>
+            <image src="{{web_num == 0?'/images/up.png':''}}"></image>
         </view>
     </view>
-    <view class="mood_item" data-id="1" bindtap="mood">
+    <view class="mood_item" data-id="1" bindtap="menuClick">
         <view class="mood_img">
-            <image src="{{mood == 1?'/images/mood4.png':'/images/mood2_a.png'}}"></image>
+            <image src="{{web_num == 1?'/images/mood4.png':'/images/mood2_a.png'}}"></image>
             <view class="font28 mood_txt">开心</view>
         </view>
         <view class="mood_up flex">
-            <image src="{{mood == 1?'/images/up.png':''}}"></image>
+            <image src="{{web_num == 1?'/images/up.png':''}}"></image>
         </view>
     </view>
-    <view class="mood_item"  data-id="2" bindtap="mood">
+    <view class="mood_item"  data-id="2" bindtap="menuClick">
         <view class="mood_img">
-             <image src="{{mood == 2?'/images/mood3.png':'/images/mood3_a.png'}}"></image>
+             <image src="{{web_num == 2?'/images/mood3.png':'/images/mood3_a.png'}}"></image>
             <view class="font28 mood_txt">没心情</view>
         </view>
         <view class="mood_up flex">
-            <image src="{{mood == 2?'/images/up.png':''}}"></image>
+            <image src="{{web_num == 2?'/images/up.png':''}}"></image>
         </view>
     </view>
-    <view class="mood_item"  data-id="3" bindtap="mood">
+    <view class="mood_item"  data-id="3" bindtap="menuClick">
         <view class="mood_img">
-            <image src="{{mood == 3?'/images/mood2.png':'/images/mood4_a.png'}}"></image>
+            <image src="{{web_num == 3?'/images/mood2.png':'/images/mood4_a.png'}}"></image>
             <view class="font28 mood_txt">难过</view>
         </view>
         <view class="mood_up flex">
-            <image src="{{mood == 3?'/images/up.png':''}}"></image>
+            <image src="{{web_num == 3?'/images/up.png':''}}"></image>
         </view>
     </view>
-    <view class="mood_item"  data-id="4" bindtap="mood">
+    <view class="mood_item"  data-id="4" bindtap="menuClick">
         <view class="mood_img">
-            <image src="{{mood == 4?'/images/mood5.png':'/images/mood5_a.png'}}"></image>
+            <image src="{{web_num == 4?'/images/mood5.png':'/images/mood5_a.png'}}"></image>
             <view class="font28 mood_txt">哭泣</view>
         </view>
         <view class="mood_up flex">
-            <image src="{{mood == 4?'/images/up.png':''}}"></image>
+            <image src="{{web_num == 4?'/images/up.png':''}}"></image>
         </view>
     </view>
-    <view class="mood_item"  data-id="5" bindtap="mood">
+    <view class="mood_item"  data-id="5" bindtap="menuClick">
         <view class="mood_img">
-            <image src="{{mood == 5?'/images/mood6.png':'/images/mood6_a.png'}}"></image>
+            <image src="{{web_num == 5?'/images/mood6.png':'/images/mood6_a.png'}}"></image>
             <view class="font28 mood_txt">愤怒</view>
         </view>
         <view class="mood_up flex">
-            <image src="{{mood == 5?'/images/up.png':''}}"></image>
+            <image src="{{web_num == 5?'/images/up.png':''}}"></image>
         </view>
     </view>
 </view>
+
 <view class="w690">
     <view class="mood_thing">
         <scroll-view scroll-Y style="height:550rpx;" scroll-with-animation="true" bindscroll="scroll">
             <view style="width:96%;height:100%;padding:0 2%;border-radius: 40rpx;background: #fff;" class="flex">
                 <view class="mood_left"></view>
                 <view class="mood_center">
-                    <view class="moode_box">
-                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
-                    </view>
-                    <view class="moode_box">
-                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
-                    </view>
-                    <view class="moode_box">
-                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
-                    </view>
-                    <view class="moode_box">
-                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
-                    </view>
-                    <view class="moode_box">
-                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
-                    </view>
-                    <view class="moode_box">
-                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
-                    </view>
-                    <view class="moode_box">
-                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
-                    </view>
-                    <view class="moode_box">
-                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
-                    </view>
-                    <view class="moode_box" bindtap="intoPath" data-path="/pages/file_thing_detail/file_thing_detail">
-                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
-                    </view>
-                    <view class="moode_box" bindtap="intoPath" data-path="/pages/file_thing_detail/file_thing_detail">
-                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
-                    </view>
-                    <view class="moode_box" bindtap="intoPath" data-path="/pages/file_thing_detail/file_thing_detail">
-                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
-                    </view>
-                    <view class="moode_box">
-                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
-                    </view>
-                    <view class="moode_box">
-                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
-                    </view>
-                    <view class="moode_box">
-                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
-                    </view>
-                    <view class="moode_box">
-                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
-                    </view>
-                    <view class="moode_box">
-                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
-                    </view>
-                    <view class="moode_box">
-                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
-                    </view>
-                    <view class="moode_box">
-                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
-                    </view>
-                    <view class="moode_box">
-                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
-                    </view>
-                    <view class="moode_box">
-                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
-                    </view>
-                    <view class="moode_box">
-                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
-                    </view>
-                    <view class="moode_box">
-                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
-                    </view>
-                    <view class="moode_box">
-                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
-                    </view>
-                    <view class="moode_box">
-                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
-                    </view>
-                    <view class="moode_box">
-                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
-                    </view>
-                    <view class="moode_box">
-                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
-                    </view>
-                    <view class="moode_box" bindtap="intoPath" data-path="/pages/file_thing_detail/file_thing_detail">
-                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
-                    </view>
-                    <view class="moode_box" bindtap="intoPath" data-path="/pages/file_thing_detail/file_thing_detail">
-                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
-                    </view>
-                    <view class="moode_box" bindtap="intoPath" data-path="/pages/file_thing_detail/file_thing_detail">
-                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
-                    </view>
-                    <view class="moode_box">
-                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
-                    </view>
-                    <view class="moode_box">
-                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
-                    </view>
-                    <view class="moode_box">
-                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
-                    </view>
-                    <view class="moode_box">
-                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
-                    </view>
-                    <view class="moode_box">
-                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
-                    </view>
-                    <view class="moode_box">
-                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
-                    </view>
-                    <view class="moode_box">
-                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
-                    </view>
-                    <view class="moode_box">
-                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
-                    </view>
-                    <view class="moode_box">
-                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
-                    </view>
-                    <view class="moode_box">
-                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
-                    </view>
-                    <view class="moode_box">
-                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
-                    </view>
-                    <view class="moode_box">
-                        <view class="mood_detail font24 color6 avoidOverflow">丑八怪走开</view>
-                    </view>
+                    
+                    <block wx:for="{{web_mainData}}" wx:key="id">
+                        <view class="moode_box" bindtap="intoPath" data-path="/pages/file_thing_detail/file_thing_detail?id={{item.id}}">
+                            <view class="mood_detail font24 color6 avoidOverflow">{{item.title}}</view>
+                        </view>
+                    </block>
                 </view>
             </view>
         </scroll-view>
@@ -237,6 +122,7 @@
         </view>
     </view>
 </view>
+
 <view class="mask" style="{{is_show?'display:block':'display:none'}}"></view>
 <view  class="dialog" style="{{is_show?'position: absolute;top:5%':'position:fixed;bottom: -100%;'}}">
     <view class="lover_dialog">

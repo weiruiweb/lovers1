@@ -5,60 +5,49 @@
     </view>
     <view class="complain_user">
         <view class="user_img">
-            <open-data type="userAvatarUrl"></open-data>
+            <image src="{{web_mainData.mainImg[0].url}}"></image>
         </view>
-        <view class="font28 color2" style="text-align: center;">抠鼻大神</view>
+
     </view>
 </view>
 <view class="complain_cont w690">
-    <view class="font32 color1" style="margin-top:30rpx">你男朋友通常“直男”到什么程度？</view>
-    <view class="font26 color1" style="margin-top:78rpx"> 有一次7夕情人节，他买了一支玫瑰，和一盒太妃糖。我就故意问他怎么才一支？他说:这玩意又不能吃一支就够了。还特意强调他有生第一次买！然后我又说怎么买的不是巧克力？他说:我看都没看直接拿的……估计拿错了吧！我也醉了！</view>
+    <view class="font32 color1" style="margin-top:30rpx">{{web_mainData.title}}</view>
+    <view class="font26 color1" style="margin-top:78rpx">{{web_mainData.content}}</view>
 </view>
 <view class="thread">
     <view class="thread1"></view>
     <view class="thread2"></view>
     <view class="thread3"></view>
 </view>
+
+
 <view class="w690">
-    <view class="complain_list flex">
-        <view class="complain_left">
-            <view class="comment_user">
-                <open-data type="userAvatarUrl"></open-data>
+    <block wx:for="{{web_comData}}" wx:key="id">
+        <view class="complain_list flex">
+            <view class="complain_left">
+                <view class="comment_user">
+                    <image src="{{item.user[0].headImgUrl}}" style="width:100rpx;height:100rpx;border-radius:50%"></image>
+                </view>
+            </view>
+            <view class="complain_right">
+                <view class="complain_detail font24 color2"> {{item.content}}</view>
+                <view class="font22 color2 comment_text" style="margin-top: 10rpx;">
+                    <view class="comment_number  flex">
+                        <image src="/images/comment@3x.png"></image>
+                        <view>{{item.comCount.totalCount}}</view>
+                    </view>
+                    <view class="comment_number flex" bindtap="submitSupport" data-index="{{index}}"  data-id="{{item.id}}" data-log_id="{{item.isPraise.id?item.isPraise.id:''}}">
+                        <image src="{{item.isPraise.id?'/images/Support@3x.png':'/images/Support1@3x.png'}}"></image>
+                        <view>{{item.praiseCount.totalCount}}</view>
+                    </view>
+                </view>
             </view>
         </view>
-        <view class="complain_right">
-            <view class="complain_detail font24 color2"> 有一次7夕情人节，他买了一支玫瑰，和一盒太妃糖。我就故意问他怎么才一支？他说:这玩意又不能吃一支就够了。还特意强调他有生第一次买！然后我又说怎么买的不是巧克力？他说:我看都没看直接拿的……估计拿错了吧！我也醉了！</view>
-            <view class="font22 color2 comment_text" style="margin-top: 10rpx;">
-                        <view class="comment_number  flex">
-                            <image src="/images/comment@3x.png"></image>
-                            <view>1265</view>
-                        </view>
-                        <view class="comment_number flex">
-                            <image src="/images/Support@3x.png"></image>
-                            <view>1265</view>
-                        </view>
-                    </view>
-        </view>
-    </view>
-    <view class="complain_list flex">
-        <view class="complain_left">
-            <view class="comment_user">
-                <open-data type="userAvatarUrl"></open-data>
-            </view>
-        </view>
-        <view class="complain_right">
-            <view class="complain_detail font24 color2"> 有一次7夕情人节，他买了一支玫瑰，和一盒太妃糖。我就故意问他怎么才一支？他说:这玩意又不能吃一支就够了。还特意强调他有生第一次买！然后我又说怎么买的不是巧克力？他说:我看都没看直接拿的……估计拿错了吧！我也醉了！</view>
-            <view class="font22 color2 comment_text" style="margin-top: 10rpx;">
-                        <view class="comment_number  flex">
-                            <image src="/images/comment@3x.png"></image>
-                            <view>1265</view>
-                        </view>
-                        <view class="comment_number flex">
-                            <image src="/images/Support@3x.png"></image>
-                            <view>1265</view>
-                        </view>
-                    </view>
-        </view>
-    </view>
+    </block>
+</view>
+
+<view style="position:absoulte;bottom:0;width:90%;left:5%">
+    <input style="background:#fff" data-key="content" bindinput="changeBind" valua="{{web_sForm.content}}"></input>
+    <button bindtap="submit">评论</button>
 </view>
 

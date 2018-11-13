@@ -175,6 +175,19 @@ class Api extends Base{
             }
         };
         this.request(allParams);       
+    }     
+
+
+    binding(param,callback){
+        var allParams ={
+            url:'Project/Solely/binding',
+            type:'post',
+            data:param,
+            sCallback: function(data) {
+                callback && callback(data);
+            }
+        };
+        this.request(allParams);       
     } 
 
     addOrder(param,callback){

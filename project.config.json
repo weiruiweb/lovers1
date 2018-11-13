@@ -12,7 +12,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.2.2",
-	"appid": "wx212611f012b9cf1d",
+	"appid": "wx4c16a5493b7fff43",
 	"projectname": "%E6%83%85%E4%BE%A3%E5%B0%B1%E8%A6%81%E8%A3%85",
 	"isGameTourist": false,
 	"condition": {
@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 23,
+			"current": 25,
 			"list": [
 				{
 					"id": -1,
@@ -178,6 +178,18 @@
 					"name": "档案统计测试",
 					"pathName": "pages/file_statistics11/file_statistics11",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "888",
+					"pathName": "pages/balance_create_end/balance_create_end",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "bind",
+					"pathName": "pages/index/index",
+					"query": "scene=UB05174230114095"
 				}
 			]
 		}

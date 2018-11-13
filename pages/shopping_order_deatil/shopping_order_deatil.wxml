@@ -35,10 +35,10 @@
 <view class="clothes w690">
     <view class="clothes_cont">
         <view class="clothes_price">
-            <text class="txt1 color">¥325</text><text class="txt2 font30">348</text>
+            <text class="txt1 color">¥{{web_mainData.price}}</text><text class="txt2 font30">348</text>
         </view>
-        <view class="font30 color1 clothes_tit">PROD小动物管理员情侣装</view>
-        <view class="font22 color2">2018新款短袖t恤女不一样的情侣T秋天上衣</view>
+        <view class="font30 color1 clothes_tit">{{web_mainData.title}}</view>
+        <view class="font22 color2">{{web_mainData.description}}</view>
     </view>
 </view>
 <view class="thread">
@@ -46,7 +46,7 @@
     <view class="thread2"></view>
     <view class="thread3"></view>
 </view>
-<view class="buy_number" bindtap="intoPath" data-path="/pages/shopping_order_choose/shopping_order_choose">
+<view class="buy_number" bindtap="intoPath" data-path="/pages/shopping_order_choose/shopping_order_choose?id={{web_mainData.id}}">
     <view class="buy_number_cont flexRowBetween">
         <view class="number_tlt color1 font24">规格数量选择</view>
         <view class="choose_icon"><image src="/images/next_page.png"></image></view>
@@ -57,6 +57,7 @@
         <view class="thread3"></view>
     </view>
 </view>
+
 <view class="buy_btn">
     <view class="thread">
         <view class="thread1"></view>
@@ -65,7 +66,7 @@
     </view>
     <view class="buy_btn_cont flex">
         <view class="purchase flex">
-            <view class="buy_left"><image src="/images/cart.png"></image></view>
+            <view class="buy_left" data-path="/pages/shopping_cart/shopping_cart" bindtap="intoPath"><image src="/images/cart.png"></image></view>
             <view class="buy_right flex">
                 <view class="add_cart">
                     <view class="add_cart_cont font28 color1 bg">加入购物车</view>

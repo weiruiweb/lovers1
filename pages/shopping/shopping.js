@@ -5,9 +5,10 @@ import {Token} from '../../utils/token.js';
 const token = new Token();
 let globalData = getApp().globalData
 let SYSTEMINFO = globalData.systeminfo
+
 Page({
   data: {
-    background: ['/images/banner1.jpg', '/images/banner1.jpg', '/images/banner1.jpg', '/images/banner1.jpg', '/images/banner1.jpg'],
+    
     indicatorDots: false,
     vertical: false,
     autoplay: true,
@@ -25,13 +26,140 @@ Page({
     animationTwo: {},
     animationThree: {},
     pos: {},
+    mainData:[],
+    labelData:[],
+    searchItem:{
+      thirdapp_id:getApp().globalData.thirdapp_id,
+      category_id:''
+    }
   },
+
+  onLoad(){
+    const self = this;
+    self.data.paginate = getApp().globalData.paginate;
+    self.getSliderData();
+    self.getLabelData()
+  },
+
+
+  getMainData(isNew){
+    const self = this;
+    if(isNew){
+      api.clearPageIndex(self);  
+    };
+    const postData = {};
+    postData.paginate = api.cloneForm(self.data.paginate);
+    postData.searchItem = api.cloneForm(self.data.searchItem);
+    postData.order = {
+      create_time:'desc'
+    };
+
+    const callback = (res)=>{
+      if(res.info.data.length>0){
+        self.data.mainData.push.apply(self.data.mainData,res.info.data);
+      }else{
+        self.data.isLoadAll = true;
+        api.showToast('没有更多了','fail');
+      };
+      wx.hideLoading();
+      self.setData({
+        web_mainData:self.data.mainData,
+      });  
+    };
+    api.productGet(postData,callback);
+  },
+
+
+  getSliderData(){
+    const self = this;
+    const postData = {};
+    postData.searchItem = {
+      title:'商城轮播图',
+      thirdapp_id:getApp().globalData.thirdapp_id,
+    };
+    const callback = (res)=>{ 
+      if(res.info.data.length>0){
+        self.data.sliderData = res.info.data[0];
+      }
+      self.setData({
+        web_sliderData:self.data.sliderData,
+      });
+    };
+    api.labelGet(postData,callback);
+  },
+
+  getLabelData(){
+    const self = this;
+    const postData = {};
+    postData.searchItem = {
+      thirdapp_id:getApp().globalData.thirdapp_id,
+      type:3
+    };
+    postData.order = {
+      create_time:'normal'
+    };
+    postData.getBefore = {
+      article:{
+        tableName:'label',
+        searchItem:{
+          title:['=',['商城']],
+        },
+        middleKey:'parentid',
+        key:'id',
+        condition:'in',
+      },
+    };
+    const callback = (res)=>{
+      if(res.info.data.length>0){
+        self.data.labelData.push.apply(self.data.labelData,res.info.data);
+      }else{
+        self.data.isLoadAll = true;
+        api.showToast('没有更多了','none');
+      }
+      console.log(self.data.labelData)
+      wx.hideLoading();
+      self.data.searchItem.category_id = self.data.labelData[0].id;
+      self.setData({
+        web_num:self.data.labelData[0].id,
+        web_labelData:self.data.labelData,
+      });
+
+      self.getMainData();
+    };
+    api.labelGet(postData,callback);   
+  },
+
+  menuClick(e) {
+    const self = this;
+    const num = e.currentTarget.dataset.id;
+    self.changeSearch(num);
+  },
+
+
+  changeSearch(num){
+    const self = this;
+    this.setData({
+      web_num: num
+    });
+    self.data.searchItem.category_id = num;
+    self.getMainData(true);
+  },
+
+  onReachBottom() {
+    const self = this;
+    if(!self.data.isLoadAll){
+      self.data.paginate.currentPage++;
+      self.getMainData();
+    };
+  },
+
   onHide() {
     wx.setStorage({
       key: 'pos',
       data: this.data.pos,
     })
   },
+
   menuMainMove (e) {
     // 如果已经弹出来了，需要先收回去，否则会受 top、left 会影响
     if (this.data.hasPopped) {
@@ -66,6 +194,7 @@ Page({
       pos,
     })
   },
+
   popp() {
     let animationMain = wx.createAnimation({
       duration: 200,
@@ -94,6 +223,7 @@ Page({
       animationThree: animationThree.export(),
     })
   },
+
   takeback() {
     let animationMain = wx.createAnimation({
       duration: 200,
@@ -122,6 +252,7 @@ Page({
       animationThree: animationThree.export(),
     })
   },
+
   menuMain () {
     if (!this.data.hasPopped) {
       this.popp()
@@ -135,6 +266,7 @@ Page({
       })
     }
   },
+
   show(e){
     const self = this;
     var is_show = !this.data.is_show
@@ -143,18 +275,21 @@ Page({
     })
     console.log(is_show);
   },
+
   swiperChange(e) {
-    const that = this;
-    that.setData({
+    const self = this;
+    self.setData({
       swiperIndex: e.detail.current,
     })
   },
+
   sort(e){
-    const that = this;
-    that.setData({
+    const self = this;
+    self.setData({
       currentId:e.currentTarget.dataset.id
     })
   },
+
   intoPath(e){
     const self = this;
     api.pathTo(api.getDataSet(e,'path'),'nav');

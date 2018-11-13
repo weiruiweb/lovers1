@@ -17,12 +17,12 @@
             <view class = 'circle left-circle' style="{{rotate}}"></view>
             <view class = 'circle right-circle'></view>
             <view class="forgive_number color1 flex">
-                <view style="margin:0 auto;font-size:100rpx;" class="color1">{{percent}}</view>
+                <view style="margin:0 auto;font-size:100rpx;" class="color1">{{web_countData}}</view>
             </view>
         </view>
    </view> 
     <view class="font32 color forgive_num">和你在一起道路上</view>
-    <view  class="font32 color forgive_num">我还能原谅你75次</view>
+    <view  class="font32 color forgive_num">我还能原谅你{{web_countData}}次</view>
 </view>
 <view class="lovers_img_box flex">
     <view class="lovers_img_cont">

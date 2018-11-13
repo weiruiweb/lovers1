@@ -11,34 +11,42 @@
 <view class="w690 things_time flex">
     <view class="things_tlt font28 flex"><view class="color font30" style="margin-right: 20rpx;">●</view>主题</view>
     <view class="things_right flex font28 color1">
-        <input placeholder="这就是那个啥"></input>
+        <input placeholder="这就是那个啥" data-key="title" bindinput="changeBind"></input>
     </view>
 </view>
-<view class="w690 things_time flex">
+
+<view class="section">
+  <picker mode="date"  start="2000-01-01" end="2050-01-01" bindchange="bindDateChange">
+    <view class="picker">
+      <view class="w690 things_time flex">
     <view class="things_tlt font28 flex">
         <view class="color font30" style="margin-right: 20rpx;">●</view>时间</view>
-    <view class="things_right flexRowBetween font28" style="border:none">
+    <view class="things_right flexRowBetween font28">
         <view class="thing1 color1 flexRowBetween">
-            <view class="font28 color1">2018</view>
+            <view class="font28 color1">{{web_submitData.passage2[0]}}</view>
             <image src="/images/up_icon.png"></image>
         </view>
         <view class="years font28 color1">年</view>
         <view class="thing1 color1 flexRowBetween">
-            <view class="font28 color1">04</view>
+            <view class="font28 color1">{{web_submitData.passage2[1]}}</view>
             <image src="/images/up_icon.png"></image>
         </view>
          <view class="years font28 color1">月</view>
         <view class="thing1 color1 flexRowBetween">
-            <view class="font28 color1">18</view>
+            <view class="font28 color1">{{web_submitData.passage2[2]}}</view>
             <image src="/images/up_icon.png"></image>
         </view>
          <view class="years font28 color1">日</view>
+        </view>
     </view>
+    </view>
+  </picker>
 </view>
+
 <view class="w690 things_time flex">
     <view class="things_tlt font28 flex"><view class="color font30" style="margin-right: 20rpx;">●</view>地点</view>
     <view class="things_right flex font28 color1">
-        <input placeholder="家里"></input>
+        <input placeholder="家里" data-key="passage1" bindinput="changeBind"></input>
     </view>
 </view>
 <view class="w690 flex" style="margin-top: 50rpx;">
@@ -46,62 +54,79 @@
     <view class="font24 color9">心情</view>
 </view>
 <view class="mood flex">
-    <view class="mood_item" data-id="0" bindtap="mood">
+    <view class="mood_item" data-value="0" bindtap="changeBind" data-key="class">
         <view class="mood_img">
-            <image src="{{mood == 0?'/images/Forgive111@2x.png':'/images/mood1@2x.png'}}"></image>
+            <image src="{{web_submitData.class == 0?'/images/Forgive111@2x.png':'/images/mood1@2x.png'}}"></image>
             <view class="font28 mood_txt">超开心</view>
         </view>
     </view>
-    <view class="mood_item" data-id="1" bindtap="mood">
+    <view class="mood_item" data-value="1" bindtap="changeBind"  data-key="class">
         <view class="mood_img">
-            <image src="{{mood == 1?'/images/Forgive111@2x.png':'/images/mood4@2x.png'}}"></image>
+            <image src="{{web_submitData.class == 1?'/images/Forgive111@2x.png':'/images/mood4@2x.png'}}"></image>
             <view class="font28 mood_txt">开心</view>
         </view>
     </view>
-    <view class="mood_item"  data-id="2" bindtap="mood">
+    <view class="mood_item"  data-value="2" bindtap="changeBind"  data-key="class">
         <view class="mood_img">
-             <image src="{{mood == 2?'/images/Forgive111@2x.png':'/images/mood5@2x.png'}}"></image>
+             <image src="{{web_submitData.class == 2?'/images/Forgive111@2x.png':'/images/mood5@2x.png'}}"></image>
             <view class="font28 mood_txt">没心情</view>
         </view>
     </view>
-    <view class="mood_item"  data-id="3" bindtap="mood">
+    <view class="mood_item"  data-value="3" bindtap="changeBind"  data-key="class">
         <view class="mood_img">
-            <image src="{{mood == 3?'/images/Forgive111@2x.png':'/images/mood2@2x.png'}}"></image>
+            <image src="{{web_submitData.class == 3?'/images/Forgive111@2x.png':'/images/mood2@2x.png'}}"></image>
             <view class="font28 mood_txt">难过</view>
         </view>
     </view>
-    <view class="mood_item"  data-id="4" bindtap="mood">
+    <view class="mood_item"  data-value="4" bindtap="changeBind"  data-key="class">
         <view class="mood_img">
-            <image src="{{mood == 4?'/images/Forgive111@2x.png':'/images/mood3@2x.png'}}"></image>
+            <image src="{{web_submitData.class == 4?'/images/Forgive111@2x.png':'/images/mood3@2x.png'}}"></image>
             <view class="font28 mood_txt">哭泣</view>
         </view>
     </view>
-    <view class="mood_item"  data-id="5" bindtap="mood">
+    <view class="mood_item"  data-value="5" bindtap="changeBind"   data-key="class">
         <view class="mood_img">
-            <image src="{{mood == 5?'/images/Forgive111@2x.png':'/images/mood3@2x.png'}}"></image>
+            <image src="{{web_submitData.class == 5?'/images/Forgive111@2x.png':'/images/mood3@2x.png'}}"></image>
             <view class="font28 mood_txt">愤怒</view>
         </view>
     </view>
 </view>
-<view class="w690 flex"  style="margin-top: 50rpx;">
+<view class="w690 flex"  style="margin-top: 50rpx;" >
     <view class="color font30" style="margin-right: 20rpx;">●</view>
     <view class="font24 color9">上传照片</view>
 </view>
-<view class="uplode">
-    <image src="/images/upload.png"></image>
+<view class="uplode flex" id="uploaderFiles">
+    <block  wx:for="{{web_submitData.mainImg}}" wx:key="{{index}}">
+        <view class="upload_box">
+            <view class = 'circle left-circle' style="{{rotate}}"></view>
+            <view class = 'circle right-circle'></view>
+            <view class="uploader_item forgive_number" bindtap="previewImage" id="{{item.url}}">
+                <image class="weui-uploader__img" src="{{item.url}}" mode="aspectFill" />
+                <view class="color1 font32 percent flex" wx:if="{{percent <=99}}" >
+                    <view class="percent_number" style="text-align:center;">{{percent}}%</view>
+                </view>
+            </view> 
+        </view>
+    </block>
+    <view  class="uploader_item" bindtap="upLoadImg" wx:if="{{web_submitData.mainImg.length==0}}">
+        <image src="/images/upload.png"></image>
+    </view>
 </view>
+
 <view class="w690 flex" style="margin-top: 50rpx;">
     <view class="color font30" style="margin-right: 20rpx;">●</view>
     <view class="font24 color9">描述</view>
 </view>
 <view class="descreption">
-    <textarea bindfocus="hide" bindblur="show">
+    <textarea bindfocus="hide" bindblur="show" data-key="content" bindinput="changeBind">
     </textarea>
     <image src="{{is_hidden?'/images/penceil.png':''}}"></image>
 </view>
+
 <view style="width:100%;height:100rpx;"></view>
+
 <view class="confirm">
-    <button class="color1">
+    <button class="color1" bindtap="submit">
         发布
     </button>
 </view>

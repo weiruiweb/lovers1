@@ -11,13 +11,22 @@ App({
 
 },
 
- globalData: {
-    // 是否保持常亮，离开小程序失效
-    keepscreenon:false,
-    systeminfo: {},
-    isIPhoneX: false,
-    ak: 'your baidu map application ak',
+  globalData: {
+    thirdapp_id:15,
+    address_id:'',
+    coupon:{},
+    paginate: {
+        count: 0,
+        currentPage:1,
+        pagesize:10,
+        is_page:true,
+    },
+    categoryIndex:'',
+    userInfo: null,
+     font:[{font:'font-size:20rpx'},{font:'font-size:22rpx'},{font:'font-size:24rpx'},{font:'font-size:28rpx'},{font:'font-size:30rpx'},{font:'font-size:32rpx'}],
+
   },
+
 
 
 })

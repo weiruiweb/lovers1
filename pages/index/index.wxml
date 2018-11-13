@@ -81,7 +81,7 @@
     <view class="great_right flex">
         <view class="font28" style="text-align: center;width: 100%;">
             <image src="/images/complaints.png"></image>
-            <view class="color2 font24">吐槽次数</view>
+            <view class="color2 font24">吐槽专区</view>
         </view>
     </view>
 </view>
@@ -90,70 +90,43 @@
     <view class="thread2"></view>
     <view class="thread3"></view>
 </view>
+
 <view class="comment">
-    <view class="comment_list" bindtap="intoPath" data-path="/pages/index_complain_detail/index_complain_detail">
-        <view class="comment_top flex">
-            <view class="comment_img">
-                <view class="comment_user">
-                    <open-data type="userAvatarUrl"></open-data>
-                </view> 
-            </view>
-            <view class="comment_center">
-                    <view class="font30 color1 comment_text avoidOverflow">你男朋友通常“直男”到什么程度？</view>
-                    <view class="font24 color2 comment_text avoidOverflow">大家一起来讨论一下你的男朋友直男程度…</view>
-                    <view class="flex font22 color2 comment_text" style="margin-top: 10rpx;">
-                        <view class="comment_number  flex">
-                            <image src="/images/comment@3x.png"></image>
-                            <view>1265</view>
-                        </view>
-                        <view class="comment_number flex">
-                            <image src="/images/Support@3x.png"></image>
-                            <view>1265</view>
-                        </view>
-                    </view>
+    <block wx:for="{{web_mainData}}" wx:key="id">
+        <view class="comment_list" bindtap="intoPath" data-path="/pages/index_complain_detail/index_complain_detail?id={{item.id}}">
+            <view class="comment_top flex">
+                <view class="comment_img">
+                    <view class="comment_user">
+                        <image   src="{{item.mainImg[0].url}}" ></image>
+                    </view> 
                 </view>
-                <view class="comment_right">
-                    <image src="/images/More@2x.png"></image>
-                </view>
-        </view>
-        <view class="comment_bottom">
-            <view class="vertical_line">
-                <view class="line"></view>
-            </view>
-        </view>
-    </view>
-    <view class="comment_list"  bindtap="intoPath" data-path="/pages/index_complain_detail/index_complain_detail">
-        <view class="comment_top flex">
-            <view class="comment_img">
-                <view class="comment_user">
-                    <open-data type="userAvatarUrl"></open-data>
-                </view> 
-            </view>
-            <view class="comment_center">
-                    <view class="font30 color1 comment_text avoidOverflow">你男朋友通常“直男”到什么程度？</view>
-                    <view class="font24 color2 comment_text avoidOverflow">大家一起来讨论一下你的男朋友直男程度…</view>
-                    <view class="flex font22 color2 comment_text" style="margin-top: 10rpx;">
-                        <view class="comment_number  flex">
-                            <image src="/images/comment@3x.png"></image>
-                            <view>1265</view>
-                        </view>
-                        <view class="comment_number flex">
-                            <image src="/images/Support@3x.png"></image>
-                            <view>1265</view>
+                <view class="comment_center">
+                        <view class="font30 color1 comment_text avoidOverflow">{{item.title}}</view>
+                        <view class="font24 color2 comment_text avoidOverflow">{{item.keywords}}</view>
+                        <view class="flex font22 color2 comment_text" style="margin-top: 10rpx;">
+                            <view class="comment_number  flex">
+                                <image src="/images/comment@3x.png"></image>
+                                <view>{{item.comCount.totalCount}}</view>
+                            </view>
+                            <view class="comment_number flex" bindtap="submitSupport" data-index="{{index}}"  data-id="{{item.id}}" data-log_id="{{item.isPraise.id?item.isPraise.id:''}}">
+                                <image src="{{item.isPraise.id?'/images/Support@3x.png':'/images/Support1@3x.png'}}"></image>
+                                <view>{{item.praiseCount.totalCount}}</view>
+                            </view>
                         </view>
                     </view>
+                    <view class="comment_right">
+                        <image src="/images/More@2x.png"></image>
+                    </view>
+            </view>
+            <view class="comment_bottom">
+                <view class="vertical_line">
+                    <view class="line"></view>
                 </view>
-                <view class="comment_right">
-                    <image src="/images/More@2x.png"></image>
-                </view>
-        </view>
-        <view class="comment_bottom">
-            <view class="vertical_line">
-                <view class="line"></view>
             </view>
         </view>
-    </view>
+    </block>
 </view>
+
 <view  class="dialog" style="{{is_show?'position: absolute;top:10%':'position:fixed;bottom: -100%;'}}">
     <view class="lover_dialog">
         <view class="heart1 flex">
@@ -166,13 +139,14 @@
             <view class="confirm_tlt color font32">CP认证</view>
             <view class="cp_note font28">好友一旦确定选择后将不能进行修改
     是否选择好友发送给对方并完成双方</view>
-            <button class="submit_info">选择好友并认证</button>
+            <button class="submit_info" bindtap="onShareAppMessage"  open-type="share">选择好友并认证</button>
         </view>
         <view class="close" bindtap="close"><image src="/images/close.png"></image></view>
     </view>
 </view>
+
 <!-- 被邀请对象弹出框 -->
-<!-- <view  class="dialog1" style="{{is_show1?'position: absolute;top:10%':'position:fixed;bottom: -100%;'}}">
+<view  class="dialog1" style="{{is_show1?'position: absolute;top:10%':'position:fixed;bottom: -100%;'}}">
     <view class="lover_dialog">
         <view class="heart1 flex">
            <view class="heart2 flex">
@@ -190,12 +164,12 @@
                         但是在喜欢的人面前沉默</view>
                  <view class="confirm_tlt color font32">
                         就是一种懦弱</view>
-            <view class="cp_note font28" style="margin-top: 30rpx">您的好友“抠脚大汉”邀请您认证CP</view>
+            <view class="cp_note font28" style="margin-top: 30rpx">您的好友“{{web_userData.nickname}}”邀请您认证CP</view>
             <view class="cp_note font28">一起入驻《情侣就要装》</view>
             <view class="cp_note font28">是否确认对方为对的人</view>
             <view class="confirm_btn flex">
                 <view class="btn_left">
-                    <button class="submit_info">答应</button>
+                    <button class="submit_info" open-type="getUserInfo" bindgetuserinfo="submit">答应</button>
                 </view>
                 <view class="btn_left">
                     <button class="submit_info">拒绝</button>
@@ -205,7 +179,8 @@
         </view>
         <view class="close" bindtap="close"><image src="/images/close.png"></image></view>
     </view>
-</view> -->
+</view>
+
 <view  class="dialog2" style="{{is_show2?'position: absolute;top:10%':'position:fixed;bottom: -100%;'}}">
     <view class="lover_dialog">
         <view class="heart1 flex">
