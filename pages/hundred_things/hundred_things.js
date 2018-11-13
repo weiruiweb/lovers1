@@ -13,16 +13,30 @@ Page({
     currentId1:0,
     searchItem:{
       thirdapp_id:getApp().globalData.thirdapp_id
-    }
+    },
+    getBefore:{},
+    buttonClick:false
   },
 
-  onLoad(options){
+  onShow(options){
     const self = this;
     self.data.paginate = getApp().globalData.paginate;
+    self.data.getBefore = {
+		article:{
+			tableName:'label',
+			searchItem:{
+			  title:['=',['一起完成100件小事']],
+			},
+			middleKey:'menu_id',
+			key:'id',
+			condition:'in',
+		}
+	};
+    
     self.setData({
       web_num:self.data.num
     });
-    self.getMainData()
+    self.getMainData(true)
   },
 
   getMainData(isNew){
@@ -31,18 +45,11 @@ Page({
       api.clearPageIndex(self);  
     };
     const postData = {};
+
     postData.paginate = api.cloneForm(self.data.paginate);
     postData.searchItem = api.cloneForm(self.data.searchItem);
-    postData.getBefore = {
-      article:{
-        tableName:'label',
-        searchItem:{
-          title:['=',['一起完成100件小事']],
-        },
-        middleKey:'menu_id',
-        key:'id',
-        condition:'in',
-      },
+    if(self.data.getBefore&&JSON.stringify(self.data.getBefore)!='{}'){
+    	postData.getBefore = api.cloneForm(self.data.getBefore);
     };
     postData.getAfter = {
       message:{
@@ -50,11 +57,12 @@ Page({
         middleKey:'id',
         key:'relation_id',
         searchItem:{
-          status:1
+          status:1,
         },
         condition:'='
       }
     };
+    
     const callback = (res)=>{
 
       if(res.info.data.length>0){
@@ -65,6 +73,7 @@ Page({
       };
       wx.hideLoading();
       self.setData({
+      	buttonClicked: false,
         web_mainData:self.data.mainData,
       });  
     };
@@ -73,6 +82,10 @@ Page({
 
   menuClick(e) {
     const self = this;
+     self.setData({
+      	buttonClicked: true,
+        web_mainData:self.data.mainData,
+     });  
     const num = e.currentTarget.dataset.id;
     self.changeSearch(num);
   },
@@ -84,11 +97,33 @@ Page({
       web_num: num
     });
     if(num=='0'){
-
+    	delete self.data.getBefore.message;
     }else if(num=='1'){
-      self.data.searchItem.message=[];
+
+		self.data.getBefore.message = {
+			tableName:'message',
+			searchItem:{
+			  user_no:['in',[wx.getStorageSync('info').user_no]],
+			  type:['in',[1]]
+			},
+			middleKey:'id',
+			key:'relation_id',
+			condition:'IN',
+		};
+	
+
     }else if(num=='2'){
-      self.data.searchItem.message!=[];
+ 
+      self.data.getBefore.message = {
+        tableName:'message',
+        searchItem:{
+          user_no:['in',[wx.getStorageSync('info').user_no]],
+          type:['in',[1]]
+        },
+        middleKey:'id',
+        key:'relation_id',
+        condition:'NOT IN',
+      };
     }
     self.getMainData(true);
   },
@@ -115,7 +150,18 @@ Page({
 
   intoPath(e){
     const self = this;
-    api.pathTo(api.getDataSet(e,'path'),'nav');
+    var id = api.getDataSet(e,'id');
+    wx.navigateTo({
+        url:'/pages/hundred_things_infor/hundred_things_infor?id='+id
+    });
+  },
+
+   intoPathCom(e){
+    const self = this;
+    var id = api.getDataSet(e,'id');
+    wx.navigateTo({
+        url:'/pages/hundred_things_confirm/hundred_things_confirm?id='+id
+    });
   },
 
   intoPathRedi(e){

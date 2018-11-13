@@ -4,7 +4,7 @@
     <view class="thread2"></view>
     <view class="thread3"></view>
 </view>
-<button class="submit_info">一起分享一瓶美酒 认证</button>
+<button class="submit_info">{{web_artData.title}} 认证</button>
 <view class="w690 flex">
     <view class="color font30" style="margin-right: 20rpx;">●</view>
     <view class="font24 color9">标点处必填</view>
@@ -14,19 +14,19 @@
     <view class="font24 color9">上传照片</view>
 </view>
 <view class="uplode flex" id="uploaderFiles">
-    <block  wx:for-items="{{files}}" wx:key="{{index}}">
+    <block  wx:for="{{web_submitData.mainImg}}" wx:key="{{index}}">
         <view class="upload_box">
             <view class = 'circle left-circle' style="{{rotate}}"></view>
             <view class = 'circle right-circle'></view>
-            <view class="uploader_item forgive_number" bindtap="previewImage" id="{{item}}">
-                <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+            <view class="uploader_item forgive_number" bindtap="previewImage" id="{{item.url}}">
+                <image class="weui-uploader__img" src="{{item.url}}" mode="aspectFill" />
                 <view class="color1 font32 percent flex" wx:if="{{percent <=99}}" >
                     <view class="percent_number" style="text-align:center;">{{percent}}%</view>
                 </view>
             </view> 
         </view>
     </block>
-    <view  class="uploader_item" bindtap="chooseImage" wx:if="{{files.length==0}}">
+    <view  class="uploader_item" bindtap="upLoadImg" wx:if="{{web_submitData.mainImg.length==0}}">
         <image src="/images/upload.png"></image>
     </view>
 </view>
@@ -62,11 +62,11 @@
 <view class="w690 things_time flex">
     <view class="things_tlt font28 flex"><view class="color font30" style="margin-right: 20rpx;">●</view>地点</view>
     <view class="things_right flex font28 color1">
-        <input placeholder="家里"></input>
+        <input placeholder="家里" data-key="passage1" bindinput="changeBind"></input>
     </view>
 </view>
 <view class="confirm">
-    <button class="color1">
+    <button class="color1" bindtap="submit">
         确认
     </button>
 </view>

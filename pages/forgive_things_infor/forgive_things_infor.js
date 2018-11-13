@@ -68,6 +68,7 @@ const token = new Token();
     self.setData({
       web_submitData:self.data.submitData
     })
+    new Date(self.data.submitData.passage2.join("-")).getTime();
   },
 
 
@@ -77,7 +78,16 @@ const token = new Token();
     const self = this;
     const postData = {};
     postData.token = wx.getStorageSync('token');
-    postData.data = {};
+    postData.data = {
+        title:self.data.submitData.title,
+        content:self.data.submitData.content,
+        passage1:self.data.submitData.passage1,
+        passage2:new Date(self.data.submitData.passage2.join("-")).getTime(),
+        type:2,
+        class:6,
+        mainImg:self.data.submitData.mainImg,
+        
+    };
     postData.data = api.cloneForm(self.data.submitData);
     const callback = (data)=>{  
       if(data.solely_code == 100000){

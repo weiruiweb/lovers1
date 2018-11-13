@@ -17,7 +17,7 @@ const token = new Token();
         passage1:'',
         passage2:'',
         type:1,
-        class:6,
+        class:'',
         mainImg:[]
       },
     
@@ -49,12 +49,12 @@ const token = new Token();
     var strDate = date.getDate();
     if (month >= 1 && month <= 9) {
         month = "0" + month;
-    };
+    }
     if (strDate >= 0 && strDate <= 9) {
         strDate = "0" + strDate;
-    };
+    }
     var currentdate = year + seperator1 + month + seperator1 + strDate;
-    self.data.submitData.passage2 =  currentdate.split('-');
+    self.data.submitData.passage2 =  currentdate.split('-')
     self.setData({
       web_submitData:self.data.submitData
     })
@@ -68,6 +68,7 @@ const token = new Token();
     self.setData({
       web_submitData:self.data.submitData
     })
+    new Date(self.data.submitData.passage2.join("-")).getTime();
   },
 
 
@@ -77,7 +78,15 @@ const token = new Token();
     const self = this;
     const postData = {};
     postData.token = wx.getStorageSync('token');
-    postData.data = {};
+    postData.data = {
+        title:self.data.submitData.title,
+        content:self.data.submitData.content,
+        passage1:self.data.submitData.passage1,
+        passage2:new Date(self.data.submitData.passage2.join("-")).getTime(),
+        type:1,
+        class:self.data.submitData.class,
+        mainImg:self.data.submitData.mainImg  
+    };
     postData.data = api.cloneForm(self.data.submitData);
     const callback = (data)=>{  
       if(data.solely_code == 100000){
@@ -197,4 +206,3 @@ const token = new Token();
   }, 
   
 })
-  

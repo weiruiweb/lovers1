@@ -1,7 +1,7 @@
 <!--index2.wxml-->
 <view class="shopping">
     <view class="W710 shopping_box flex">
-        <view class="select">
+        <view class="select" data-index="{{index}}" bindtap='choose'>
             <image src="/images/select.png"></image>
         </view>
         <view class="shopping_img">
@@ -13,39 +13,19 @@
             <view class="shopping_number font28 flex">
                 <view class="shopping_price color flex">¥8999</view>
                 <view class="number_handle flex">
-                    <view class="add flex"><image src="/images/left.png"></image></view>
-                    <view class="add_cont"><view class="add_number">0</view></view>
-                    <view class="add flex"><image src="/images/right.png"></image></view>
-                </view>
-            </view>
-        </view>
-    </view>
-    <view class="W710 shopping_box flex">
-        <view class="select">
-            <image src="/images/select_a.png"></image>
-        </view>
-        <view class="shopping_img">
-            <image src="/images/product.jpg"></image>
-        </view>
-        <view class="shopping_detail">
-            <view class="shopping_name font30 color1">产品名称</view>
-            <view class="shopping_txt font24  color2 avoidOverflow"><text>男白</text><text>女黑</text></view>
-            <view class="shopping_number font28 flex">
-                <view class="shopping_price color flex">¥8999</view>
-                <view class="number_handle flex">
-                    <view class="add flex"><image src="/images/left.png"></image></view>
-                    <view class="add_cont"><view class="add_number">0</view></view>
-                    <view class="add flex"><image src="/images/right.png"></image></view>
+                    <view class="add flex" data-index="{{index}}" data-type="-" bindtap="counter"><image src="/images/left.png"></image></view>
+                    <view class="add_cont"><view class="add_number">{{item.count}}</view></view>
+                    <view class="add flex" data-index="{{index}}" data-type="+" bindtap="counter"><image src="/images/right.png"></image></view>
                 </view>
             </view>
         </view>
     </view>
 </view>
 <view class="settlement flex">
-    <view class="settlement_left bg flexRowBetween">
+    <view class="settlement_left bg flexRowBetween" bindtap="chooseAll">
         <image src="/images/select1.png"></image>
         <text class="font24 color1">全选</text>
-        <view class="font24 color1">合计：¥899</view>
+        <view class="font24 color1">合计：¥{{web_totalPrice}}</view>
     </view>
     <view class="settlement_right bg">
         <text class="font28 color1">结算</text><text class="font28 color1">(20)</text>

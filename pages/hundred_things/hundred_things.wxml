@@ -5,13 +5,13 @@
     <view class="thread3"></view>
 </view>
 <view class="tab font30 flexRowBetween">
-    <view class="tab_item" data-id="0" bindtap="menuClick">
+    <view class="tab_item" data-id="0" bindtap="{{!buttonClicked?'menuClick':''}}">
         <view class="tab_click font30 {{web_num == 0?'tab_this':''}}">全部</view>
     </view>
-    <view class="tab_item" data-id="1"  bindtap="menuClick">
+    <view class="tab_item" data-id="1"  bindtap="{{!buttonClicked?'menuClick':''}}">
         <view class="tab_click font30 {{web_num == 1?'tab_this':''}}">已完成</view>
     </view>
-    <view class="tab_item" data-id="2"  bindtap="menuClick">
+    <view class="tab_item" data-id="2"  bindtap="{{!buttonClicked?'menuClick':''}}">
         <view class="tab_click font30 {{web_num == 2?'tab_this':''}}">未完成</view>
     </view>
 </view>
@@ -19,10 +19,10 @@
 <view class="hundred_things">
     <view class="w710 hundred_box flex">
         <block wx:for="{{web_mainData}}" wx:key="id">
-            <view class="hundred_item"  bindtap="intoPath" data-path="/pages/hundred_things_infor/hundred_things_infor">
+            <view class="hundred_item"  bindtap="{{item.message.length>0?'intoPathCom':'intoPath'}}" data-id="{{item.id}}">
                 <view class="things_item">
                     <view class="things_top flex">
-                        <view class="circle2  flex" >
+                        <view class=" {{item.message.length>0?'circle2 flex':''}}" style="margin:0 auto">
                             <image src="/images/heart.png"></image>
                         </view>
                     </view>
