@@ -13,7 +13,8 @@ Page({
     sForm:{
       content:'',
       type:4,
-    }
+    },
+    is_comment:false,
   },
   onLoad(options) {
     const self = this;
@@ -283,6 +284,9 @@ Page({
     }else{
       api.showToast('不能发出空评论','none');
     };
+    this.setData({
+      is_comment:false
+    })
   },
 
   onReachBottom() {
@@ -319,7 +323,16 @@ Page({
       is_show2:false,
     })
   },
- 
+  preventTouchMove:function(e) {
+
+  },
+  comment(e){
+    const self =this;
+    var is_comment = !this.data.is_comment
+    this.setData({
+      is_comment:is_comment,
+    })
+  },
   intoPath(e){
     const self = this;
     api.pathTo(api.getDataSet(e,'path'),'nav');

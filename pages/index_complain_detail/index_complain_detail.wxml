@@ -36,18 +36,23 @@
                         <image src="/images/comment@3x.png"></image>
                         <view>{{item.comCount.totalCount}}</view>
                     </view>
-                    <view class="comment_number flex" bindtap="submitSupport" data-index="{{index}}"  data-id="{{item.id}}" data-log_id="{{item.isPraise.id?item.isPraise.id:''}}">
+                   <!--  <view class="comment_number flex" bindtap="submitSupport" data-index="{{index}}"  data-id="{{item.id}}" data-log_id="{{item.isPraise.id?item.isPraise.id:''}}">
                         <image src="{{item.isPraise.id?'/images/Support@3x.png':'/images/Support1@3x.png'}}"></image>
                         <view>{{item.praiseCount.totalCount}}</view>
-                    </view>
+                    </view> -->
                 </view>
             </view>
         </view>
     </block>
 </view>
-
-<view style="position:absoulte;bottom:0;width:90%;left:5%">
-    <input style="background:#fff" data-key="content" bindinput="changeBind" valua="{{web_sForm.content}}"></input>
-    <button bindtap="submit">评论</button>
+<view class="send_comment" style="position:fixed;right:0;bottom:20%;" bindtap="comment">
+    <view class="font28 color1 bg " style="width:100%;height:100%;">点击评论</view>
+</view>
+<view class="mask" catchtouchmove="true" style="{{is_comment?'display:block':'display:none'}}"></view>
+<view class="comment_box w710" style="{{is_comment?'bottom:30%':'bottom:-100%'}}">
+    <view class="">
+        <textarea  class="comment_textarea color1" data-key="content" bindinput="changeBind" valua="{{web_sForm.content}}"></textarea>
+        <button bindtap="submit">评论</button>
+    </view>
 </view>
 
