@@ -8,6 +8,8 @@ Page({
   data: {
     isShow:false,
     slider: [],
+    labelData:[],
+    choose_sku_item:[],
     swiperCurrent: 3,
     slider: [
     {
