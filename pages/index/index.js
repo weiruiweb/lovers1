@@ -14,6 +14,7 @@ Page({
   //事件处理函数
   onLoad(options){
     const self = this;
+    wx.showLoading();
     wx.showShareMenu({
       withShareTicket: true
     });
@@ -57,8 +58,94 @@ Page({
       self.setData({
         web_userData:self.data.userData
       });
+      self.getProductData()
     }
     api.userGet(postData,callback)
+  },
+
+  getProductData(){
+    const self = this;
+    const postData = {
+      token:wx.getStorageSync('token'), 
+    };
+    postData.getBefore = {
+      article:{
+        tableName:'label',
+        searchItem:{
+          title:['=',['100件小事']],
+        },
+        middleKey:'category_id',
+        key:'id',
+        condition:'in',
+      },
+    };
+    const callback = (res)=>{
+      if(res.info.data.length>0){
+        self.data.productData = res.info.data[0]
+      };
+      wx.hideLoading(); 
+      self.setData({
+        web_productData:self.data.productData
+      });
+
+    }
+    api.productGet(postData,callback)
+  },
+
+  addOrder(){
+    const self = this;
+    if(!self.data.order_id){
+    const postData = {
+        token:wx.getStorageSync('token'), 
+        product:[
+          {id:self.data.productData.id,count:1}
+        ],
+        pay:{wxPay:self.data.productData.price,wxPayStatus:0},
+        type:3,
+        data:{
+          passage1:wx.getStorageSync('info').passage1
+        }
+      };
+      console.log(postData)
+      const callback = (res)=>{
+        if(res&&res.solely_code==100000){
+          self.data.order_id = res.info.id;
+
+          self.pay(self.data.order_id)
+        }; 
+      };
+      api.addOrder(postData,callback);
+    }else{
+      self.pay(self.data.order_id)
+    }    
+  },
+
+  pay(order_id){
+    const self = this;
+    var order_id = self.data.order_id;
+    const postData = {
+      searchItem:{
+        id:order_id,
+      },
+      token:wx.getStorageSync('token'),
+      wxPay:self.data.productData.price,
+      wxPayStatus:0,
+    };
+    
+    const callback = (res)=>{
+      wx.hideLoading();
+      if(res.solely_code==100000){
+        const payCallback=(payData)=>{
+            if(payData==1){
+               api.showToast('支付成功','none');
+            };   
+          };
+          api.realPay(res.info,payCallback);      
+      }else{
+        api.showToast('支付失败','none')
+      }    
+    };
+    api.pay(postData,callback);
   },
 
   getBindData(){
@@ -87,10 +174,14 @@ Page({
       self.setData({
         web_bindData:self.data.bindData
       });
+
+      self.getProductData()
       self.countDays()
     }
     api.userGet(postData,callback)
   },
+
+
 
   countDays(){
     const self = this;

@@ -37,10 +37,10 @@
                 <open-data type="userAvatarUrl"></open-data>
             </view> -->
             <!-- 点击添加对方 -->
-            <view class="img_in flex" bindtap="add">
+            <view class="img_in flex" bindtap="{{web_bindData.bind[0]?'':'add'}}">
                 <image src="{{web_bindData.bind[0]?web_bindData.bind[0].headImgUrl:'/images/img_no.png'}}"></image>
             </view>
-            <view class="font28 color1"  bindtap="add" style="margin-top:20rpx;">{{web_bindData.bind[0]?web_bindData.bind[0].nickname:'点击添加'}}</view> 
+            <view class="font28 color1"  bindtap="{{web_bindData.bind[0]?'':'add'}}" style="margin-top:20rpx;">{{web_bindData.bind[0]?web_bindData.bind[0].nickname:'点击添加'}}</view> 
         </view>
     </view>
 </view>
@@ -172,7 +172,7 @@
                     <button class="submit_info" open-type="getUserInfo" bindgetuserinfo="submit">答应</button>
                 </view>
                 <view class="btn_left">
-                    <button class="submit_info">拒绝</button>
+                    <button class="submit_info" bindtap="close">拒绝</button>
                 </view>
             </view>
             <view class="font28 color" style="text-align: center;">成为CP后该平台暂不支持更换CP</view>
@@ -193,9 +193,9 @@
             <view class="confirm_tlt color font32" style="margin-top: 90rpx;">你敢挑战吗？</view>
             <view class="cp_note font28" style="margin-top: 30rpx">情侣必做100件温馨小事</view>
             <view class="cp_note font28">全部完成即可获得10倍红包祝福</view>
-            <view class="confirm_btn flex" bindtap="intoPath" data-path="/pages/hundred_things/hundred_things">
+            <view class="confirm_btn flex">
                 <view class="btn_left">
-                    <button class="submit_info btn_border" style="width:238rpx">支付5.20元参与</button>
+                    <button class="submit_info btn_border" style="width:238rpx" bindtap="addOrder">支付{{web_productData.price}}元参与</button>
                 </view>
                 <view class="btn_left" bindtap="close">
                     <button class="submit_info btn_border" style="background: none;color:#666;">不参与</button>
@@ -203,14 +203,14 @@
             </view>
             
             <!-- 支付成功后的弹框 -->
-            <!-- <view class="confirm_tlt color font32" style="margin-top: 90rpx;height:100rpx;line-height: 100rpx;">支付成功</view>
+            <view class="confirm_tlt color font32" style="margin-top: 90rpx;height:100rpx;line-height: 100rpx;">支付成功</view>
             <view class="success">
                 <image src="/images/success.png"></image>
             </view>
             <view>
                 <view class="cp_note font28" style="margin-top: 30rpx">请尽快通知您的ta</view>
                 <view class="cp_note font28">共同参与</view>
-            </view> -->
+            </view>
         </view>
         <view class="close" bindtap="close"><image src="/images/close.png"></image></view>
     </view>
@@ -227,12 +227,12 @@
             <view class="color font32" style="margin-top:130rpx;text-align:center;">原谅他7次太少</view>
             <view class="color font32" style="text-align:center;">70个7次会太多</view>
             <view class="font24 color6 cp_note" style="margin-top: 50rpx;line-height: 50rpx;">一个正常人的忍耐力，可以原谅伤害他的77次。挖鼻大婶 你是否愿意给 抠脚大汉 77次机会原谅他77次</view>
-            <view class="confirm_btn flex" bindtap="intoPath" data-path="/pages/forgive/forgive" style="margin-top: 50rpx;">
+            <view class="confirm_btn flex"  style="margin-top: 50rpx;">
                 <view class="btn_left">
-                    <button class="submit_info btn_border">参与</button>
+                    <button class="submit_info btn_border" bindtap="intoPath" data-path="/pages/forgive/forgive">参与</button>
                 </view>
                 <view class="btn_left">
-                    <button class="submit_info btn_border" style="background: none;color:#666;">取消</button>
+                    <button class="submit_info btn_border" style="background: none;color:#666;" bindtap="close">取消</button>
                 </view>
             </view>
         </view>

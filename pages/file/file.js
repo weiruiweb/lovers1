@@ -12,7 +12,7 @@ Page({
     is_show:false,
     scrollTop:'',
     searchItem:{
-      thirdapp_id:getApp().globalData.thirdapp_id,
+
       class:0,
       type:1,
       passage3:wx.getStorageSync('info').passage1,
@@ -50,7 +50,7 @@ Page({
         self.data.mainData.push.apply(self.data.mainData,res.info.data);
       }else{
         self.data.isLoadAll = true;
-        api.showToast('没有更多了','fail');
+        api.showToast('没有更多了','none');
       };
       wx.hideLoading();
       self.setData({
@@ -71,14 +71,18 @@ Page({
     this.setData({
       web_tab: tab
     });
+
     if(tab==0){
       self.data.searchItem.user_no = wx.getStorageSync('info').user_no
     }else if(tab==1){
       self.data.searchItem.user_no = ['NOT IN',[wx.getStorageSync('info').user_no]]
     }else if(tab==2){
+      self.data.searchItem.user_type = 0,
       delete self.data.searchItem.user_no
     };
+
     self.getMainData(true);
+
   },
 
   menuClick(e) {
