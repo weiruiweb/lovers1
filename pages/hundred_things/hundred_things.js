@@ -109,7 +109,7 @@ Page({
 			},
 			middleKey:'id',
 			key:'relation_id',
-			condition:'IN',
+			condition:'NOT IN',
 		};
 	
 
@@ -123,7 +123,7 @@ Page({
         },
         middleKey:'id',
         key:'relation_id',
-        condition:'NOT IN',
+        condition:'IN',
       };
     }
     self.getMainData(true);

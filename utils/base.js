@@ -411,6 +411,35 @@ class Base{
         }; 
     };
 
+    skuChoose(skuData,choosed_sku_item){
+        const self = this;
+
+        var can_choose_sku_item = [];
+        var choosed_skuData = {};
+
+        for(var i=0;i<skuData.length;i++){ 
+          if(JSON.stringify(skuData[i].sku_item.sort())==JSON.stringify(choosed_sku_item.sort())){
+            choosed_skuData = self.cloneForm(skuData[i]);
+            can_choose_sku_item = choosed_sku_item;
+            break;
+          }else{
+            if(choosed_sku_item.length>0){
+                for(var c_i=0;c_i<choosed_sku_item.length;c_i++){ 
+                    if(skuData[i].sku_item.indexOf(choosed_sku_item[c_i])!=-1){
+                        can_choose_sku_item.push.apply(can_choose_sku_item,skuData[i].sku_item);
+                    };
+                };
+            }else{
+                can_choose_sku_item.push.apply(can_choose_sku_item,skuData[i].sku_item);
+            };
+          };   
+        };
+        return {
+            choosed_skuData:choosed_skuData,
+            can_choose_sku_item:can_choose_sku_item
+        };
+    };
+
     checkLogin(userType){
         const self = this;
         if(userType){

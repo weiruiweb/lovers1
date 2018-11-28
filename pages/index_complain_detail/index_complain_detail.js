@@ -129,7 +129,6 @@ Page({
         self.data.comData.push.apply(self.data.comData,res.info.data)
       }else{
         self.data.isLoadAll = true;
-        api.showToast('没有更多了','none');
       };
       wx.hideLoading();
       self.data.sForm.relation_id = self.data.id;
@@ -161,12 +160,13 @@ Page({
       }else{
         api.showToast('评论失败','none');
       };
-      self.data.sForm ={
-        content:''
-      };
+      self.data.sForm.content='';
+      self.data.comData = []
       self.setData({
         web_sForm:self.data.sForm
       });
+
+      self.getComData()
       wx.hideLoading(); 
     };
     api.messageAdd(postData,callback);  
