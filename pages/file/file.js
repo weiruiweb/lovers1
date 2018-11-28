@@ -14,8 +14,10 @@ Page({
     searchItem:{
       thirdapp_id:getApp().globalData.thirdapp_id,
       class:0,
-      type:1
-    }
+      type:1,
+      passage3:wx.getStorageSync('info').passage1,
+    },
+    tab:0
   },
   //事件处理函数
   onLoad(){
@@ -23,6 +25,7 @@ Page({
     self.data.paginate = getApp().globalData.paginate;
     self.getMainData();
     self.setData({
+      web_tab:self.data.tab,
       web_num:self.data.searchItem.class
     })
   },
@@ -55,6 +58,27 @@ Page({
       });  
     };
     api.messageGet(postData,callback);
+  },
+
+  menuClickTwo(e) {
+    const self = this;
+    const tab = e.currentTarget.dataset.id;
+    self.changeSearchTwo(tab);
+  },
+
+  changeSearchTwo(tab){
+    const self = this;
+    this.setData({
+      web_tab: tab
+    });
+    if(tab==0){
+      self.data.searchItem.user_no = wx.getStorageSync('info').user_no
+    }else if(tab==1){
+      self.data.searchItem.user_no = ['NOT IN',[wx.getStorageSync('info').user_no]]
+    }else if(tab==2){
+      delete self.data.searchItem.user_no
+    };
+    self.getMainData(true);
   },
 
   menuClick(e) {
@@ -110,17 +134,7 @@ Page({
     })
   },
 
-  tabs(e){
-   this.setData({
-      currentId1:e.currentTarget.dataset.id
-    })
-  },
 
-  mood(e){
-   this.setData({
-      mood:e.currentTarget.dataset.id
-    })
-  },
 
   intoPath(e){
     const self = this;

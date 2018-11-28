@@ -1,29 +1,29 @@
 <!--index1.wxml-->
 <view class="tabs font30 flexRowBetween color6 bg">
-    <view class="tabs_item " data-id="0" bindtap="tabs">
+    <view class="tabs_item " data-id="0" bindtap="menuClickTwo">
         <view class="tab_txt">他</view>
         <view class="item_box">
-            <image src="{{currentId1 == 0?'/images/all.png':''}}" class="tab_img2"></image>
+            <image src="{{web_tab == 0?'/images/all.png':''}}" class="tab_img2"></image>
             <view class="orgin_img">
-                <image src="{{currentId1 == 0?'/images/tab1.png':'/images/his1@2x.png'}}" class="tab_img1"></image>
+                <image src="{{web_tab == 0?'/images/tab1.png':'/images/his1@2x.png'}}" class="tab_img1"></image>
             </view>
         </view>
     </view>
-    <view class="tabs_item " data-id="1" bindtap="tabs">
+    <view class="tabs_item " data-id="1" bindtap="menuClickTwo">
         <view class="tab_txt">她</view>
         <view class="item_box">
-            <image src="{{currentId1 == 1?'/images/all.png':''}}" class="tab_img2"></image>
+            <image src="{{web_tab == 1?'/images/all.png':''}}" class="tab_img2"></image>
             <view class="orgin_img">
-                <image src="{{currentId1 == 1?'/images/tab2.png':'/images/me@2x.png'}}" class="tab_img1"></image>
+                <image src="{{web_tab == 1?'/images/tab2.png':'/images/me@2x.png'}}" class="tab_img1"></image>
             </view>
         </view>
     </view>
-    <view class="tabs_item" data-id="2" bindtap="tabs">
+    <view class="tabs_item" data-id="2" bindtap="menuClickTwo">
         <view class="tab_txt">全部</view>
         <view class="item_box">
-            <image src="{{currentId1 == 2?'/images/all.png':''}}" class="tab_img2"></image>
+            <image src="{{web_tab == 2?'/images/all.png':''}}" class="tab_img2"></image>
             <view class="orgin_img">
-                <image src="{{currentId1 == 2?'/images/tab3.png':'/images/all1@2x.png'}}" class="tab_img1"></image>
+                <image src="{{web_tab == 2?'/images/tab3.png':'/images/all1@2x.png'}}" class="tab_img1"></image>
             </view>
         </view>
     </view>

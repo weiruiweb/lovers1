@@ -11,7 +11,7 @@
             <view class="img_in img_border">
                   <open-data type="userAvatarUrl"></open-data>
             </view>
-            <view class="font28 color1" style="margin-top:20rpx;">抠脚大神</view>
+            <view class="font28 color1" style="margin-top:20rpx;"><open-data type="userNickName"></open-data></view>
         </view>
         <view class="lovers_center flex">
             <view class="lovers_thread flex">
@@ -38,13 +38,13 @@
             </view> -->
             <!-- 点击添加对方 -->
             <view class="img_in flex" bindtap="add">
-                <image src="/images/img_no.png"></image>
+                <image src="{{web_bindData.bind[0]?web_bindData.bind[0].headImgUrl:'/images/img_no.png'}}"></image>
             </view>
-            <view class="font28 color1"  bindtap="add" style="margin-top:20rpx;">点击添加</view> 
+            <view class="font28 color1"  bindtap="add" style="margin-top:20rpx;">{{web_bindData.bind[0]?web_bindData.bind[0].nickname:'点击添加'}}</view> 
         </view>
     </view>
 </view>
-<view class="lovers_datys submit_info font28">认证456天</view>
+<view class="lovers_datys submit_info font28">认证{{web_day}}天</view>
 <view class="thread" style="margin-top: 10rpx;">
     <view class="thread1"></view>
     <view class="thread2"></view>
@@ -164,7 +164,7 @@
                         但是在喜欢的人面前沉默</view>
                  <view class="confirm_tlt color font32">
                         就是一种懦弱</view>
-            <view class="cp_note font28" style="margin-top: 30rpx">您的好友“{{web_userData.nickname}}”邀请您认证CP</view>
+            <view class="cp_note font28" style="margin-top: 30rpx">您的好友“{{web_userData.bind[0].nickname}}”邀请您认证CP</view>
             <view class="cp_note font28">一起入驻《情侣就要装》</view>
             <view class="cp_note font28">是否确认对方为对的人</view>
             <view class="confirm_btn flex">
@@ -175,7 +175,7 @@
                     <button class="submit_info">拒绝</button>
                 </view>
             </view>
-            <view class="font28 color" style="text-align: center;">成CP后该平台暂不支持更换CP</view>
+            <view class="font28 color" style="text-align: center;">成为CP后该平台暂不支持更换CP</view>
         </view>
         <view class="close" bindtap="close"><image src="/images/close.png"></image></view>
     </view>
@@ -197,7 +197,7 @@
                 <view class="btn_left">
                     <button class="submit_info btn_border" style="width:238rpx">支付5.20元参与</button>
                 </view>
-                <view class="btn_left">
+                <view class="btn_left" bindtap="close">
                     <button class="submit_info btn_border" style="background: none;color:#666;">不参与</button>
                 </view>
             </view>

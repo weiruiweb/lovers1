@@ -18,7 +18,8 @@ const token = new Token();
         passage2:'',
         type:1,
         class:'',
-        mainImg:[]
+        mainImg:[],
+        passage3:wx.getStorageSync('info').passage1,  
       },
     
 
@@ -85,7 +86,8 @@ const token = new Token();
         passage2:new Date(self.data.submitData.passage2.join("-")).getTime(),
         type:1,
         class:self.data.submitData.class,
-        mainImg:self.data.submitData.mainImg  
+        mainImg:self.data.submitData.mainImg,
+        passage3:wx.getStorageSync('info').passage1,  
     };
     postData.data = api.cloneForm(self.data.submitData);
     const callback = (data)=>{  
@@ -149,7 +151,7 @@ const token = new Token();
         var tempFilePaths = res.tempFilePaths
         
         wx.uploadFile({
-          url: 'https://api.solelycloud.com/api/public/index.php/api/v1/Base/FtpImage/upload ',
+          url: 'https://ssl.qljyz.com/api/public/index.php/api/v1/Base/FtpImage/upload ',
           filePath:tempFilePaths[0],
           name: 'file',
           formData: {

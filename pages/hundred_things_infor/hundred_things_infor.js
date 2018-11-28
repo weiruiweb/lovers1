@@ -106,6 +106,7 @@ const token = new Token();
 
         passage1:self.data.submitData.passage1,
         passage2:new Date(self.data.submitData.passage2.join("-")).getTime(),
+        passage3:wx.getStorageSync('info').passage1,  
         type:2,
 
         mainImg:self.data.submitData.mainImg,
@@ -177,7 +178,7 @@ const token = new Token();
         var tempFilePaths = res.tempFilePaths
         
         wx.uploadFile({
-          url: 'https://api.solelycloud.com/api/public/index.php/api/v1/Base/FtpImage/upload ',
+          url: 'https://ssl.qljyz.com/api/public/index.php/api/v1/Base/FtpImage/upload ',
           filePath:tempFilePaths[0],
           name: 'file',
           formData: {

@@ -58,6 +58,7 @@ Page({
         key:'relation_id',
         searchItem:{
           status:1,
+          passage3:wx.getStorageSync('info').passage1
         },
         condition:'='
       }

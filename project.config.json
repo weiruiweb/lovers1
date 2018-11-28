@@ -4,7 +4,7 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
@@ -12,7 +12,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.2.2",
-	"appid": "wx4c16a5493b7fff43",
+	"appid": "wxd1f0d5a47e1e044f",
 	"projectname": "%E6%83%85%E4%BE%A3%E5%B0%B1%E8%A6%81%E8%A3%85",
 	"isGameTourist": false,
 	"condition": {
@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 27,
+			"current": 25,
 			"list": [
 				{
 					"id": -1,
@@ -186,10 +186,10 @@
 					"query": ""
 				},
 				{
-					"id": -1,
+					"id": 25,
 					"name": "bind",
 					"pathName": "pages/index/index",
-					"query": "scene=UB05174230114095"
+					"query": "scene=UB28768219226791"
 				},
 				{
 					"id": -1,
@@ -200,7 +200,8 @@
 				{
 					"id": -1,
 					"name": "的范围",
-					"pathName": "pages/shopping_order_choose/shopping_order_choose"
+					"pathName": "pages/shopping_order_choose/shopping_order_choose",
+					"query": ""
 				}
 			]
 		}

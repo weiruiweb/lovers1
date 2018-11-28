@@ -27,17 +27,28 @@ Page({
       self.data.scene = scene;
       self.dialog1();
       self.getUserData(scene)
+    }else{
+      self.getBindData()
     };
-    
+
   },
+  
 
   getUserData(scene){
     const self = this;
     const postData = {
-      token:wx.getStorageSync('token'),
-      searchItem:{
-        user_no:scene
-      },
+      token:wx.getStorageSync('token'), 
+    };
+    postData.getAfter = {
+      bind:{
+        tableName:'user',
+        middleKey:'status',
+        key:'status',
+        searchItem:{
+          user_no:scene
+        },
+        condition:'='
+      }
     };
     const callback = (res)=>{
       if(res.info.data.length>0){
@@ -49,6 +60,54 @@ Page({
     }
     api.userGet(postData,callback)
   },
+
+  getBindData(){
+    const self = this;
+    const postData = {
+      token:wx.getStorageSync('token'), 
+    };
+    if(JSON.stringify(wx.getStorageSync('info').passage1)!={}){
+      postData.getAfter = {
+        bind:{
+          tableName:'user',
+          middleKey:'passage1',
+          key:'passage1',
+          searchItem:{
+            user_type:0,
+            id:['NOT IN',[wx.getStorageSync('info').id]],
+          },
+          condition:'='
+        }
+      };
+    }
+    const callback = (res)=>{
+      if(res.info.data.length>0){
+        self.data.bindData = res.info.data[0]
+      };
+      self.setData({
+        web_bindData:self.data.bindData
+      });
+      self.countDays()
+    }
+    api.userGet(postData,callback)
+  },
+
+  countDays(){
+    const self = this;
+    console.log(parseInt(Date.parse(new Date()))/1000);
+    console.log(parseInt(self.data.bindData.bind_time));
+    var totalSecond = parseInt(Date.parse(new Date())/1000)- parseInt(self.data.bindData.bind_time);
+      console.log(totalSecond)
+      var day = Math.floor(totalSecond/(24*3600));
+      day=parseInt(day)
+      console.log(day)
+      self.setData({
+        web_day:day,
+      });
+
+  },
+
+
 
   binding(){
     const self = this;
@@ -273,7 +332,7 @@ Page({
         self.data.shareBtn = false;
       }
       return {
-        title: '纯粹科技',
+        title: '情侣就要装',
         path: 'pages/detail/detail?user_no='+wx.getStorageSync('info').user_no,
         success: function (res){
           console.log(res);

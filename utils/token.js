@@ -82,7 +82,7 @@ class Token {
                 };
 
                 wx.request({
-                    url: 'https://api.solelycloud.com/api/public/index.php/api/v1/Base/ProgrameToken/get',
+                    url: 'https://ssl.qljyz.com/api/public/index.php/api/v1/Base/ProgrameToken/get',
                     method:'POST',
                     data:postData,
                     success:function(res){
@@ -122,7 +122,7 @@ class Token {
                 password:wx.getStorageSync('login').password,
             }
             wx.request({
-                url: 'https://api.solelycloud.com/api/public/index.php/api/v1/Func/Common/loginByUp',
+                url: 'https://ssl.qljyz.com/api/public/index.php/api/v1/Func/Common/loginByUp',
                 method:'POST',
                 data:postData,
                 success:function(res){
