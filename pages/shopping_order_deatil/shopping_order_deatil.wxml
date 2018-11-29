@@ -76,7 +76,6 @@
         </view>
     </view>
 </view>
-
 <view class="product {{isShow?'sildeIn':'slideOut'}}">
     <view class="product_box">
         <view class="choose_this">
@@ -84,85 +83,76 @@
                 <image src="/images/cart.png"></image>
             </view>
         </view>
-  
-    <view class="product_cont">
-        <view class="w690 clothes">
-        <view class="font24 color2" style="margin-top: 20rpx;">颜色</view>
-
-            <view class="product_color flex">
-
-                <view class="color_left flex">
-                    <image src="/images/femela.png"></image>
-                    <view class="color_choose flex">
-                        <block wx:for="{{web_menColor.child}}" wx:key="id">
-                        <image  bindtap="choose_color" data-id="{{item.id}}" style="{{is_choose==0?'border:solid 1px #fe6565':''}}" src="{{item.mainImg[0].url}}">
-                             
-                        </image>
-                        </block>
-                    </view>
-                </view>
-
-                <view class="color_left flex" style="text-align: right;">
-                    <view class="color_left_cont flex">
-                        <image src="/images/mela.png"></image>
-                        <view class="color_choose flex">
-                        <block wx:for="{{web_womenColor.child}}" wx:key="id">
-                            <image  bindtap="choose_color" data-id="{{item.id}}" style="{{is_choose==0?'border:solid 1px #fe6565':''}}" src="{{item.mainImg[0].url}}"> </image>
-                        </block>
-                    </view>
-                </view>
-
-            </view>
-
-            <view class="clothes_size">
-            <view class="font24 color2">尺码</view>
-
-                <view class="size_box flex">
-                    <view class="size_left">
-                        <view class="size_choose flex">
-                            <view class="choose_box flex">
-                                <block wx:for="{{web_menSize.child}}" wx:key="id">
-                                    <view class="size_item" data-id="0" bindtap="choose_size1">
-                                        <view>{{item.title}}</view>
-                                        <view class="choose_img" style="{{choose_size==0?'display: block;':'display:none'}}">
-                                            <image src="/images/mela.png"></image>
-                                        </view>
-                                    </view>
+        <view class="product_cont">
+            <view class="w690 clothes">
+            <view class="font24 color2" style="margin-top: 20rpx;">颜色</view>
+                <view class="product_color">
+                    <view class="flex">
+                        <view class="color_left flex">
+                            <image src="/images/femela.png"></image>
+                            <view class="color_choose flex">
+                                <block wx:for="{{web_menColor.child}}" wx:key="id">
+                                <image  bindtap="choose_color" data-id="{{item.id}}" style="{{is_choose==0?'border:solid 1px #fe6565':''}}" src="{{item.mainImg[0].url}}">
+                                     
+                                </image>
                                 </block>
-
+                            </view>
+                        </view>
+                        <view class="color_left flex" style="text-align: right;">
+                            <view class="color_left_cont flex">
+                                <image src="/images/mela.png"></image>
+                                <view class="color_choose flex">
+                                    <block wx:for="{{web_womenColor.child}}" wx:key="id">
+                                        <image  bindtap="choose_color" data-id="{{item.id}}" style="{{is_choose==0?'border:solid 1px #fe6565':''}}" src="{{item.mainImg[0].url}}"> </image>
+                                    </block>
+                                </view>
                             </view>
                         </view>
                     </view>
-
-                    <view class="size_right ">
-                        <view class="size_choose flex">
-                            <view class="choose_box flex">
-                                <block wx:for="{{web_womenSize.child}}" wx:key="id">
-                                    <view class="size_item" data-id="0" bindtap="choose_size1">
-                                        <view>{{item.title}}</view>
-                                        <view class="choose_img" style="{{choose_size==0?'display: block;':'display:none'}}">
-                                            <image src="/images/mela.png"></image>
+                <view class="clothes_size">
+                <view class="font24 color2">尺码</view>
+                    <view class="size_box flex">
+                        <view class="size_left">
+                            <view class="size_choose flex">
+                                <view class="choose_box flex">
+                                    <block wx:for="{{web_menSize.child}}" wx:key="id">
+                                        <view class="size_item" data-id="0" bindtap="choose_size1">
+                                            <view>{{item.title}}</view>
+                                            <view class="choose_img" style="{{choose_size==0?'display: block;':'display:none'}}">
+                                                <image src="/images/mela.png"></image>
+                                            </view>
                                         </view>
-                                    </view>
-                                </block>
+                                    </block>
+
+                                </view>
+                            </view>
+                        </view>
+                        <view class="size_right ">
+                            <view class="size_choose flex">
+                                <view class="choose_box flex">
+                                    <block wx:for="{{web_womenSize.child}}" wx:key="id">
+                                        <view class="size_item" data-id="0" bindtap="choose_size1">
+                                            <view>{{item.title}}</view>
+                                            <view class="choose_img" style="{{choose_size==0?'display: block;':'display:none'}}">
+                                                <image src="/images/mela.png"></image>
+                                            </view>
+                                        </view>
+                                    </block>
+                                </view>
                             </view>
                         </view>
                     </view>
                 </view>
-            </view>
-
-            <view class="product_num">
-                <view class="font24 color2">数量</view>
-                <view class="number_handle flex">
-                    <view class="add flex"><image src="/images/left.png"></image></view>
-                    <view class="add_cont"><view class="add_number">0</view></view>
-                    <view class="add flex"><image src="/images/right.png"></image></view>
+                <view class="product_num">
+                    <view class="font24 color2">数量</view>
+                    <view class="number_handle flex">
+                        <view class="add flex"><image src="/images/left.png"></image></view>
+                        <view class="add_cont"><view class="add_number">0</view></view>
+                        <view class="add flex"><image src="/images/right.png"></image></view>
+                    </view>
                 </view>
             </view>
-
-        </view>
-
+            </view>
         </view>
     </view>
-      </view>
 </view>
