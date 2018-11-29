@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 25,
+			"current": 28,
 			"list": [
 				{
 					"id": -1,
@@ -201,6 +201,12 @@
 					"id": -1,
 					"name": "的范围",
 					"pathName": "pages/shopping_order_choose/shopping_order_choose",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "商城",
+					"pathName": "pages/shopping/shopping",
 					"query": ""
 				}
 			]

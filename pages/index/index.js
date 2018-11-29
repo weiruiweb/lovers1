@@ -137,7 +137,7 @@ Page({
       if(res.solely_code==100000){
         const payCallback=(payData)=>{
             if(payData==1){
-               api.showToast('支付成功','none');
+               
             };   
           };
           api.realPay(res.info,payCallback);      

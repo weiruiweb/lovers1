@@ -12,7 +12,7 @@ Page({
     is_show:false,
     scrollTop:'',
     searchItem:{
-
+      user_no:wx.getStorageSync('info').user_no,
       class:0,
       type:1,
       passage3:wx.getStorageSync('info').passage1,

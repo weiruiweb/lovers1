@@ -72,6 +72,28 @@ Page({
           };    
         };  
         console.log(self.data.labelData)
+        for (var i = 0; i < self.data.labelData.length; i++) {
+          if(self.data.labelData[i].title=='男颜色'){
+            self.data.menColor = self.data.labelData[i]
+          };
+          if(self.data.labelData[i].title=='男尺码'){
+            self.data.menSize = self.data.labelData[i]
+          };
+          if(self.data.labelData[i].title=='女颜色'){
+            self.data.womenColor = self.data.labelData[i]
+          };
+          if(self.data.labelData[i].title=='女尺码'){
+            self.data.womenSize = self.data.labelData[i]
+          };
+        };
+        self.setData({
+          web_menColor:self.data.menColor,
+          web_menSize:self.data.menSize,
+          web_womenColor:self.data.womenColor,
+          web_womenSize:self.data.womenSize,
+        }); 
+        console.log(self.data.menColor)
+        console.log(self.data.womenSize)
         for (var i = 0; i < self.data.mainData.sku.length; i++) {
           self.data.choose_sku_item.push.apply(self.data.choose_sku_item,self.data.mainData.sku[i].sku_item);
         };
