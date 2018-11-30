@@ -48,7 +48,6 @@ page{
   box-shadow: 0 0 16rpx #633535
 }
 .clothes{
-	width:100%;
 	height: 190rpx;
 	margin-top:110rpx;
 }
@@ -86,7 +85,7 @@ page{
 	left: 0;
 	bottom: 0;
 	background:#222;
-	z-index:9999;
+	z-index:99;
 }
 .buy_btn_cont{
 	padding-left:4.5%;
@@ -125,7 +124,7 @@ page{
 	margin-top: 16rpx;
 }
 /*banner轮播  */
-#content{width:100%;height:700rpx;}
+#content{width:100%;height:700rpx;overflow:hidden;}
 .swiper-container {
   position: relative;
   width:100%;
@@ -135,6 +134,7 @@ page{
 .swiper-container .swiper {
   height: 700rpx;
   position: relative;
+  overflow:hidden;
 }
 .swiper-container .swiper .img {
   width: 100%;
@@ -225,11 +225,12 @@ page{
 	height:700rpx;
 	position:fixed;
 	bottom:-60%;
+	z-index:999;
+	transition:all 0.5s;
 }
 .product_cont{
 	width:100%;
-	/*position: absolute;
-	top:-108rpx;*/
+	position: relative;
 }
 .product_small{
 	width:216rpx;
@@ -340,7 +341,6 @@ page{
 .product_box{
 	width:100%;
 	height:100%;
-	position: relative;
 }
 .choose_this{
 	width:100%;

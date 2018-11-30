@@ -149,7 +149,6 @@
         <view class="close" bindtap="close"><image src="/images/close.png"></image></view>
     </view>
 </view>
-<view class="font22 color6" style="text-align:center;">技术支持：西安纯粹云科技有限公司</view>
 <view style="width:100%;height:268rpx;"></view>
 <view class="navbar">
     <view class="navbar_box">
