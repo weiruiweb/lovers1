@@ -37,6 +37,7 @@ Page({
     is_choose1:0,
     choose_size:0,
     choose_size1:0,
+    count:1
   },
 
   onLoad(options){
@@ -66,13 +67,9 @@ Page({
     const callback = (res)=>{
       if(res.info.data.length>0){
         self.data.mainData = res.info.data[0];
-        for(var key in self.data.mainData.label){
-          if(self.data.mainData.sku_array.indexOf(parseInt(key))!=-1){
-            self.data.labelData.push(self.data.mainData.label[key])
-          };    
-        };  
-        console.log(self.data.labelData)
-        for (var i = 0; i < self.data.labelData.length; i++) {
+        self.data.labelData = self.data.mainData.label;
+        console.log('getMainData',self.data.labelData)
+        for (var i in self.data.labelData) {
           if(self.data.labelData[i].title=='男颜色'){
             self.data.menColor = self.data.labelData[i]
           };
@@ -86,11 +83,28 @@ Page({
             self.data.womenSize = self.data.labelData[i]
           };
         };
+
+        for (var i = 0; i < self.data.mainData.sku.length; i++) {
+          if(self.data.mainData.sku[i].id==self.data.id){
+            self.data.choosed_skuData = api.cloneForm(self.data.mainData.sku[i]);
+            self.data.choosed_sku_item = api.cloneForm(self.data.mainData.sku[i].sku_item);
+            var skuRes = api.skuChoose(self.data.mainData.sku,self.data.choosed_sku_item);
+            self.data.can_choose_sku_item = skuRes.can_choose_sku_item;
+            console.log('self.data.can_choose_sku_item',self.data.can_choose_sku_item)
+          };
+        };
+
+
+
+
         self.setData({
           web_menColor:self.data.menColor,
           web_menSize:self.data.menSize,
           web_womenColor:self.data.womenColor,
           web_womenSize:self.data.womenSize,
+          web_choosed_sku_item:self.data.choosed_sku_item,
+          web_can_choose_sku_item:self.data.can_choose_sku_item,
+          web_choosed_skuData:self.data.choosed_skuData,
         }); 
         console.log(self.data.menColor)
         console.log(self.data.womenSize)
@@ -129,7 +143,9 @@ Page({
     totalPrice += self.data.count*parseFloat(self.data.skuData.price);
     self.data.totalPrice = totalPrice;
     self.setData({
-      web_totalPrice:self.data.totalPrice.toFixed(2)
+      web_totalPrice:self.data.totalPrice.toFixed(2),
+      web_count:self.data.count
+
     });
   },
 
@@ -192,68 +208,65 @@ Page({
   },
 
 
+    //计算数量
+  counter(e){
+
+    const self = this;
+    if(JSON.stringify(self.data.choosed_skuData)!='{}'){
+      if(api.getDataSet(e,'type')=='+'){
+        self.data.count++;
+      }else if(self.data.choosed_skuData.count > '1'){
+        self.data.count--;
+      }
+      self.data.choosed_skuData.count = self.data.count;
+    }else{
+      self.data.count = 1;
+    };
+    console.log('self.data.count',self.data.count)
+    self.countTotalPrice();
+
+  },
+
+
 
   chooseSku(e){
     const self = this;
-    const callback = (user,res) =>{ 
-        if(self.data.buttonClicked){
-        api.showToast('数据有误请稍等','none');
-        setTimeout(function(){
-          wx.showLoading();
-        },800)   
-        return;
-      };
-      self.data.skuData = {};
-      self.data.id = '';
-      
-      self.data.count = 1;
-      delete self.data.totalPrice;
-      var id = api.getDataSet(e,'id');
-      
-      if(self.data.choose_sku_item.indexOf(id)==-1){
-        return;
-      };
-      self.data.choose_sku_item = [];
-      var parentid = api.getDataSet(e,'parentid');
-      var sku = self.data.mainData.label[parentid];
-
-      for(var i=0;i<sku.child.length;i++){
-        if(self.data.sku_item.indexOf(sku.child[i].id)!=-1){
-          self.data.sku_item.splice(self.data.sku_item.indexOf(sku.child[i].id), 1);
-        };
-        self.data.choose_sku_item.push(sku.child[i].id);
-      };
-
-      
-      for (var i = 0; i < self.data.mainData.sku.length; i++) {
-        if(self.data.mainData.sku[i].sku_item.indexOf(parseInt(id))!=-1){
-          self.data.choose_sku_item.push.apply(self.data.choose_sku_item,self.data.mainData.sku[i].sku_item);  
-        };
-      };
-
-      for(var i=0;i<self.data.sku_item.length;i++){
-        if(self.data.choose_sku_item.indexOf(parseInt(self.data.sku_item[i]))==-1){
-          self.data.sku_item.splice(i, 1); 
-        };
-      };
-      self.data.sku_item.push(id);
-
-      for(var i=0;i<self.data.mainData.sku.length;i++){ 
-        if(JSON.stringify(self.data.mainData.sku[i].sku_item.sort())==JSON.stringify(self.data.sku_item.sort())){
-          self.data.id = self.data.mainData.sku[i].id;
-          self.data.skuData = api.cloneForm(self.data.mainData.sku[i]);
-        };   
-      };
-      self.setData({
-        web_totalPrice:'',
-        web_count:self.data.count,
-        web_sku_item:self.data.sku_item,
-        web_skuData:self.data.skuData,
-        web_choose_sku_item:self.data.choose_sku_item,
-      });
+    console.log('chooseSku',e)
+    if(self.data.buttonClicked){
+      api.showToast('数据有误请稍等','none');
+      setTimeout(function(){
+        wx.showLoading();
+      },800)   
+      return;
     };
-    api.getAuthSetting(callback);
     
+    var id = api.getDataSet(e,'id');
+    if(self.data.can_choose_sku_item.indexOf(id)==-1){
+      return;
+    };
+
+    var index = self.data.choosed_sku_item.indexOf(id);
+    if(index==-1){
+      self.data.choosed_sku_item.push(id);
+    }else{
+      self.data.choosed_sku_item.splice(index,1);
+    };
+    var skuRes = api.skuChoose(self.data.mainData.sku,self.data.choosed_sku_item);
+    self.data.choosed_skuData = skuRes.choosed_skuData;
+    self.data.can_choose_sku_item = skuRes.can_choose_sku_item;
+
+    self.data.count = 1;
+    self.countTotalPrice();
+
+    console.log('self.data.mainData.sku',self.data.mainData.sku)
+    console.log('self.data.choosed_sku_item',self.data.choosed_sku_item)
+    console.log('self.data.can_choose_sku_item',self.data.can_choose_sku_item)
+    console.log('self.data.choosed_skuData',self.data.choosed_skuData)
+    self.setData({
+      web_choosed_sku_item:self.data.choosed_sku_item,
+      web_choosed_skuData:self.data.choosed_skuData,
+      web_can_choose_sku_item:self.data.can_choose_sku_item,
+    });
     
   },
 

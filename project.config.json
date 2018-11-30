@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 28,
+			"current": 29,
 			"list": [
 				{
 					"id": -1,
@@ -208,6 +208,12 @@
 					"name": "商城",
 					"pathName": "pages/shopping/shopping",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "sku选择",
+					"pathName": "pages/shopping_order_deatil/shopping_order_deatil",
+					"query": "id=1"
 				}
 			]
 		}
