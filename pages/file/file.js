@@ -12,10 +12,9 @@ Page({
     is_show:false,
     scrollTop:'',
     searchItem:{
-      user_no:wx.getStorageSync('info').user_no,
+    
       class:0,
-      type:1,
-      passage3:wx.getStorageSync('info').passage1,
+      user_no:wx.getStorageSync('info').user_no
     },
     tab:0
   },
@@ -23,11 +22,16 @@ Page({
   onLoad(){
     const self = this;
     self.data.paginate = getApp().globalData.paginate;
-    self.getMainData();
     self.setData({
       web_tab:self.data.tab,
       web_num:self.data.searchItem.class
     })
+  },
+
+
+  onShow(){
+    const self = this;
+    self.getMainData();
   },
 
   getMainData(isNew){
@@ -41,7 +45,9 @@ Page({
     const postData = {};
     postData.paginate = api.cloneForm(self.data.paginate);
     postData.token = wx.getStorageSync('token');
-    postData.searchItem = api.cloneForm(self.data.searchItem)
+    postData.searchItem = api.cloneForm(self.data.searchItem);
+    postData.searchItem.passage3=wx.getStorageSync('info').passage1;
+    postData.searchItem.type=1;
     postData.order = {
       create_time:'desc'
     };
@@ -71,13 +77,15 @@ Page({
     this.setData({
       web_tab: tab
     });
-
+  
     if(tab==0){
+      delete self.data.searchItem.user_type,
       self.data.searchItem.user_no = wx.getStorageSync('info').user_no
     }else if(tab==1){
+      delete self.data.searchItem.user_type,
       self.data.searchItem.user_no = ['NOT IN',[wx.getStorageSync('info').user_no]]
     }else if(tab==2){
-      self.data.searchItem.user_type = 0,
+ /*     self.data.searchItem.user_type = 0,*/
       delete self.data.searchItem.user_no
     };
 

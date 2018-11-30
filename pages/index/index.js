@@ -7,7 +7,7 @@ Page({
   data: {
     mainData:[],
     is_show:false,
-    is_show:false,
+    payData:[],
     is_show2:false,
     is_show3:false,
   },
@@ -19,26 +19,34 @@ Page({
       withShareTicket: true
     });
     self.data.paginate = getApp().globalData.paginate;
-    self.getMainData();
+
     if(options.scene){
       var scene = decodeURIComponent(options.scene)
     };
-    console.log(scene)
-    if(scene){
-      self.data.scene = scene;
+    console.log(options)
+    if(options.user_no){
+      self.data.user_no = options.user_no;
+      self.getUserData(self.data.user_no);
       self.dialog1();
-      self.getUserData(scene)
-    }else{
-      self.getBindData()
     };
-
+    if(wx.getStorageSync('info').passage1!=''){
+      self.getBindData();
+      self.checkPay()
+    }
   },
   
+  onShow(){
+  	const self = this;
+  	self.getMainData()
+  },
 
   getUserData(scene){
     const self = this;
     const postData = {
       token:wx.getStorageSync('token'), 
+      searchItem:{
+      	user_type:0
+      }
     };
     postData.getAfter = {
       bind:{
@@ -46,7 +54,8 @@ Page({
         middleKey:'status',
         key:'status',
         searchItem:{
-          user_no:scene
+          user_no:scene,
+          
         },
         condition:'='
       }
@@ -58,7 +67,7 @@ Page({
       self.setData({
         web_userData:self.data.userData
       });
-      self.getProductData()
+      
     }
     api.userGet(postData,callback)
   },
@@ -87,13 +96,32 @@ Page({
       self.setData({
         web_productData:self.data.productData
       });
-
+     
     }
     api.productGet(postData,callback)
   },
 
+
+  checkPay(){
+  	const self = this;
+  	const postData = {
+  	  searchItem:{
+  	  	passage1:wx.getStorageSync('info').passage1
+  	  }
+  	};
+  	const callback = (res)=>{
+       if(res.solely_code==100000){
+       	 self.data.payData.push.apply(self.data.payData,res.info.data)
+       }
+     };
+    api.orderGet(postData,callback);
+  },
+
+
+
   addOrder(){
     const self = this;
+  
     if(!self.data.order_id){
     const postData = {
         token:wx.getStorageSync('token'), 
@@ -120,6 +148,10 @@ Page({
     }    
   },
 
+
+
+ 
+
   pay(order_id){
     const self = this;
     var order_id = self.data.order_id;
@@ -137,7 +169,7 @@ Page({
       if(res.solely_code==100000){
         const payCallback=(payData)=>{
             if(payData==1){
-               
+               api.pathTo('/pages/hundred_things/hundred_things','nav')
             };   
           };
           api.realPay(res.info,payCallback);      
@@ -152,21 +184,24 @@ Page({
     const self = this;
     const postData = {
       token:wx.getStorageSync('token'), 
+      searchItem:{
+     	user_no:wx.getStorageSync('info').user_no
+      }
     };
-    if(JSON.stringify(wx.getStorageSync('info').passage1)!={}){
-      postData.getAfter = {
-        bind:{
-          tableName:'user',
-          middleKey:'passage1',
-          key:'passage1',
-          searchItem:{
-            user_type:0,
-            id:['NOT IN',[wx.getStorageSync('info').id]],
-          },
-          condition:'='
-        }
-      };
-    }
+   
+	  postData.getAfter = {
+	    bind:{
+	      tableName:'user',
+	      middleKey:'passage1',
+	      key:'passage1',
+	      searchItem:{
+	        user_type:0,
+	        user_no:['NOT IN',[wx.getStorageSync('info').user_no]],
+	      },
+	      condition:'='
+	    }
+	  };
+ 
     const callback = (res)=>{
       if(res.info.data.length>0){
         self.data.bindData = res.info.data[0]
@@ -174,8 +209,6 @@ Page({
       self.setData({
         web_bindData:self.data.bindData
       });
-
-      self.getProductData()
       self.countDays()
     }
     api.userGet(postData,callback)
@@ -204,10 +237,12 @@ Page({
     const self = this;
     const postData = {
       token:wx.getStorageSync('token'),
-      user_no:self.data.scene,
+      user_no:self.data.user_no,
     };
     const callback = (res) =>{
-      console.log(res)
+     if(res.solely_code==100000){
+     	self.getBindData()	
+     }
     };
     api.binding(postData,callback)
   },
@@ -302,6 +337,7 @@ Page({
       self.setData({
         web_mainData:self.data.mainData,
       });  
+      self.getProductData()
     };
     api.messageGet(postData,callback);
   },
@@ -424,7 +460,7 @@ Page({
       }
       return {
         title: '情侣就要装',
-        path: 'pages/detail/detail?user_no='+wx.getStorageSync('info').user_no,
+        path: 'pages/index/index?user_no='+wx.getStorageSync('info').user_no,
         success: function (res){
           console.log(res);
           console.log(parentNo)
@@ -472,6 +508,14 @@ Page({
 
   dialog2(e){
     const self = this;
+	if(self.data.payData.length>=1){
+	   api.pathTo('/pages/hundred_things/hundred_things','nav');
+	   return;	
+  	};
+  	if(wx.getStorageSync('info').passage1==''){
+  		api.showToast('未绑定Cp功能无法使用','none')
+  		return;
+  	}
     var is_show2 = !this.data.is_show2
     this.setData({
       is_show2:is_show2
@@ -480,6 +524,10 @@ Page({
 
   dialog3(e){
     const self = this;
+    if(wx.getStorageSync('info').passage1==''){
+  		api.showToast('未绑定Cp功能无法使用','none')
+  		return;
+  	}
     var is_show3 = !this.data.is_show3
     this.setData({
       is_show3:is_show3
@@ -487,10 +535,15 @@ Page({
   },
 
   close(e){
-     const self = this;
-    var is_show = !this.data.is_show
+    const self = this;
+    self.data.is_show = !self.data.is_show;
+    self.data.is_show = !self.data.is_show1;
+    self.data.is_show2 = !self.data.is_show2;
+    self.data.is_show3 = !self.data.is_show3;
     this.setData({
       is_show:false,
+      is_show1:false,
+
       is_show2:false,
       is_show3:false,
     })

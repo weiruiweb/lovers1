@@ -108,7 +108,7 @@ const token = new Token();
         passage2:new Date(self.data.submitData.passage2.join("-")).getTime(),
         passage3:wx.getStorageSync('info').passage1,  
         type:2,
-
+        user_no:wx.getStorageSync('info').user_no,
         mainImg:self.data.submitData.mainImg,
         relation_id:self.data.id 
     };

@@ -16,6 +16,7 @@ Page({
   onLoad(options) {
     const self = this;
     self.getMainData();
+    self.getBindData();
     var num = 0;
     var t = setInterval(function(){
       num++;
@@ -53,6 +54,39 @@ Page({
       });  
     };
     api.messageGet(postData,callback);
+  },
+
+  getBindData(){
+    const self = this;
+    const postData = {
+      token:wx.getStorageSync('token'), 
+      searchItem:{
+      user_no:wx.getStorageSync('info').user_no
+      }
+    };
+   
+    postData.getAfter = {
+      bind:{
+        tableName:'user',
+        middleKey:'passage1',
+        key:'passage1',
+        searchItem:{
+          user_type:0,
+          user_no:['NOT IN',[wx.getStorageSync('info').user_no]],
+        },
+        condition:'='
+      }
+    };
+ 
+    const callback = (res)=>{
+      if(res.info.data.length>0){
+        self.data.bindData = res.info.data[0]
+      };
+      self.setData({
+        web_bindData:self.data.bindData
+      });
+    }
+    api.userGet(postData,callback)
   },
 
 

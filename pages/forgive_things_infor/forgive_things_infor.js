@@ -86,13 +86,17 @@ const token = new Token();
         passage2:new Date(self.data.submitData.passage2.join("-")).getTime(),
         type:2,
         class:6,
-        mainImg:self.data.submitData.mainImg,              
+        mainImg:self.data.submitData.mainImg,   
+        user_no:wx.getStorageSync('info').user_no,           
     };
     
     postData.data = api.cloneForm(self.data.submitData);
     const callback = (data)=>{  
       if(data.solely_code == 100000){
         api.showToast('添加成功','fail');
+        wx.navigateBack({
+          delta:1
+        })
       }else{
         api.showToast('添加失败','fail');
       };

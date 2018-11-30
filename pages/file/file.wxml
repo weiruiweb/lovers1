@@ -52,7 +52,7 @@
     </view>
     <view class="mood_item" data-id="1" bindtap="menuClick">
         <view class="mood_img">
-            <image src="{{web_num == 1?'/images/mood4.png':'/images/mood2_a.png'}}"></image>
+            <image src="{{web_num == 1?'/images/mood2.png':'/images/mood2_a.png'}}"></image>
             <view class="font28 mood_txt">开心</view>
         </view>
         <view class="mood_up flex">
@@ -70,7 +70,7 @@
     </view>
     <view class="mood_item"  data-id="3" bindtap="menuClick">
         <view class="mood_img">
-            <image src="{{web_num == 3?'/images/mood2.png':'/images/mood4_a.png'}}"></image>
+            <image src="{{web_num == 3?'/images/mood4.png':'/images/mood4_a.png'}}"></image>
             <view class="font28 mood_txt">难过</view>
         </view>
         <view class="mood_up flex">
@@ -93,6 +93,15 @@
         </view>
         <view class="mood_up flex">
             <image src="{{web_num == 5?'/images/up.png':''}}"></image>
+        </view>
+    </view>
+    <view class="mood_item"  data-id="6" bindtap="menuClick">
+        <view class="mood_img">
+            <image src="{{web_num == 6?'/images/mood6.png':'/images/mood6_a.png'}}"></image>
+            <view class="font28 mood_txt">原谅</view>
+        </view>
+        <view class="mood_up flex">
+            <image src="{{web_num == 6?'/images/up.png':''}}"></image>
         </view>
     </view>
 </view>

@@ -44,7 +44,8 @@
         </view>
     </view>
 </view>
-<view class="lovers_datys submit_info font28">认证{{web_day}}天</view>
+<view class="lovers_datys submit_info font28" wx:if="{{web_bindData}}">认证{{web_day}}天</view>
+<view class="lovers_datys submit_info font28" wx:else>暂未认证Cp</view>
 <view class="thread" style="margin-top: 10rpx;">
     <view class="thread1"></view>
     <view class="thread2"></view>
@@ -198,7 +199,7 @@
                     <button class="submit_info btn_border" style="width:238rpx" bindtap="addOrder">支付{{web_productData.price}}元参与</button>
                 </view>
                 <view class="btn_left" bindtap="close">
-                    <button class="submit_info btn_border" style="background: none;color:#666;">不参与</button>
+                    <button class="submit_info btn_border" style="background: none;color:#666;" bindtap="close">不参与</button>
                 </view>
             </view>
             
@@ -215,6 +216,7 @@
         <view class="close" bindtap="close"><image src="/images/close.png"></image></view>
     </view>
 </view>
+
 <view  class="dialog3" style="{{is_show3?'position: absolute;top:10%':'position:fixed;bottom: -100%;'}}">
     <view class="lover_dialog">
         <view class="heart1 flex">
@@ -226,7 +228,7 @@
         <view class="cp_confirm">
             <view class="color font32" style="margin-top:130rpx;text-align:center;">原谅他7次太少</view>
             <view class="color font32" style="text-align:center;">70个7次会太多</view>
-            <view class="font24 color6 cp_note" style="margin-top: 50rpx;line-height: 50rpx;">一个正常人的忍耐力，可以原谅伤害他的77次。挖鼻大婶 你是否愿意给 抠脚大汉 77次机会原谅他77次</view>
+            <view class="font24 color6 cp_note" style="margin-top: 50rpx;line-height: 50rpx;">一个正常人的忍耐力，可以原谅伤害他的77次。<open-data type="userNickName"></open-data> 你是否愿意给{{web_bindData.bind[0]?web_bindData.bind[0].nickname:''}}77次机会原谅他77次</view>
             <view class="confirm_btn flex"  style="margin-top: 50rpx;">
                 <view class="btn_left">
                     <button class="submit_info btn_border" bindtap="intoPath" data-path="/pages/forgive/forgive">参与</button>

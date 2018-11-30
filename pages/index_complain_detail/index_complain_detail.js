@@ -13,6 +13,7 @@ Page({
     sForm:{
       content:'',
       type:4,
+      user_no:wx.getStorageSync('info').user_no
     },
     is_comment:false,
   },
