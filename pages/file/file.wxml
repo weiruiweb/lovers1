@@ -32,7 +32,7 @@
     <view class="file_all_cont flexRowBetween">
         <image src="/images/plus@2x.png" class="add"  bindtap="intoPath" data-path="/pages/file_thing_add/file_thing_add"></image>
         <view class="file_btn_box">
-            <view class="file_btn" bindtap="statistics">
+            <view class="file_btn" bindtap="countDays">
                 <image src="/images/Statistics1@2x.png"></image>
                 <view class="font28 color" >档案统计</view>
             </view>
@@ -144,7 +144,7 @@
                 <view class="cp_note font32 color">或添加记录不足100条</view>
                 <view class="cp_note font32 color">暂时不能生成统计</view>
             </view>
-            <button class="submit_info" style="border:solid 1px transparent" bindtap="intoPath" data-path="/pages/file_statistics/file_statistics">知道了</button>
+            <button class="submit_info" style="border:solid 1px transparent" bindtap="close" >知道了</button>
         </view>
         <view class="close" bindtap="close"><image src="/images/close.png"></image></view>
     </view>

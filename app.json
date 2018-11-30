@@ -21,7 +21,8 @@
     "pages/balance/balance",
     "pages/balance_create_end/balance_create_end",
     "pages/shopping_order_choose/shopping_order_choose",
-    "pages/loading/loading"
+    "pages/loading/loading",
+    "pages/order_confirm/order_confirm"
   ],
   "window": {
     "backgroundTextStyle": "light",

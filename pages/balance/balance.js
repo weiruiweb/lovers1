@@ -16,13 +16,17 @@ Page({
     const self = this;
      self.setData({
       is_show:true
-     })
-     setTimeout(function(){
-      wx.switchTab({
+     });
+  /*   setTimeout(function(){
+      wx.navigateTo({
         url:'/pages/balance_create_end/balance_create_end'
       },5000)
-    })
+    })*/
   },
+
+ 
+
+
   intoPath(e){
     const self = this;
     api.pathTo(api.getDataSet(e,'path'),'nav');

@@ -157,7 +157,7 @@ Page({
     };
     console.log(skuDatas);
     wx.setStorageSync('payPro',skuDatas);
-    api.pathTo('/pages/mall/confirmOrder/confirmOrder','nav')
+    api.pathTo('/pages/order_confirm/order_confirm','nav')
   },
 
 

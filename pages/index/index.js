@@ -10,6 +10,7 @@ Page({
     payData:[],
     is_show2:false,
     is_show3:false,
+    is_show4:false,
   },
   //事件处理函数
   onLoad(options){
@@ -31,12 +32,12 @@ Page({
     };
     if(wx.getStorageSync('info').passage1!=''){
       self.getBindData();
-      self.checkPay()
     }
   },
   
   onShow(){
   	const self = this;
+  	self.data.mainData = [];
   	self.getMainData()
   },
 
@@ -102,20 +103,7 @@ Page({
   },
 
 
-  checkPay(){
-  	const self = this;
-  	const postData = {
-  	  searchItem:{
-  	  	passage1:wx.getStorageSync('info').passage1
-  	  }
-  	};
-  	const callback = (res)=>{
-       if(res.solely_code==100000){
-       	 self.data.payData.push.apply(self.data.payData,res.info.data)
-       }
-     };
-    api.orderGet(postData,callback);
-  },
+
 
 
 
@@ -443,6 +431,14 @@ Page({
     }
   },
 
+  submitTwo(e){
+    const self = this;
+    const callback = (user,res) =>{ 
+      self.onShareAppMessage();
+    };
+    api.getAuthSetting(callback);
+  },
+
   onShareAppMessage(res){
     const self = this;
     if(self.data.buttonClicked){
@@ -487,6 +483,34 @@ Page({
       }
   },
 
+   checkPay(){
+  	const self = this;
+  	wx.showLoading();
+  	const postData = {
+  	  searchItem:{
+
+  	  	passage1:wx.getStorageSync('info').passage1,
+  	  	pay_status:1
+  	  }
+  	};
+  	const callback = (res)=>{
+       if(res.solely_code==100000){
+       	 self.data.payData.push.apply(self.data.payData,res.info.data)
+       	 for (var i = 0; i < self.data.payData.length; i++) {
+       	 	if(self.data.payData.length==2){
+       	 	  api.pathTo('/pages/hundred_things/hundred_things','nav');
+       	 	  return;
+       	 	}else if(self.data.payData.length==1&&self.data.payData[i].user_no==wx.getStorageSync('info').user_no){
+       	 		self.dialog4()
+       	 	}else if(self.data.payData.length==1&&self.data.payData[i].user_no!=wx.getStorageSync('info').user_no){
+       	 		self.dialog2()
+       	 	}
+       	 }
+       }
+     };
+    api.orderGet(postData,callback);
+  },
+
 
 
   add(e){
@@ -508,14 +532,11 @@ Page({
 
   dialog2(e){
     const self = this;
-	if(self.data.payData.length>=1){
-	   api.pathTo('/pages/hundred_things/hundred_things','nav');
-	   return;	
-  	};
   	if(wx.getStorageSync('info').passage1==''){
   		api.showToast('未绑定Cp功能无法使用','none')
   		return;
   	}
+  	wx.hideLoading();
     var is_show2 = !this.data.is_show2
     this.setData({
       is_show2:is_show2
@@ -534,6 +555,15 @@ Page({
     })
   },
 
+   dialog4(e){
+    const self = this;
+  	wx.hideLoading();
+    var is_show4 = !this.data.is_show4
+    this.setData({
+      is_show4:is_show4
+    })
+  },
+
   close(e){
     const self = this;
     self.data.is_show = !self.data.is_show;
@@ -546,6 +576,7 @@ Page({
 
       is_show2:false,
       is_show3:false,
+      is_show4:false,
     })
   },
 

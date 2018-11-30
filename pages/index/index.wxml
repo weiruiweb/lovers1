@@ -33,11 +33,9 @@
             </view>
         </view>
         <view class="lovers_img">
-             <!-- <view class="img_in img_border">
-                <open-data type="userAvatarUrl"></open-data>
-            </view> -->
+             
             <!-- 点击添加对方 -->
-            <view class="img_in flex" bindtap="{{web_bindData.bind[0]?'':'add'}}">
+            <view class="img_in img_border" bindtap="{{web_bindData.bind[0]?'':'add'}}">
                 <image src="{{web_bindData.bind[0]?web_bindData.bind[0].headImgUrl:'/images/img_no.png'}}"></image>
             </view>
             <view class="font28 color1"  bindtap="{{web_bindData.bind[0]?'':'add'}}" style="margin-top:20rpx;">{{web_bindData.bind[0]?web_bindData.bind[0].nickname:'点击添加'}}</view> 
@@ -55,13 +53,13 @@
     <view class="menu_cont flex">
         <view class="menu_item" bindtap="dialog3">
             <image src="/images/menu1.png"></image>
-            <view class="font28 color2">原谅他0次</view>
+            <view class="font28 color2">原谅77次</view>
         </view>
         <view class="menu_item" bindtap="intoPath" data-path="/pages/balance/balance">
             <image src="/images/menu2.png"></image>
             <view class="font28 color2">爱情天平</view>
         </view>
-        <view class="menu_item" bindtap="dialog2">
+        <view class="menu_item" bindtap="checkPay">
             <image src="/images/menu3.png"></image>
             <view class="font28 color2">100件小事</view>
         </view>
@@ -140,7 +138,7 @@
             <view class="confirm_tlt color font32">CP认证</view>
             <view class="cp_note font28">好友一旦确定选择后将不能进行修改
     是否选择好友发送给对方并完成双方</view>
-            <button class="submit_info" bindtap="onShareAppMessage"  open-type="share">选择好友并认证</button>
+            <button class="submit_info" bindtap="submitTwo"  open-type="share">选择好友并认证</button>
         </view>
         <view class="close" bindtap="close"><image src="/images/close.png"></image></view>
     </view>
@@ -190,6 +188,7 @@
                 <view class="heart"><image src="/images/heart.png"></image></view>
             </view> 
         </view>
+
         <view class="cp_confirm">
             <view class="confirm_tlt color font32" style="margin-top: 90rpx;">你敢挑战吗？</view>
             <view class="cp_note font28" style="margin-top: 30rpx">情侣必做100件温馨小事</view>
@@ -203,6 +202,23 @@
                 </view>
             </view>
             
+
+        </view>
+        <view class="close" bindtap="close"><image src="/images/close.png"></image></view>
+    </view>
+</view>
+
+<view  class="dialog4" style="{{is_show4?'position: absolute;top:10%':'position:fixed;bottom: -100%;'}}">
+    <view class="lover_dialog">
+        <view class="heart1 flex">
+            <view class="heart_box">
+                <view class="heart4 flex"></view>
+                <view class="heart"><image src="/images/heart.png"></image></view>
+            </view> 
+        </view>
+
+        <view class="cp_confirm">
+            
             <!-- 支付成功后的弹框 -->
             <view class="confirm_tlt color font32" style="margin-top: 90rpx;height:100rpx;line-height: 100rpx;">支付成功</view>
             <view class="success">
@@ -212,8 +228,10 @@
                 <view class="cp_note font28" style="margin-top: 30rpx">请尽快通知您的ta</view>
                 <view class="cp_note font28">共同参与</view>
             </view>
+            
         </view>
         <view class="close" bindtap="close"><image src="/images/close.png"></image></view>
+
     </view>
 </view>
 

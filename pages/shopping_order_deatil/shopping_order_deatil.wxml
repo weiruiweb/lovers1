@@ -4,19 +4,19 @@
   <!--banner-->
     <view class="swiper-container">
       <swiper autoplay="auto" interval="5000" duration="500" current="{{swiperCurrent}}" circular="{{circular}}" bindchange="swiperChange" class="swiper">
-        <block wx:for="{{slider}}" wx:key="unique">
+        <block wx:for="{{web_mainData.bannerImg}}" wx:key="unique">
           <swiper-item data-id="{{item.id}}" data-url="{{item.linkUrl}}" class="dot{{index == swiperCurrent ? ' active' : ''}}" bindtap="chuangEvents" id="{{index}}">
-            <image src="{{item.picUrl}}" mode="aspectFill" class="img"></image>
+            <image src="{{item.url}}" mode="aspectFill" class="img"></image>
             <span>{{item.index+1}}</span>
           </swiper-item>
         </block>
       </swiper>
         <scroll-view scroll-x class="scroll-header">
         <swiper autoplay="auto" interval="5000" display-multiple-items="4" duration="500" current="{{dotsCurrent}}" circular="{{circular}}" bindchange="dotsChange">
-          <block wx:for="{{slider}}" wx:key="unique">
+          <block wx:for="{{web_mainData.bannerImg}}" wx:key="unique">
             <swiper-item data-id="{{item.id}}" class="" bindtap="chuangEvent" id="{{index}}" style="width:160rpx;height:160rpx;">
               <view class="small_img">
-              <image src="{{item.picUrl}}" class="imgs"></image>
+              <image src="{{item.url}}" class="imgs"></image>
               <view class="{{index == swiperCurrent ?'circle':''}}" style="width:20rpx;height:20rpx;background:#fe6565;">4674687486747684685466868</view>
             </view>
             </swiper-item>
@@ -69,10 +69,10 @@
         <view class="purchase flex">
             <view class="buy_left" data-path="/pages/shopping_cart/shopping_cart" bindtap="intoPath"><image src="/images/cart.png"></image></view>
             <view class="buy_right flex">
-                <view class="add_cart" bindtap="add_cart">
+                <view class="add_cart"  bindtap="selectModel" data-type="addCart">
                     <view class="add_cart_cont font28 color1 bg">加入购物车</view>
                 </view>
-                <view class="buy_now font28 bg color1">立即购买</view>
+                <view class="buy_now font28 bg color1" data-type="buy" bindtap="selectModel">立即购买</view>
             </view>
         </view>
     </view>
@@ -128,6 +128,7 @@
                                 </view>
                             </view>
                         </view>
+                 
                         <view class="size_right ">
                             <view class="size_choose flex">
                                 <view class="choose_box flex">
@@ -146,13 +147,20 @@
                 </view>
                 <view class="product_num">
                     <view class="font24 color2">数量</view>
+
                     <view class="number_handle flex">
                         <view class="add flex"  bindtap="counter" data-type="-"><image src="/images/left.png"></image></view>
                         <view class="add_cont"><view class="add_number">{{web_count}}</view></view>
                         <view class="add flex" bindtap="counter" data-type="+"><image src="/images/right.png"></image></view>
+                         <view bindtap="{{web_buttonType=='buy'?'goBuy':'addCart'}}">
+                        <view style="width:100%;height:80rpx;line-height:80rpx;color:#fff;left:0;bottom:0;">
+                            确    认
+                        </view>
+                    </view>
                     </view>
                 </view>
             </view>
+
             </view>
         </view>
     </view>

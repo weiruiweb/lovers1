@@ -6,6 +6,7 @@ const token = new Token();
 
 Page({
   data: {
+    countData:[],
     mainData:[],
     currentId1:0,
     mood:0,
@@ -31,8 +32,13 @@ Page({
 
   onShow(){
     const self = this;
+    self.data.mainData=[];
     self.getMainData();
+    self.getCountData();
+
+
   },
+
 
   getMainData(isNew){
     const self = this;
@@ -65,6 +71,38 @@ Page({
     };
     api.messageGet(postData,callback);
   },
+
+  getCountData(){
+    const self = this;
+    const postData = {};
+    postData.token = wx.getStorageSync('token');
+    postData.searchItem= {};
+    postData.searchItem.passage3 = wx.getStorageSync('info').passage1;
+    postData.searchItem.type=1;
+    const callback = (res)=>{
+      if(res.solely_code==10000){
+        self.data.countData.push.apply(self.data.countData,res.info.data)
+      };
+    };
+    api.messageGet(postData,callback);
+  },
+
+  countDays(){
+    const self = this;
+    console.log(parseInt(Date.parse(new Date()))/1000);
+    console.log(parseInt(wx.getStorageSync('info').bind_time));
+    var totalSecond = parseInt(Date.parse(new Date())/1000)- parseInt(wx.getStorageSync('info').bind_time);
+      console.log(totalSecond)
+      var day = Math.floor(totalSecond/(24*3600));
+      day=parseInt(day)
+      console.log(day)
+      if(day<100&&self.data.countData.length<100){
+        self.statistics()
+      }else{
+        api.pathTo("/pages/file_statistics/file_statistics",'nav')
+      }
+  },
+
 
   menuClickTwo(e) {
     const self = this;

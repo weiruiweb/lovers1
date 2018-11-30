@@ -43,6 +43,9 @@ Page({
   onLoad(options){
     const self = this;
     self.data.id = options.id;
+    self.setData({
+      web_count:self.data.count
+    });
     self.getMainData()
   },
 
@@ -197,7 +200,7 @@ Page({
       if(self.data.skuData.id !=''&&self.data.skuData.id !=undefined){
         wx.setStorageSync('payPro',skuDatas);
        
-        api.pathTo('/pages/order_confirm/order_confirm?group_no='+self.data.scene+'&&user_no='+self.data.user_no,'nav')
+        api.pathTo('/pages/order_confirm/order_confirm','nav')
       }else{
         api.showToast('请完善信息','none')
       }

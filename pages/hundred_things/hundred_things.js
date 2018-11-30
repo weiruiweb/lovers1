@@ -27,11 +27,11 @@ Page({
 			searchItem:{
 			  title:['=',['一起完成100件小事']],
 			},
-			middleKey:'menu_id',
-			key:'id',
-			condition:'in',
-		}
-	};
+  			middleKey:'menu_id',
+  			key:'id',
+  			condition:'in',
+		  }
+	  };
     
     self.setData({
       web_num:self.data.num
@@ -101,32 +101,31 @@ Page({
     	delete self.data.getBefore.message;
     }else if(num=='1'){
 
-		self.data.getBefore.message = {
-			tableName:'message',
-			searchItem:{
-			  user_no:['in',[wx.getStorageSync('info').user_no]],
-			  type:['in',[1]]
-			},
-			middleKey:'id',
-			key:'relation_id',
-			condition:'NOT IN',
-		};
+  		self.data.getBefore.message = {
+  			tableName:'message',
+  			searchItem:{
+  			  passage3:['in',[wx.getStorageSync('info').passage1]],
+  			  type:['in',[2]]
+  			},
+  			middleKey:'id',
+  			key:'relation_id',
+  			condition:'in',
+  		};
 	
-
     }else if(num=='2'){
- 
       self.data.getBefore.message = {
         tableName:'message',
         searchItem:{
-          user_no:['in',[wx.getStorageSync('info').user_no]],
-          type:['in',[1]]
+          passage3:['NOT IN',[wx.getStorageSync('info').passage1]],
         },
         middleKey:'id',
         key:'relation_id',
-        condition:'IN',
+        condition:'in',
       };
-    }
+    };
+
     self.getMainData(true);
+
   },
 
   onReachBottom() {

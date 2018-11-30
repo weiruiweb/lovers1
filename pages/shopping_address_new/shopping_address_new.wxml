@@ -5,7 +5,7 @@
     <view class="thread3"></view>
 </view>
 <block wx:for="{{web_mainData}}" wx:key="id">
-    <view class="address_new">
+    <view class="address_new"  bindtap="choose" data-id="{{item.id}}">
         <view class="w690">
             <view class="address_list bg flex">
                 <view class="address_list_cont">
