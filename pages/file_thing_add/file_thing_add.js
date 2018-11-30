@@ -127,11 +127,13 @@ const token = new Token();
     const self = this;
     if(api.getDataSet(e,'value')){
       self.data.submitData[api.getDataSet(e,'key')] = api.getDataSet(e,'value');
+      
     }else{
       api.fillChange(e,self,'submitData');
     };
     self.setData({
       web_submitData:self.data.submitData,
+      is_hidden:false,
     }); 
     console.log(self.data.submitData)
   },

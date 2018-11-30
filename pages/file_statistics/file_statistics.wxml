@@ -27,7 +27,6 @@
                 <view class="statistics_list flex">
                     <view class="statistics_right">
                     <view class="textR {{web_scrollTop>10&&web_scrollTop<95?'text1':'text2'}}">在这些日子里
-                        {{web_scrollTop}}
                     </view>
                     <view class="textR {{web_scrollTop>10&&web_scrollTop<95?'c_text1':'c_text2'}}">我们共有1698条</view>
                     </view>
