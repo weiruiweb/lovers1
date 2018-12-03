@@ -90,7 +90,7 @@
                 <view class="product_color">
                     <view class="flex">
                         <view class="color_left flex">
-                            <image src="/images/femela.png" style="width:36rpx"></image>
+                            <image src="/images/boy.png" style="width:36rpx"></image>
                             <view class="color_choose flex">
                             
                                 <block wx:for="{{web_menColor.child}}" wx:key="id">
@@ -101,10 +101,10 @@
                         </view>
                         <view class="color_left flex" style="text-align: right;">
                             <view class="color_left_cont flex">
-                                <image src="/images/mela.png" style="width:36rpx"></image>
+                                <image src="/images/girl.png" style="width:36rpx"></image>
                                 <view class="color_choose flex">
                                     <block wx:for="{{web_womenColor.child}}" wx:key="id">
-                                        <image  bindtap="{{func.inArray(item.id,web_can_choose_sku_item)!=-1?'chooseSku':''}}" data-id="{{item.id}}"   style="{{func.inArray(item.id,web_can_choose_sku_item)==-1?'text-decoration:line-through':(func.inArray(item.id,web_choosed_sku_item)!=-1?'border:solid 1px #fe6565':'')}}" src="{{item.mainImg[0].url}}" style="margin-left:20rpx;">
+                                        <image class="boy"  bindtap="{{func.inArray(item.id,web_can_choose_sku_item)!=-1?'chooseSku':''}}" data-id="{{item.id}}"   style="{{func.inArray(item.id,web_can_choose_sku_item)==-1?'text-decoration:line-through':(func.inArray(item.id,web_choosed_sku_item)!=-1?'border:solid 1px #fe6565':'')}}" src="{{item.mainImg[0].url}}" style="margin-left:20rpx;">
                                         </image>
                                     </block>
                                 </view>

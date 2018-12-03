@@ -51,11 +51,6 @@
 .thing1>view{
 	width:70%;
 }
-.uplode{
-	width:256rpx;
-	height:256rpx;
-	margin:0 auto;
-}
 .uplode image{
 	width:100%;
 	height:100%;
@@ -174,11 +169,6 @@
 .thing1>view{
 	width:70%;
 }
-.uplode{
-	width:256rpx;
-	height:256rpx;
-	margin:0 auto;
-}
 .uplode image{
 	width:100%;
 	height:100%;
@@ -210,12 +200,15 @@
 	width:100%;
 	height:100%;
 }
+.uploder{
+	width:70%;
+	margin:0 auto;
+}
 /***************上传进度动画*****************/
 .upload_box{
 	position:relative;
 	width:130px;
 	height:130px;
-	margin:0 auto;
 	border-radius:100%;
 	background: rgba(254,101,101,0.2);
 	clip:rect(0px, 130px, 130px, 65px);

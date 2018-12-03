@@ -158,7 +158,7 @@ view{
 	z-index: 999;
 	position: absolute;
 	left:0;
-	top:17%;
+	top:10%;
 	transition:all 1s;
 }
 .silde_circle{

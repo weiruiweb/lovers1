@@ -79,7 +79,7 @@
 	margin:0 auto;
 }
 .settlement{
-	width:400rpx;
+	width:450rpx;
 	height:68rpx;
 	position: fixed;
 	right:0;
@@ -88,12 +88,12 @@
 	overflow: hidden;
 }
 .settlement_left{
-	width:58%;
+	width:65%;
 	height:100%;
 	padding:0 1%;
 }
 .settlement_right{
-	width:38%;
+	width:31%;
 	height:100%;
 	margin-left: 1%;
 	text-align: center;

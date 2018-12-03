@@ -13,13 +13,30 @@
     </view>
     <view class="font24 color1">{{web_mainData.content}}</view>
     <view class="mood">
-        <image src="/images/mood6@2x.png"></image>
-        <view class="font24 color2" wx:if="{{web_mainData.class=='0'}}">超级开心</view>
-        <view class="font24 color2" wx:if="{{web_mainData.class=='1'}}">开心</view>
-        <view class="font24 color2" wx:if="{{web_mainData.class=='2'}}">没心情</view>
-        <view class="font24 color2" wx:if="{{web_mainData.class=='3'}}">难过</view>
-        <view class="font24 color2" wx:if="{{web_mainData.class=='4'}}">哭泣</view>
-        <view class="font24 color2" wx:if="{{web_mainData.class=='5'}}">愤怒</view>
+        <view class="" wx:if="{{web_mainData.class=='0'}}">
+            <image src="/images/mood1.png"></image>
+            <view class="font24 color2">超级开心</view>
+        </view>
+        <view class="font24 color2" wx:if="{{web_mainData.class=='1'}}">
+            <image src="/images/mood2.png"></image>
+            <view class="font24 color2">开心</view>
+        </view>
+        <view class="font24 color2" wx:if="{{web_mainData.class=='2'}}">
+            <image src="/images/mood3.png"></image>
+            <view class="font24 color2">没心情</view>
+        </view>
+        <view class="font24 color2" wx:if="{{web_mainData.class=='3'}}">
+            <image src="/images/mood4.png"></image>
+            <view class="font24 color2">难过</view>
+        </view>
+        <view class="font24 color2" wx:if="{{web_mainData.class=='4'}}">
+            <image src="/images/mood5.png"></image>
+            <view class="font24 color2">哭泣</view>
+        </view>
+        <view class="font24 color2" wx:if="{{web_mainData.class=='5'}}">
+            <image src="/images/mood6.png"></image>
+            <view>愤怒</view>
+        </view>
     </view>
 
 </view>
