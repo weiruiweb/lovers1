@@ -19,7 +19,7 @@
 <view class="hundred_things">
     <view class="w710 hundred_box flex">
         <block wx:for="{{web_mainData}}" wx:key="id">
-            <view class="hundred_item"  bindtap="{{item.message.length>0?'intoPathCom':'intoPath'}}" data-id="{{item.id}}">
+            <view wx:if="{{web_num==0||(web_num==1&&item.message.length>0)||(web_num==2&&item.message.length==0)}}" class="hundred_item"  bindtap="{{item.message.length>0?'intoPathCom':'intoPath'}}" data-id="{{item.id}}">
                 <view class="things_item">
                     <view class="things_top flex">
                         <view class=" {{item.message.length>0?'circle2 flex':''}}" style="margin:0 auto">

@@ -15,27 +15,62 @@ Page({
    web_scrollTop:0,
   },
   onLoad(options){
-    
+    const self = this;
+    self.getBindData();
   },
-  // onPageScroll(e){
-  //   const self = this
-  //       self.setData({
-  //           scrollTop: e.scrollTop
-  //       })
-  //     let query = wx.createSelectorQuery()
-  //     query.select('#record1').boundingClientRect( (rect) => {
-  //         let top = rect.top
-  //         if (top >= 60) { 
-  //             self.setData({
-  //                 is_scroll:true,
-  //             })
-  //         } else {
-  //             self.setData({
-  //                 is_scroll:false,
-  //             })
-  //         }
-  //     }).exec()
-  // },
+
+  getBindData(){
+    const self = this;
+    const postData = {
+      token:wx.getStorageSync('token'), 
+      searchItem:{
+      user_no:wx.getStorageSync('info').user_no
+      }
+    };
+    postData.getAfter = {
+      bind:{
+        tableName:'user',
+        middleKey:'passage1',
+        key:'passage1',
+        searchItem:{
+          user_type:0,
+          user_no:['NOT IN',[wx.getStorageSync('info').user_no]],
+        },
+        condition:'='
+      }
+    };      
+    console.log('postData',postData)
+    const callback = (res)=>{
+      if(res.info.data.length>0){
+        self.data.bindData = res.info.data[0]
+      };
+      self.setData({
+        web_bindData:self.data.bindData
+      });
+      self.countDays()
+    }
+    api.userGet(postData,callback)
+  },
+
+
+
+  countDays(){
+    const self = this;
+    console.log(parseInt(Date.parse(new Date()))/1000);
+
+    console.log(parseInt(self.data.bindData.bind_time));
+    var totalSecond = parseInt(Date.parse(new Date())/1000)- parseInt(self.data.bindData.bind_time);
+      console.log(totalSecond)
+      var day = Math.floor(totalSecond/(24*3600));
+      day=parseInt(day)
+      console.log(day)
+      self.setData({
+        web_date:parseInt(self.data.bindData.bind_time),
+        web_day:day,
+      });
+
+  },
+
   upper(e){
     const self = this;
     self.setData({
@@ -44,6 +79,8 @@ Page({
       record2:false,
     })
   },
+
+
   lower(e){
     const self = this;
     self.setData({

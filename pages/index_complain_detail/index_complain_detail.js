@@ -13,15 +13,16 @@ Page({
     sForm:{
       content:'',
       type:4,
-      user_no:wx.getStorageSync('info').user_no
+      
     },
     is_comment:false,
   },
   onLoad(options) {
     const self = this;
-    self.data.paginate = getApp().globalData.paginate;
+    self.data.paginate = api.cloneForm(getApp().globalData.paginate);
     self.data.id = options.id;
-    self.getMainData()
+    self.getMainData();
+    console.log('user_no',wx.getStorageSync('info').user_no)
   },
 
   getMainData(){
@@ -153,16 +154,19 @@ Page({
     const self = this;
     const postData = {};
     postData.token = wx.getStorageSync('token');
-    postData.data = {};
     postData.data = api.cloneForm(self.data.sForm);
+    postData.data.user_no = wx.getStorageSync('info').user_no;
+    console.log('postData',postData);
     const callback = (data)=>{  
       if(data.solely_code == 100000){
         api.showToast('评论成功','none');
-
+        self.setData({
+	      is_comment:false
+	    })
       }else{
         api.showToast('评论失败','none');
       };
-      self.data.sForm.content='';
+      
       self.data.comData = []
       self.setData({
         web_sForm:self.data.sForm
@@ -285,9 +289,7 @@ Page({
     }else{
       api.showToast('不能发出空评论','none');
     };
-    this.setData({
-      is_comment:false
-    })
+    
   },
 
   onReachBottom() {

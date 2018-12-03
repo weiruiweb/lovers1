@@ -1,7 +1,8 @@
 import {Api} from '../../utils/api.js';
 var api = new Api();
 const app = getApp();
-
+import {Token} from '../../utils/token.js';
+const token = new Token();
 
 Page({
   data: {
@@ -19,20 +20,26 @@ Page({
     wx.showShareMenu({
       withShareTicket: true
     });
-    self.data.paginate = getApp().globalData.paginate;
-
+    self.data.paginate = api.cloneForm(getApp().globalData.paginate);
     if(options.scene){
-      var scene = decodeURIComponent(options.scene)
+      var scene = decodeURIComponent(options.scene);
     };
-    console.log(options)
+    console.log(options);
     if(options.user_no){
       self.data.user_no = options.user_no;
-      self.getUserData(self.data.user_no);
+      self.getUserData();
       self.dialog1();
     };
-    if(wx.getStorageSync('info').passage1!=''){
-      self.getBindData();
-    }
+    console.log('test',wx.getStorageSync('token'));
+
+    const callback=(res)=>{
+      if(wx.getStorageSync('info').passage1){
+        self.getBindData();
+      };
+    };
+    token.getUserInfo({data:{}},callback);
+    
+  	
   },
   
   onShow(){
@@ -157,7 +164,7 @@ Page({
       if(res.solely_code==100000){
         const payCallback=(payData)=>{
             if(payData==1){
-               api.pathTo('/pages/hundred_things/hundred_things','nav')
+               self.close();
             };   
           };
           api.realPay(res.info,payCallback);      
@@ -176,7 +183,7 @@ Page({
      	user_no:wx.getStorageSync('info').user_no
       }
     };
-   
+   	
 	  postData.getAfter = {
 	    bind:{
 	      tableName:'user',
@@ -188,8 +195,10 @@ Page({
 	      },
 	      condition:'='
 	    }
-	  };
- 
+	  };   		
+   	
+
+ 	console.log('postData',postData)
     const callback = (res)=>{
       if(res.info.data.length>0){
         self.data.bindData = res.info.data[0]
@@ -229,6 +238,7 @@ Page({
     };
     const callback = (res) =>{
      if(res.solely_code==100000){
+     	self.close();
      	self.getBindData()	
      }
     };
@@ -434,7 +444,7 @@ Page({
   submitTwo(e){
     const self = this;
     const callback = (user,res) =>{ 
-      self.onShareAppMessage();
+      self.add();
     };
     api.getAuthSetting(callback);
   },
@@ -488,24 +498,31 @@ Page({
   	wx.showLoading();
   	const postData = {
   	  searchItem:{
-
   	  	passage1:wx.getStorageSync('info').passage1,
   	  	pay_status:1
   	  }
   	};
   	const callback = (res)=>{
        if(res.solely_code==100000){
+       	self.data.payData = [];
        	 self.data.payData.push.apply(self.data.payData,res.info.data)
-       	 for (var i = 0; i < self.data.payData.length; i++) {
-       	 	if(self.data.payData.length==2){
-       	 	  api.pathTo('/pages/hundred_things/hundred_things','nav');
-       	 	  return;
-       	 	}else if(self.data.payData.length==1&&self.data.payData[i].user_no==wx.getStorageSync('info').user_no){
-       	 		self.dialog4()
-       	 	}else if(self.data.payData.length==1&&self.data.payData[i].user_no!=wx.getStorageSync('info').user_no){
-       	 		self.dialog2()
-       	 	}
+       	 if(self.data.payData.length==0){
+       	 	self.dialog2()
+       	 }else{
+	       	 for (var i = 0; i < self.data.payData.length; i++) {
+	       	 	if(self.data.payData.length==2){
+	       	 	  api.pathTo('/pages/hundred_things/hundred_things','nav');
+	       	 	  return;
+	       	 	}else if(self.data.payData.length==1&&self.data.payData[i].user_no==wx.getStorageSync('info').user_no){
+	       	 		self.dialog4()
+	       	 	}else if(self.data.payData.length==1&&self.data.payData[i].user_no!=wx.getStorageSync('info').user_no){
+	       	 		self.dialog2()
+	       	 	}
+	       	 }	
        	 }
+      }else{
+       	wx.hideLoading()
+       	 api.showToast(res.msg,'none')
        }
      };
     api.orderGet(postData,callback);

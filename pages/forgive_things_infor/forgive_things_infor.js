@@ -19,7 +19,8 @@ const token = new Token();
         passage3:wx.getStorageSync('info').passage1,
         type:1,
         class:6,
-        mainImg:[]
+        mainImg:[],
+        user_no:wx.getStorageSync('info').user_no, 
       },
     
 
@@ -93,12 +94,14 @@ const token = new Token();
     postData.data = api.cloneForm(self.data.submitData);
     const callback = (data)=>{  
       if(data.solely_code == 100000){
-        api.showToast('添加成功','fail');
-        wx.navigateBack({
-          delta:1
-        })
+        api.showToast('添加成功','none');
+        setTimeout(function(){
+          wx.navigateBack({
+            delta:1
+          })
+        },1000)
       }else{
-        api.showToast('添加失败','fail');
+        api.showToast('添加失败','none');
       };
       wx.hideLoading(); 
     };
@@ -113,7 +116,7 @@ const token = new Token();
         wx.showLoading();
         self.messageAdd(); 
     }else{
-      api.showToast('请补全信息','fail');
+      api.showToast('请补全信息','none');
     };
   },
 

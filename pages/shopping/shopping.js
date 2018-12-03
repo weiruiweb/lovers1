@@ -29,14 +29,14 @@ Page({
     mainData:[],
     labelData:[],
     searchItem:{
-      thirdapp_id:getApp().globalData.thirdapp_id,
+      thirdapp_id:api.cloneForm(getApp().globalData.thirdapp_id),
       category_id:''
     }
   },
 
   onLoad(){
     const self = this;
-    self.data.paginate = getApp().globalData.paginate;
+    self.data.paginate = api.cloneForm(getApp().globalData.paginate);
     self.getSliderData();
     self.getLabelData()
   },

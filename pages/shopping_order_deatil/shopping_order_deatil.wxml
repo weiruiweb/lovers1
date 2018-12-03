@@ -4,19 +4,19 @@
   <!--banner-->
     <view class="swiper-container">
       <swiper autoplay="auto" interval="5000" duration="500" current="{{swiperCurrent}}" circular="{{circular}}" bindchange="swiperChange" class="swiper">
-        <block wx:for="{{web_mainData.bannerImg}}" wx:key="unique">
-          <swiper-item data-id="{{item.id}}" data-url="{{item.linkUrl}}" class="dot{{index == swiperCurrent ? ' active' : ''}}" bindtap="chuangEvents" id="{{index}}">
+        <block wx:for="{{web_mainData.bannerImg}}" wx:key="unique" >
+          <swiper-item data-id="{{item.index}}" data-url="{{item.url}}" class="dot{{index == swiperCurrent ? ' active' : ''}}" bindtap="chuangEvents" id="{{index}}">
             <image src="{{item.url}}" mode="aspectFill" class="img"></image>
-            <span>{{item.index+1}}</span>
+            <span>{{index+1}}</span>
           </swiper-item>
         </block>
       </swiper>
         <scroll-view scroll-x class="scroll-header">
         <swiper autoplay="auto" interval="5000" display-multiple-items="4" duration="500" current="{{dotsCurrent}}" circular="{{circular}}" bindchange="dotsChange">
           <block wx:for="{{web_mainData.bannerImg}}" wx:key="unique">
-            <swiper-item data-id="{{item.id}}" class="" bindtap="chuangEvent" id="{{index}}" style="width:160rpx;height:160rpx;">
+            <swiper-item data-id="{{item.index}}" class="" bindtap="chuangEvent" id="{{index}}" style="width:160rpx;height:160rpx;">
               <view class="small_img">
-              <image src="{{item.url}}" class="imgs"></image>
+              	<image src="{{item.url}}" class="imgs"></image>
               <view class="{{index == swiperCurrent ?'circle':''}}" style="width:20rpx;height:20rpx;background:#fe6565;">4674687486747684685466868</view>
             </view>
             </swiper-item>
@@ -24,7 +24,7 @@
         </swiper>
       </scroll-view>
       <view class="dots"> 
-        <block wx:for="{{slider}}" wx:key="unique"> 
+        <block wx:for="{{web_mainData.bannerImg}}" wx:key="unique"> 
             <view class="dot flex">
                 <view class="dot_in {{index == swiperCurrent ? ' active' : ''}}"></view>
             </view> 
@@ -90,21 +90,21 @@
                 <view class="product_color">
                     <view class="flex">
                         <view class="color_left flex">
-                            <image src="/images/femela.png"></image>
+                            <image src="/images/femela.png" style="width:36rpx"></image>
                             <view class="color_choose flex">
                             
                                 <block wx:for="{{web_menColor.child}}" wx:key="id">
-                                <image  bindtap="{{func.inArray(item.id,web_can_choose_sku_item)!=-1?'chooseSku':''}}" data-id="{{item.id}}"   style="{{func.inArray(item.id,web_can_choose_sku_item)==-1?'text-decoration:line-through':(func.inArray(item.id,web_choosed_sku_item)!=-1?'border:solid 1px #fe6565':'')}}" src="{{item.mainImg[0].url}}">
+                                <image  bindtap="{{func.inArray(item.id,web_can_choose_sku_item)!=-1?'chooseSku':''}}" data-id="{{item.id}}"   style="{{func.inArray(item.id,web_can_choose_sku_item)==-1?'text-decoration:line-through':(func.inArray(item.id,web_choosed_sku_item)!=-1?'border:solid 1px #fe6565':'')}}" src="{{item.mainImg[0].url}}" style="margin-left:20rpx;">
                                 </image>
                                 </block>
                             </view>
                         </view>
                         <view class="color_left flex" style="text-align: right;">
                             <view class="color_left_cont flex">
-                                <image src="/images/mela.png"></image>
+                                <image src="/images/mela.png" style="width:36rpx"></image>
                                 <view class="color_choose flex">
                                     <block wx:for="{{web_womenColor.child}}" wx:key="id">
-                                        <image  bindtap="{{func.inArray(item.id,web_can_choose_sku_item)!=-1?'chooseSku':''}}" data-id="{{item.id}}"   style="{{func.inArray(item.id,web_can_choose_sku_item)==-1?'text-decoration:line-through':(func.inArray(item.id,web_choosed_sku_item)!=-1?'border:solid 1px #fe6565':'')}}" src="{{item.mainImg[0].url}}">
+                                        <image  bindtap="{{func.inArray(item.id,web_can_choose_sku_item)!=-1?'chooseSku':''}}" data-id="{{item.id}}"   style="{{func.inArray(item.id,web_can_choose_sku_item)==-1?'text-decoration:line-through':(func.inArray(item.id,web_choosed_sku_item)!=-1?'border:solid 1px #fe6565':'')}}" src="{{item.mainImg[0].url}}" style="margin-left:20rpx;">
                                         </image>
                                     </block>
                                 </view>
@@ -121,7 +121,7 @@
                                         <view class="size_item" data-id="{{item.id}}" bindtap="{{func.inArray(item.id,web_can_choose_sku_item)!=-1?'chooseSku':''}}">
                                             <view style="{{func.inArray(item.id,web_can_choose_sku_item)==-1?'text-decoration:line-through':''}}">{{item.title}}</view>
                                             <view class="choose_img" style="{{func.inArray(item.id,web_choosed_sku_item)!=-1?'display: block;':'display:none'}}">
-                                                <image src="/images/mela.png"></image>
+                                                <image src="/images/mela.png" style="width:52rpx"></image>
                                             </view>
                                         </view>
                                     </block>
@@ -136,7 +136,7 @@
                                         <view class="size_item" data-id="{{item.id}}" bindtap="chooseSku">
                                             <view style="{{func.inArray(item.id,web_can_choose_sku_item)==-1?'text-decoration:line-through':''}}">{{item.title}}</view>
                                             <view class="choose_img" style="{{func.inArray(item.id,web_choosed_sku_item)!=-1?'display: block;':'display:none'}}">
-                                                <image src="/images/mela.png"></image>
+                                                <image src="/images/mela.png" style="width:52rpx"></image>
                                             </view>
                                         </view>
                                     </block>

@@ -6,7 +6,7 @@
     <view class="thread3"></view>
 </view>
 <view class="w690" style="height:100rpx;">
-    <view class="add" bindtap="intoPath" data-path="/pages/forgive_things_infor/forgive_things_infor">
+    <view class="add" bindtap="{{web_countData>0?'intoPath':'showToast'}}" data-path="/pages/forgive_things_infor/forgive_things_infor">
         <image src="/images/plus@2x.png"></image>
     </view>
 </view>

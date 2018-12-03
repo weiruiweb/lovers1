@@ -7,7 +7,7 @@
 
 <view class="comment">
     <block wx:for="{{web_mainData}}" wx:key="id">
-        <view class="comment_list">
+        <view class="comment_list"  bindtap="intoPath" data-path="/pages/index_complain_detail/index_complain_detail?id={{item.id}}">
             <view class="comment_top flex">
                 <view class="comment_img">
                     <view class="comment_user">

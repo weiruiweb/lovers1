@@ -143,7 +143,7 @@ Page({
         	standard:self.data.mainData[0].product.standard
         },	
         passage1:self.data.submitData.passage1,
-        type:2
+        type:1
       };
       console.log('addOrder',self.data.addressData)
      

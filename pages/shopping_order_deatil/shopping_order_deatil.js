@@ -10,7 +10,7 @@ Page({
     slider: [],
     labelData:[],
     choose_sku_item:[],
-    swiperCurrent: 3,
+    swiperCurrent: 1,
     slider: [
     {
       picUrl: '/images/product.png'
@@ -273,12 +273,6 @@ Page({
     
   },
 
-  swiperChange(e) {
-    const that = this;
-    that.setData({
-      swiperIndex: e.detail.current,
-    })
-  },
 
   onShareAppMessage(res){
     const self = this;

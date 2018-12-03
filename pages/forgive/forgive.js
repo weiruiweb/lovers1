@@ -15,32 +15,43 @@ Page({
   
   onLoad(options) {
     const self = this;
-    self.getMainData();
+    self.data.paginate = api.cloneForm(getApp().globalData.paginate);
     self.getBindData();
     var num = 0;
     var t = setInterval(function(){
-      num++;
-      var rotateNum = num * 4.4;
-      var style= '-webkit-transform:rotate('+rotateNum+'deg);transform:rotate('+rotateNum+'deg);';
-      self.setData({
-          percent:num,
-          rotate:style,
-       })
-      
-      if(num==77){
-          clearInterval(t);
-        }      
-      },60);
+    num++;
+    var rotateNum = num * 4.4;
+    var style= '-webkit-transform:rotate('+rotateNum+'deg);transform:rotate('+rotateNum+'deg);';
+    self.setData({
+        percent:num,
+        rotate:style,
+     })
+    
+    if(num==77){
+        clearInterval(t);
+      }      
+    },60);
   },
 
-  getMainData(){
+  onShow(){
     const self = this;
+    self.getMainData(true);
+  },
+
+  getMainData(isNew){
+    const self = this;
+    if(isNew){
+      api.clearPageIndex(self)
+    };
+    
     const postData = {};
+    postData.paginate = api.cloneForm(self.data.paginate);
     postData.token = wx.getStorageSync('token');
     postData.searchItem = {
       type:1,
       thirdapp_id:getApp().globalData.thirdapp_id,
       class:6,
+      user_no:wx.getStorageSync('info').user_no
     };
    
     const callback = (res)=>{
@@ -120,6 +131,10 @@ Page({
       is_show2:false,
       is_show3:false,
     })
+  },
+  showToast(){
+    const self = this;
+    api.showToast('已经没有原谅机会了','none')
   },
   intoPath(e){
     const self = this;

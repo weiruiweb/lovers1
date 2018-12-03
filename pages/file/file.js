@@ -97,7 +97,7 @@ Page({
       day=parseInt(day)
       console.log(day)
       if(day<100&&self.data.countData.length<100){
-        self.statistics()
+        /*self.statistics()*/api.pathTo("/pages/file_statistics/file_statistics",'nav')
       }else{
         api.pathTo("/pages/file_statistics/file_statistics",'nav')
       }

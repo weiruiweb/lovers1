@@ -91,7 +91,7 @@ const token = new Token();
         passage3:wx.getStorageSync('info').passage1,
         user_no:wx.getStorageSync('info').user_no,
     };
-   
+
     console.log(postData)
     const callback = (data)=>{  
       if(data.solely_code == 100000){

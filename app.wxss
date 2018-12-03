@@ -159,5 +159,17 @@ view{
 	text-align:left;
 }
 button{
-	border:none;
+	border: none;
+	background: none;
+	line-height:normal
+}
+ button::after{
+	width:100%;
+	height:100%;
+	border: none;
+	background: none;
+}
+.button-hover {
+
+background:none;
 }

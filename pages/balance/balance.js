@@ -17,11 +17,11 @@ Page({
      self.setData({
       is_show:true
      });
-  /*   setTimeout(function(){
+    setTimeout(function(){
       wx.navigateTo({
         url:'/pages/balance_create_end/balance_create_end'
-      },5000)
-    })*/
+      })
+    },3800)
   },
 
  

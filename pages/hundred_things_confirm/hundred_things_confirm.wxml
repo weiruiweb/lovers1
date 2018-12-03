@@ -5,7 +5,7 @@
     <view class="thread2"></view>
     <view class="thread3"></view>
 </view>
-<button class="submit_info" >一起分享一瓶美酒 认证</button>
+<button class="submit_info" >{{web_mainData.title}} 认证</button>
 <view class="things_img">
     <image src="{{web_mainData.message[0].mainImg[0].url}}"></image>
 </view>

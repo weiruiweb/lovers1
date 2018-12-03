@@ -265,7 +265,7 @@ page{
 	height:60rpx;
 }
 .color_left image{
-	width:34rpx;
+	width:46rpx;
 	height:48rpx;
 }
 .color_choose .black{
@@ -366,7 +366,7 @@ page{
 	height:60rpx;
 }
 .color_left image{
-	width:34rpx;
+	width:46rpx;
 	height:48rpx;
 }
 .color_choose .black{

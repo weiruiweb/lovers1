@@ -15,7 +15,8 @@ Page({
       thirdapp_id:getApp().globalData.thirdapp_id
     },
     getBefore:{},
-    buttonClick:false
+    buttonClick:false,
+    num:0
   },
 
   onShow(options){
@@ -94,38 +95,11 @@ Page({
 
   changeSearch(num){
     const self = this;
+    self.data.num = num;
     this.setData({
-      web_num: num
-    });
-    if(num=='0'){
-    	delete self.data.getBefore.message;
-    }else if(num=='1'){
-
-  		self.data.getBefore.message = {
-  			tableName:'message',
-  			searchItem:{
-  			  passage3:['in',[wx.getStorageSync('info').passage1]],
-  			  type:['in',[2]]
-  			},
-  			middleKey:'id',
-  			key:'relation_id',
-  			condition:'in',
-  		};
-	
-    }else if(num=='2'){
-      self.data.getBefore.message = {
-        tableName:'message',
-        searchItem:{
-          passage3:['NOT IN',[wx.getStorageSync('info').passage1]],
-        },
-        middleKey:'id',
-        key:'relation_id',
-        condition:'in',
-      };
-    };
-
-    self.getMainData(true);
-
+      web_num: self.data.num,
+      buttonClicked: false
+    }); 
   },
 
   onReachBottom() {
