@@ -6,6 +6,7 @@ const token = new Token();
 
 Page({
   data: {
+    mainData:[],
    is_hidden:true,
    mood:0,
    is_scroll:false,
@@ -16,8 +17,88 @@ Page({
   },
   onLoad(options){
     const self = this;
+    self.data.paginate = api.cloneForm(getApp().globalData.paginate);
     self.getBindData();
+    self.getMainData();
   },
+
+  getMainData(isNew){
+    const self = this;
+    const postData = {};
+    postData.token = wx.getStorageSync('token');
+    postData.searchItem = {
+      user_no:wx.getStorageSync('info').user_no
+    };
+    postData.getAfter = {
+      message:{
+        tableName:'message',
+        middleKey:'passage1',
+        key:'passage3',
+        condition:'=',
+        searchItem:{
+          status:1
+        },
+      },
+      messageHappy:{
+        tableName:'message',
+        middleKey:'passage1',
+        key:'passage3',
+        condition:'=',
+        searchItem:{
+          status:1,
+          class:1
+        },
+      },
+      messageSad:{
+        tableName:'message',
+        middleKey:'passage1',
+        key:'passage3',
+        condition:'=',
+        searchItem:{
+          status:1,
+          class:3
+        },
+      },
+      messageAngry:{
+        tableName:'message',
+        middleKey:'passage1',
+        key:'passage3',
+        condition:'=',
+        searchItem:{
+          status:1,
+          class:5
+        },
+      },
+      messageForgive:{
+        tableName:'message',
+        middleKey:'passage1',
+        key:'passage3',
+        condition:'=',
+        searchItem:{
+          status:1,
+          class:6
+        },
+      },
+    };
+    const callback = (res)=>{
+      if(res.info.data.length>0){
+        self.data.mainData = res.info.data[0]
+      };
+      console.log( self.data.mainData.length)
+      self.setData({
+        web_totalCount:self.data.mainData.message.length,
+        web_totalCountHappy:self.data.mainData.messageHappy.length,
+        web_totalCountSad:self.data.mainData.messageSad.length,
+        web_totalCountAngry:self.data.mainData.messageAngry.length,
+        web_totalCountForgive:self.data.mainData.messageForgive.length,
+        web_mainData:self.data.mainData
+      });
+    };
+    api.userGet(postData,callback);
+  },
+
+
+
 
   getBindData(){
     const self = this;
@@ -65,7 +146,7 @@ Page({
       day=parseInt(day)
       console.log(day)
       self.setData({
-        web_date:parseInt(self.data.bindData.bind_time),
+        web_date:self.data.bindData.bind_time,
         web_day:day,
       });
 

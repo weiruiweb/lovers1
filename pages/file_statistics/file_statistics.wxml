@@ -21,7 +21,7 @@
                         </view>
                     </view>
                     <view class="statistics_right">
-                        <view class="{{web_scrollTop<10?'text1':'text3'}}">{{func.formatDate(web_date)}}我们在一起</view>
+                        <view class="{{web_scrollTop<10?'text1':'text3'}}">{{func.timestampToTime(web_date)}}我们在一起</view>
                         <view class="{{web_scrollTop<10?'c_text1':'c_text3'}}">在一起{{web_day}}天</view>
                     </view>
                 </view>
@@ -29,7 +29,9 @@
                     <view class="statistics_right">
                     <view class="textR {{web_scrollTop>10&&web_scrollTop<95?'text1':'text2'}}">在这些日子里
                     </view>
-                    <view class="textR {{web_scrollTop>10&&web_scrollTop<95?'c_text1':'c_text2'}}">共记录1698条</view>
+                    <view class="textR {{web_scrollTop>10&&web_scrollTop<95?'c_text1':'c_text2'}}">
+                        共记录 {{web_totalCount}}条
+                    </view>
                     </view>
                     <view class="statistics_circle">
                         <view class="circle {{web_scrollTop>10&&web_scrollTop<95?'circle1':'circle2'}}">  
@@ -51,7 +53,7 @@
                         </view>
                         <view class="trans {{web_scrollTop>95&&web_scrollTop<195?'text1':'text3'}}">总有一些瞬间让人难以忘怀</view>
                         <view class="{{web_scrollTop>95&&web_scrollTop<195?'c_text1':'c_text2'}}">
-                            开心 1698条
+                            开心 {{web_totalCountHappy}}条
                         </view>
                     </view>
                 </view>
@@ -59,7 +61,7 @@
                     <view class="statistics_right statis_left">
                         <view class="textR {{web_scrollTop>195&&web_scrollTop<295?'text1':'text3'}}">不开心的事情记录下来</view>
                         <view class="textR {{web_scrollTop>195&&web_scrollTop<295?'text1':'text3'}}">只是为了让我们互相成长</view>
-                        <view class="textR  {{web_scrollTop>195&&web_scrollTop<295?'c_text1':'c_text3'}}">不开心 1698条</view>
+                        <view class="textR  {{web_scrollTop>195&&web_scrollTop<295?'c_text1':'c_text3'}}">不开心 {{web_totalCountSad}}条</view>
                     </view>
                     <view class="statistics_circle">
                         <view class="circle {{web_scrollTop>195&&web_scrollTop<295?'circle1':'circle2'}}">  
@@ -79,7 +81,7 @@
                         <view class="{{web_scrollTop>245&&web_scrollTop<395?'text1':'text3'}}">我们生气过但
                         </view>
                         <view class="{{web_scrollTop>245&&web_scrollTop<395?'text1':'text3'}}">我们一直在一起</view>
-                        <view class="{{web_scrollTop>245&&web_scrollTop<395?'c_text1':'c_text3'}}">生气 1698条</view>
+                        <view class="{{web_scrollTop>245&&web_scrollTop<395?'c_text1':'c_text3'}}">生气 {{web_totalCountAngry}}条</view>
                     </view>
                 </view>
                 <view class="statistics_list flex">
@@ -89,7 +91,7 @@
                         </view>
                         <view class="textR {{web_scrollTop>355?'text2':'text4'}}">我们之间犯下的过错</view>
                         <view class="textR  {{web_scrollTop>355?'text2':'text4'}}">都是值得原谅的</view>
-                        <view class="textR {{web_scrollTop>385?'c_text1':'c_text3'}}">开心 1698条</view>
+                        <view class="textR {{web_scrollTop>385?'c_text1':'c_text3'}}">互相原谅 {{web_totalCountForgive}}条</view>
                     </view>
                     <view class="statistics_circle">
                         <view class="circle {{web_scrollTop>355?'circle2':'circle3'}}">  

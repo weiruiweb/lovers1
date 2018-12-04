@@ -1,20 +1,11 @@
 
 var timestampToTime = function(timestamp) {
     
-    timestamp = parseInt(timestamp);
-    
+    timestamp = parseInt(timestamp)*1000;
+    console.log('666',timestamp)
     var format = getDate(timestamp).getFullYear()+'/'+(getDate(timestamp).getMonth()+1)+'/'+getDate(timestamp).getDate()+'  ';
 
-    if(getDate(timestamp).getHours()<10){
-    	var format = format + '0' + getDate(timestamp).getHours();
-    }else{
-    	var format = format +  getDate(timestamp).getHours();
-    }
-    if(getDate(timestamp).getMinutes()<10){
-    	var format = format + ':' + '0' + getDate(timestamp).getMinutes();
-    }else{
-    	var format = format + ':' + getDate(timestamp).getMinutes();
-    }
+
 
     return format;
 

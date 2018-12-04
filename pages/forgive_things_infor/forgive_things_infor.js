@@ -85,6 +85,7 @@ const token = new Token();
         content:self.data.submitData.content,
         passage1:self.data.submitData.passage1,
         passage2:new Date(self.data.submitData.passage2.join("-")).getTime(),
+        passage3:wx.getStorageSync('info').passage1,
         type:2,
         class:6,
         mainImg:self.data.submitData.mainImg,   
