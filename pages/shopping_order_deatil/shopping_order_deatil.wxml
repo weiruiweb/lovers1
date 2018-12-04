@@ -12,12 +12,12 @@
         </block>
       </swiper>
         <scroll-view scroll-x class="scroll-header">
-        <swiper autoplay="auto" interval="5000" display-multiple-items="4" duration="500" current="{{dotsCurrent}}" circular="{{circular}}" bindchange="dotsChange">
+        <swiper autoplay="auto" interval="5000" class="flex" display-multiple-items="{{web_mainData.bannerImg.length}}" duration="500" current="{{dotsCurrent}}" circular="{{circular}}" bindchange="dotsChange">
           <block wx:for="{{web_mainData.bannerImg}}" wx:key="unique">
             <swiper-item data-id="{{item.index}}" class="" bindtap="chuangEvent" id="{{index}}" style="width:160rpx;height:160rpx;">
               <view class="small_img">
               	<image src="{{item.url}}" class="imgs"></image>
-              <view class="{{index == swiperCurrent ?'circle':''}}" style="width:20rpx;height:20rpx;background:#fe6565;">4674687486747684685466868</view>
+              <view class="{{index == swiperCurrent ?'circle':''}}" style="width:20rpx;height:20rpx;background:#fe6565;z-index:9999;">4674687486747684685466868</view>
             </view>
             </swiper-item>
           </block>
@@ -119,7 +119,7 @@
                                 <view class="choose_box flex">
                                     <block wx:for="{{web_menSize.child}}" wx:key="id">
                                         <view class="size_item" data-id="{{item.id}}" bindtap="{{func.inArray(item.id,web_can_choose_sku_item)!=-1?'chooseSku':''}}">
-                                            <view style="{{func.inArray(item.id,web_can_choose_sku_item)==-1?'text-decoration:line-through':''}}">{{item.title}}</view>
+                                            <view style="{{func.inArray(item.id,web_can_choose_sku_item)==-1?'text-decoration:line-through':'color:#fe6565;font-weight:700;transform: scale(1.5);'}}">{{item.title}}</view>
                                             <view class="choose_img" style="{{func.inArray(item.id,web_choosed_sku_item)!=-1?'display: block;':'display:none'}}">
                                                 <image src="/images/mela.png" style="width:52rpx"></image>
                                             </view>
@@ -134,9 +134,9 @@
                                 <view class="choose_box flex">
                                     <block wx:for="{{web_womenSize.child}}" wx:key="id">
                                         <view class="size_item" data-id="{{item.id}}" bindtap="chooseSku">
-                                            <view style="{{func.inArray(item.id,web_can_choose_sku_item)==-1?'text-decoration:line-through':''}}">{{item.title}}</view>
-                                            <view class="choose_img" style="{{func.inArray(item.id,web_choosed_sku_item)!=-1?'display: block;':'display:none'}}">
-                                                <image src="/images/mela.png" style="width:52rpx"></image>
+                                            <view style="{{func.inArray(item.id,web_can_choose_sku_item)==-1?'text-decoration:line-through':'color:#fe6565;font-weight:700;transform: scale(1.4);'}}">{{item.title}}</view>
+                                            <view class="choose_img" style="{{func.inArray(item.id,web_choosed_sku_item)!=-1?'display: block;top:-8%;':'display:none'}}">
+                                                <image src="/images/femela.png" style="width:52rpx"></image>
                                             </view>
                                         </view>
                                     </block>

@@ -315,14 +315,15 @@ page{
 }
 .choose_img{
 	position: absolute;
-	top:-50%;
+	top:-38%;
 	left:0;
 	width:100%;
+	height:80rpx;
 	display: none;
 }
 .choose_img image{
 	width:68rpx;
-	height:90rpx;
+	height:80rpx;
 	margin:0 auto;
 }
 .sildeIn{
@@ -413,18 +414,6 @@ page{
 	font-size:24rpx;
 	color:#717171;
 	position:relative;
-}
-.choose_img{
-	position: absolute;
-	top:-50%;
-	left:0;
-	width:100%;
-	display: none;
-}
-.choose_img image{
-	width:66rpx;
-	height:88rpx;
-	margin:0 auto;
 }
 .number_handle{
 	width:28%;

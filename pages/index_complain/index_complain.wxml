@@ -40,14 +40,5 @@
                 </view>
             </view>
         </view>
-        <view class="comment_list">
-            <view class="end">
-                <view class="heart1 flex">
-                   <view class="heart2">
-                    
-                    </view> 
-                </view>
-            </view>
-        </view>
     </block>
 </view>

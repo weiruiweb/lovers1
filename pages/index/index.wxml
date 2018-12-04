@@ -209,7 +209,7 @@
     </view>
 </view>
 
-<view  class="dialog4" style="{{is_show4?'position: absolute;top:10%':'position:fixed;bottom: -100%;'}}">
+<view  class="dialog4" style="{{is_show4?'position: absolute;top:10%;width:100%;':'position:fixed;bottom: -100%;'}}">
     <view class="lover_dialog">
         <view class="heart1 flex">
             <view class="heart_box">

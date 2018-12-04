@@ -9,6 +9,17 @@ Page({
   data: {
    is_hidden:true,
    mood:0,
+   is_show:false,
+   indicatorDots: false,
+    vertical: false,
+    autoplay: false,
+    circular: true,
+    interval: 2000,
+    duration: 500,
+    previousMargin: 0,
+    nextMargin: 0,
+    currentId:0,
+    swiperIndex:0,
   },
 
   onLoad(options){
@@ -16,9 +27,6 @@ Page({
     self.data.id = options.id;
     self.getMainData()
   },
-
-
-
   getMainData(){
     const self = this;
     const postData = {};
@@ -53,9 +61,27 @@ Page({
       is_hidden:true
      }) 
   }, 
+   scale(){
+    const self = this;
+    self.setData({
+      is_show:true
+    })
+  },
+  close(){
+    const self = this;
+    self.setData({
+      is_show:false
+    })
+  },
  mood(e){
    this.setData({
       mood:e.currentTarget.dataset.id
+    })
+  },
+  swiperChange(e) {
+    const self = this;
+    self.setData({
+      swiperIndex: e.detail.current,
     })
   },
   intoPath(e){

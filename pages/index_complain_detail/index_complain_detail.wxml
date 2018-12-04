@@ -52,7 +52,7 @@
 <view class="comment_box w710" catchtouchmove="true" style="{{is_comment?'bottom:30%':'bottom:-100%'}}">
     <view class="">
         <textarea  class="comment_textarea color1" data-key="content" bindinput="changeBind" valua="{{web_sForm.content}}"></textarea>
-        <button bindtap="submit">评论</button>
+        <button bindtap="submit" style="height:70rpx;line-height:70rpx;">评论</button>
     </view>
 </view>
 

@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 30,
+			"current": 31,
 			"list": [
 				{
 					"id": -1,
@@ -218,7 +218,13 @@
 				{
 					"id": -1,
 					"name": "档案",
-					"pathName": "pages/file_statistics/file_statistics"
+					"pathName": "pages/file_statistics/file_statistics",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "事件详情",
+					"pathName": "pages/file_thing_detail/file_thing_detail"
 				}
 			]
 		}

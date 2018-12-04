@@ -56,37 +56,38 @@
 <view class="mood flex">
     <view class="mood_item" data-value="0" bindtap="changeBind" data-key="class">
         <view class="mood_img">
-            <image src="{{web_submitData.class == 0?'/images/mood1.png':''}}"></image>
+            <image src="{{web_submitData.class == 0?'/images/mood1.png':'/images/mood1_a.png'}}"></image>
             <view class="font28 mood_txt">超开心</view>
         </view>
     </view>
     <view class="mood_item" data-value="1" bindtap="changeBind"  data-key="class">
         <view class="mood_img">
-            <image src="{{web_submitData.class == 1?'/images/mood2.png':''}}"></image>
+            <image src="{{web_submitData.class == 1?'/images/mood2.png':'/images/mood4_a.png'}}"></image>
             <view class="font28 mood_txt">开心</view>
         </view>
     </view>
     <view class="mood_item"  data-value="2" bindtap="changeBind"  data-key="class">
         <view class="mood_img">
-             <image src="{{web_submitData.class == 2?'/images/mood5.png':''}}"></image>
+             <image src="{{web_submitData.class == 2?'/images/mood5.png':'/images/mood5_a.png'}}"></image>
             <view class="font28 mood_txt">没心情</view>
         </view>
+        
     </view>
     <view class="mood_item"  data-value="3" bindtap="changeBind"  data-key="class">
         <view class="mood_img">
-            <image src="{{web_submitData.class == 3?'/images/mood4.png':''}}"></image>
+            <image src="{{web_submitData.class == 3?'/images/mood4.png':'/images/mood2_a.png'}}"></image>
             <view class="font28 mood_txt">难过</view>
         </view>
     </view>
     <view class="mood_item"  data-value="4" bindtap="changeBind"  data-key="class">
         <view class="mood_img">
-            <image src="{{web_submitData.class == 4?'/images/mood3.png':''}}"></image>
+            <image src="{{web_submitData.class == 4?'/images/mood3.png':'/images/mood3_a.png'}}"></image>
             <view class="font28 mood_txt">哭泣</view>
         </view>
     </view>
     <view class="mood_item"  data-value="5" bindtap="changeBind"   data-key="class">
         <view class="mood_img">
-            <image src="{{web_submitData.class == 5?'/images/mood6.png':''}}"></image>
+            <image src="{{web_submitData.class == 5?'/images/mood6.png':'/images/mood6_a.png'}}"></image>
             <view class="font28 mood_txt">愤怒</view>
         </view>
     </view>

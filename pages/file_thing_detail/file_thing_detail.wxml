@@ -38,12 +38,25 @@
             <view>愤怒</view>
         </view>
     </view>
-
 </view>
-<view class="things_img flex w710">
-    <block wx:for="{{web_mainData.mainImg}}" wx:key="id">
-        <view class="things_item">
-            <image src="{{item.url}}"></image>
-        </view>
-    </block>
+<view style="{{is_show?'display: none':'display:block'}}">
+    <view class="things_img flex w710">
+        <block wx:for="{{web_mainData.mainImg}}" wx:key="id">
+            <view class="things_item" bindtap="scale">
+                <image src="{{item.url}}"></image>
+            </view>
+        </block>
+    </view>
+</view>
+<view class="mask" style="{{is_show?'display: block':'display:none'}}">
+    <swiper  class="swiper-block flexRowBetween"  previous-margin="40rpx" next-margin="40rpx" current="0"  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" bindchange="swiperChange" circular="{{circular}} ">
+        <block wx:for="{{web_mainData.mainImg}}" wx:key="id">
+            <swiper-item class="swiper-item" >
+                <image  src="{{item.url}}"  class="slide-image {{swiperIndex == index ? 'active' : ''}}"/>
+            </swiper-item>
+        </block>
+    </swiper>
+    <view class="close" bindtap="close">
+        <image src="/images/close.png"></image>
+    </view>
 </view>

@@ -61,7 +61,7 @@
     </view>
     <view class="mood_item"  data-id="2" bindtap="menuClick">
         <view class="mood_img">
-             <image src="{{web_num == 2?'/images/mood3.png':'/images/mood3_a.png'}}"></image>
+             <image src="{{web_num == 2?'/images/mood5.png':'/images/mood5_a.png'}}"></image>
             <view class="font28 mood_txt">没心情</view>
         </view>
         <view class="mood_up flex">
@@ -79,7 +79,7 @@
     </view>
     <view class="mood_item"  data-id="4" bindtap="menuClick">
         <view class="mood_img">
-            <image src="{{web_num == 4?'/images/mood5.png':'/images/mood5_a.png'}}"></image>
+            <image src="{{web_num == 4?'/images/mood3.png':'/images/mood3_a.png'}}"></image>
             <view class="font28 mood_txt">哭泣</view>
         </view>
         <view class="mood_up flex">
