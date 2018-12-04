@@ -97,17 +97,17 @@
 	height:100%;
 }
 .descreption{
-	width:81%;
+	width:87%;
 	height:298rpx;
-	padding:3%;
 	border:solid 1px #4c4c4c;
 	border-radius: 10rpx;
 	margin:0 auto;
 	position: relative;
 }
 .descreption textarea{
-	width:100%;
-	height:100%;
+	width:94%;
+	height:94%;
+	padding:3%;
 	font-size: 28rpx;
 }
 .descreption image{
@@ -201,7 +201,7 @@
 	height:100%;
 }
 .uploder{
-	width:70%;
+	width:80%;
 	margin:0 auto;
 }
 /***************上传进度动画*****************/

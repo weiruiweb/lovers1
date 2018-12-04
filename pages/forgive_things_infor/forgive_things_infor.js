@@ -120,10 +120,6 @@ const token = new Token();
       api.showToast('请补全信息','none');
     };
   },
-
-
-
-
   changeBind(e){
     const self = this;
     if(api.getDataSet(e,'value')){
@@ -136,11 +132,6 @@ const token = new Token();
     }); 
     console.log(self.data.submitData)
   },
-
-
-
-
-
   upLoadImg: function (){
     var self = this;
     if(self.data.submitData.mainImg.length>2){
@@ -192,9 +183,14 @@ const token = new Token();
      }) 
   },
   show:function(e) {
+    if(e.detail.value){
+      var isHidden=false
+    }else{
+      var isHidden=true
+    }
      this.setData({
-      is_hidden:true
-     }) 
+      is_hidden:isHidden
+     })
   }, 
 
 

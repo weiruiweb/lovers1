@@ -17,7 +17,7 @@
             <swiper-item data-id="{{item.index}}" class="" bindtap="chuangEvent" id="{{index}}" style="width:160rpx;height:160rpx;">
               <view class="small_img">
               	<image src="{{item.url}}" class="imgs"></image>
-              <view class="{{index == swiperCurrent ?'circle':''}}" style="width:20rpx;height:20rpx;background:#fe6565;z-index:9999;">4674687486747684685466868</view>
+              <view  style="width:20rpx;height:20rpx;background:#fe6565;z-index:9999;">4674687486747684685466868</view>
             </view>
             </swiper-item>
           </block>

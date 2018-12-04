@@ -97,7 +97,7 @@
     </view>
     <view class="mood_item"  data-id="6" bindtap="menuClick">
         <view class="mood_img">
-            <image src="{{web_num == 6?'/images/mood6.png':'/images/mood6_a.png'}}"></image>
+            <image src="{{web_num == 6?'/images/mood7.png':'/images/mood7_a.png'}}"></image>
             <view class="font28 mood_txt">原谅</view>
         </view>
         <view class="mood_up flex">

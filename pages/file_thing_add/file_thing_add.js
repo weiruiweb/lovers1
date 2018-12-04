@@ -126,14 +126,12 @@ const token = new Token();
   changeBind(e){
     const self = this;
     if(api.getDataSet(e,'value')){
-      self.data.submitData[api.getDataSet(e,'key')] = api.getDataSet(e,'value');
-      
+      self.data.submitData[api.getDataSet(e,'key')] = api.getDataSet(e,'value');  
     }else{
       api.fillChange(e,self,'submitData');
     };
     self.setData({
       web_submitData:self.data.submitData,
-      is_hidden:false,
     }); 
     console.log(self.data.submitData)
   },
@@ -193,9 +191,14 @@ const token = new Token();
      }) 
   },
   show:function(e) {
+    if(e.detail.value){
+      var isHidden=false
+    }else{
+      var isHidden=true
+    }
      this.setData({
-      is_hidden:true
-     }) 
+      is_hidden:isHidden
+     })
   }, 
 
 
