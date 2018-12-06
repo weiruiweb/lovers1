@@ -118,7 +118,7 @@ Page({
         self.data.sku_item = self.data.skuData.sku_item;
       }
       wx.hideLoading();
-      
+      self.data.mainData.bannerImg.push({},{},{});
       self.setData({
         web_skuData:self.data.skuData,
         web_labelData:self.data.labelData,

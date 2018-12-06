@@ -11,7 +11,7 @@
           </swiper-item>
         </block>
       </swiper>
-        <scroll-view scroll-x class="scroll-header">
+        <!-- <scroll-view scroll-x class="scroll-header">
         <swiper autoplay="auto" interval="5000" class="flex" display-multiple-items="{{web_mainData.bannerImg.length}}" duration="500" current="{{dotsCurrent}}" circular="{{circular}}" bindchange="dotsChange">
           <block wx:for="{{web_mainData.bannerImg}}" wx:key="unique">
             <swiper-item data-id="{{item.index}}" class="" bindtap="chuangEvent" id="{{index}}" style="width:160rpx;height:160rpx;">
@@ -22,7 +22,24 @@
             </swiper-item>
           </block>
         </swiper>
-      </scroll-view>
+      </scroll-view> -->
+      <view class="small_imgs">
+        <swiper autoplay="auto" class="flex" interval="5000" display-multiple-items="{{web_mainData.bannerImg.length>3?4:2}}" duration="500" current="{{dotsCurrent}}" circular="{{circular}}" bindchange="dotsChange">
+          <block wx:for="{{web_mainData.bannerImg}}" wx:key="unique">
+            <swiper-item style="width:160rpx !important;" data-id="{{item.id}}" class="dot{{index == swiperCurrent ? ' active' : ''}}" bindtap="chuangEvent" id="{{index}}" >
+                <view class="small_box" style="width:160rpx !important;">
+                  <image src="{{item.url}}" class="imgs"></image>
+                  <view class="circle_box">
+                      <view class="circle flex">
+                          <view class="circle_in"></view>
+                      </view>
+                  </view>
+              </view>
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
+
       <view class="dots"> 
         <block wx:for="{{web_mainData.bannerImg}}" wx:key="unique"> 
             <view class="dot flex">

@@ -100,17 +100,17 @@
                     <view class="statistics_left"> 
                     </view>
                 </view>
-                <view class="statistics_list">
-                </view>
-                <view class="statistics_list">
-                </view>
-            </view> 
-        </scroll-view>
-        <view class="heart4 flex">
+                <view class="heart4 flex">
             <view class="heart5 flex"></view>
         </view>
         <view class="record_end color">总结</view>
         <view class="record_des font28 color1">两个人的生活总是充满了磕绊
 磕绊后的我们终将会迎来一生的幸福</view>
+                <view class="statistics_list">
+                </view>
+                <view class="statistics_list">
+                </view>
+            </view> 
 
+        </scroll-view>
 </view>
