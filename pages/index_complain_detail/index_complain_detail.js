@@ -36,13 +36,13 @@ Page({
       user_type:2,
       id:self.data.id
     };
-    
-  
     const callback = (res)=>{
       if(res.info.data.length>0){
-        self.data.mainData = res.info.data[0]
+        self.data.mainData = res.info.data[0];
+        console.log(self.data.mainData.content)
+        self.data.mainData.content = api.wxParseReturn(res.info.data[0].content).nodes;
       }else{
-        api.showToast('数据错误','fail');
+        api.showToast('数据错误','none');
       };
       wx.hideLoading();
       self.data.sForm.relation_id = self.data.id;
