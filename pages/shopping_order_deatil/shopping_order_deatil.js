@@ -44,7 +44,8 @@ Page({
     const self = this;
     self.data.id = options.id;
     self.setData({
-      web_count:self.data.count
+      web_count:self.data.count,
+      web_dotWidth:'0px'
     });
     self.getMainData()
   },
@@ -96,8 +97,19 @@ Page({
             console.log('self.data.can_choose_sku_item',self.data.can_choose_sku_item)
           };
         };
-
-
+        if(self.data.mainData.bannerImg.length>0){
+          var testDotsWidth = wx.getSystemInfoSync().windowWidth/self.data.mainData.bannerImg.length;
+          console.log('testDotsWidth',testDotsWidth)
+          if(testDotsWidth>103.5){
+            self.setData({
+              web_dotWidth:103.5*self.data.mainData.bannerImg.length+'px'
+            });
+          }else{
+            self.setData({
+              web_dotWidth:'100%'
+            });
+          };
+        };
 
 
         self.setData({
@@ -118,7 +130,7 @@ Page({
         self.data.sku_item = self.data.skuData.sku_item;
       }
       wx.hideLoading();
-      self.data.mainData.bannerImg.push({},{},{});
+      //self.data.mainData.bannerImg.push({},{},{});
       self.setData({
         web_skuData:self.data.skuData,
         web_labelData:self.data.labelData,

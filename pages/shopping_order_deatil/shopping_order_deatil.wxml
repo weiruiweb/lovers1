@@ -11,23 +11,11 @@
           </swiper-item>
         </block>
       </swiper>
-        <!-- <scroll-view scroll-x class="scroll-header">
-        <swiper autoplay="auto" interval="5000" class="flex" display-multiple-items="{{web_mainData.bannerImg.length}}" duration="500" current="{{dotsCurrent}}" circular="{{circular}}" bindchange="dotsChange">
-          <block wx:for="{{web_mainData.bannerImg}}" wx:key="unique">
-            <swiper-item data-id="{{item.index}}" class="" bindtap="chuangEvent" id="{{index}}" style="width:160rpx;height:160rpx;">
-              <view class="small_img">
-              	<image src="{{item.url}}" class="imgs"></image>
-              <view  style="width:20rpx;height:20rpx;background:#fe6565;z-index:9999;">4674687486747684685466868</view>
-            </view>
-            </swiper-item>
-          </block>
-        </swiper>
-      </scroll-view> -->
-      <view class="small_imgs">
+      <view class="small_imgs" style="width:{{web_dotWidth}}">
         <swiper autoplay="auto" class="flex" interval="5000" display-multiple-items="{{web_mainData.bannerImg.length>3?4:2}}" duration="500" current="{{dotsCurrent}}" circular="{{circular}}" bindchange="dotsChange">
           <block wx:for="{{web_mainData.bannerImg}}" wx:key="unique">
-            <swiper-item style="width:160rpx !important;" data-id="{{item.id}}" class="dot{{index == swiperCurrent ? ' active' : ''}}" bindtap="chuangEvent" id="{{index}}" >
-                <view class="small_box" style="width:160rpx !important;">
+            <swiper-item  data-id="{{item.id}}" class="dot{{index == swiperCurrent ? ' active' : ''}}" bindtap="chuangEvent" id="{{index}}">
+                <view class="small_box" >
                   <image src="{{item.url}}" class="imgs"></image>
                   <view class="circle_box">
                       <view class="circle flex">
@@ -98,7 +86,7 @@
     <view class="product_box">
         <view class="choose_this">
             <view class="choose_clothes">
-                <image src="/images/cart.png"></image>
+                <image src="{{web_choosed_skuData.mainImg[0].url}}"></image>
             </view>
         </view>
         <view class="product_cont">
@@ -109,10 +97,12 @@
                         <view class="color_left flex">
                             <image src="/images/boy.png" style="width:36rpx"></image>
                             <view class="color_choose flex">
-                            
                                 <block wx:for="{{web_menColor.child}}" wx:key="id">
-                                <image  bindtap="{{func.inArray(item.id,web_can_choose_sku_item)!=-1?'chooseSku':''}}" data-id="{{item.id}}"   style="{{func.inArray(item.id,web_can_choose_sku_item)==-1?'text-decoration:line-through':(func.inArray(item.id,web_choosed_sku_item)!=-1?'border:solid 1px #fe6565':'')}}" src="{{item.mainImg[0].url}}" style="margin-left:20rpx;">
-                                </image>
+                                <view class="img_box" bindtap="{{func.inArray(item.id,web_can_choose_sku_item)!=-1?'chooseSku':''}}" data-id="{{item.id}}"   style="{{func.inArray(item.id,web_can_choose_sku_item)==-1?'background:#666;':(func.inArray(item.id,web_choosed_sku_item)!=-1?'border:solid 1px #fe6565':'')}}">
+                                <!-- <image class="color_img"  src="{{item.mainImg[0].url}}" >
+                                </image> -->
+                                <image  src="{{func.inArray(item.id,web_can_choose_sku_item)==-1?'/images/forbird.png':(func.inArray(item.id,web_choosed_sku_item)!=-1?item.mainImg[0].url:item.mainImg[0].url)}}"></image>
+                            </view>
                                 </block>
                             </view>
                         </view>
@@ -121,8 +111,9 @@
                                 <image src="/images/girl.png" style="width:36rpx"></image>
                                 <view class="color_choose flex">
                                     <block wx:for="{{web_womenColor.child}}" wx:key="id">
-                                        <image class="boy"  bindtap="{{func.inArray(item.id,web_can_choose_sku_item)!=-1?'chooseSku':''}}" data-id="{{item.id}}"   style="{{func.inArray(item.id,web_can_choose_sku_item)==-1?'text-decoration:line-through':(func.inArray(item.id,web_choosed_sku_item)!=-1?'border:solid 1px #fe6565':'')}}" src="{{item.mainImg[0].url}}" style="margin-left:20rpx;">
-                                        </image>
+                                        <view class="img_box" bindtap="{{func.inArray(item.id,web_can_choose_sku_item)!=-1?'chooseSku':''}}" data-id="{{item.id}}"   style="{{func.inArray(item.id,web_can_choose_sku_item)==-1?'background:#666;':(func.inArray(item.id,web_choosed_sku_item)!=-1?'border:solid 1px #fe6565;':'')}}">
+                                            <image src="{{func.inArray(item.id,web_can_choose_sku_item)==-1?'/images/forbird.png':(func.inArray(item.id,web_choosed_sku_item)!=-1?item.mainImg[0].url:item.mainImg[0].url)}}"></image>
+                                        </view>
                                     </block>
                                 </view>
                             </view>

@@ -28,7 +28,9 @@ page{
   position: absolute;
   left:60rpx;
   top:20%;
+
 } 
+
 .dots .dot{ 
   margin: 12rpx auto; 
   width:20rpx;
@@ -340,13 +342,14 @@ page{
 	height:216rpx;
 	position: absolute;
 	left:0;
-	top:-200rpx;
+	top:-108rpx;
+
 }
 .choose_clothes{
 	width:216rpx;
 	height:216rpx;
 	border-radius: 50%;
-	border:solid 1px #000;
+	border:solid 6px #fe6565;
 	margin:0 auto;
 	overflow: hidden;
 }
@@ -528,4 +531,9 @@ page{
 .swiper-container .dotes .dote.actives {
   background: #f80;
   color: #fff;
+}
+.img_box{
+	width:46rpx;
+	height:48rpx;
+	margin-left:20rpx;
 }
