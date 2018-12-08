@@ -75,7 +75,7 @@
     </image>
     <image src="/images/menu_btn.png" animation="{{animationMain}}" class="menu main" bindtap="menuMain" catchtouchmove='menuMainMove' style='top:{{pos.top}}px;right:{{pos.right}}px;'></image>
   </view>
-<view class="mask" style="{{hasPopped?'display: block':'display:none'}}"></view>
+<view class="mask" style="{{hasPopped?'display: block':'display:none'}}" bindtap="mask"></view>
 <view class="font22 color6" style="text-align:center;">技术支持：西安纯粹云科技有限公司</view>
 <view style="width:100%;height:180rpx;"></view>
 

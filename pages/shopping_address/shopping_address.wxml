@@ -23,7 +23,7 @@
                 <input class="font28" placeholder="11位手机号" value="{{web_mainData.phone}}"  data-key="phone" bindblur="inputChange"></input>
             </view>
         </view>
-        <view class="address_list flex">
+        <view class="address_list flex" >
             <view class="address_left">
                 <view class="address_icon">
                     <image src="/images/address3.png"></image>
@@ -31,7 +31,9 @@
                 </view>
             </view>
             <view class="address_right" bindtap="chooseLocation">
-                <input class="font28" value="{{web_name}}"></input>
+                <view class="font28 avoidOverflow"  style="height:40rpx;line-height:40rpx;border-bottom:solid 1px #ff7070;">
+                    {{web_name}}
+                </view>
             </view>
         </view>
         <view class="address_list flex">

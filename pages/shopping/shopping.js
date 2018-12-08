@@ -8,7 +8,6 @@ let SYSTEMINFO = globalData.systeminfo
 
 Page({
   data: {
-    
     indicatorDots: false,
     vertical: false,
     autoplay: true,
@@ -266,7 +265,6 @@ Page({
       })
     }
   },
-
   show(e){
     const self = this;
     var is_show = !this.data.is_show

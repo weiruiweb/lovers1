@@ -25,9 +25,6 @@ Page({
       var token = new Token();
       token.getUserInfo();
     };
-    self.setData({
-      img:app.globalData.img
-    });
     if(options.id){
       self.data.id = options.id
       self.getMainData(self.data.id); 
@@ -140,8 +137,8 @@ Page({
     };
   },
 
-  chooseLocation:function(e){
-    var self = this;
+  chooseLocation(e){
+    const self = this;
     wx.chooseLocation({
       success: function(res){
         self.data.sForm.detail = res.address,
