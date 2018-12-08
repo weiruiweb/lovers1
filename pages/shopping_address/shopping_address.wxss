@@ -18,8 +18,8 @@
 	width:32%;
 }
 .address_left image{
-	width:50rpx;
-	height:50rpx;
+	width:44rpx;
+	height:54rpx;
 }
 .address_right{
 	width:68%
@@ -33,7 +33,7 @@
 	height:40rpx;
 	border-bottom:solid 1px #ff7070;
 	line-height:40rpx;
-	color:#4c4c4c;
+	color:#ccc;
 }
 .submit_info{
 	width:470rpx;

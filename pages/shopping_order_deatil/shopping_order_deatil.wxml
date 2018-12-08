@@ -83,6 +83,9 @@
     </view>
 </view>
 <view class="product" style="{{isShow?'bottom:0':'bottom:-100%;'}}">
+    <view class="close" bindtap="close">
+        <image src="/images/close.png"></image>
+    </view>
     <view class="product_box">
         <view class="choose_this">
             <view class="choose_clothes">
@@ -157,9 +160,9 @@
                     <view class="font24 color2">数量</view>
                     <view class="flexRowBetween">
                         <view class="number_handle flex">
-                            <view class="add flex"  bindtap="counter" data-type="-"><image src="/images/left.png"></image></view>
-                            <view class="add_cont"><view class="add_number">{{web_count}}</view></view>
-                            <view class="add flex" bindtap="counter" data-type="+"><image src="/images/right.png"></image></view>
+                            <view class="add flex"  bindtap="counter" data-type="-"><image src="/images/left1.jpg"></image></view>
+                            <view class="add_cont"><view class="add_number color">{{web_count}}</view></view>
+                            <view class="add flex" bindtap="counter" data-type="+"><image src="/images/right1.jpg"></image></view>
                         </view>
                     </view>
                 </view>

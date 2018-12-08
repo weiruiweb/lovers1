@@ -11,21 +11,6 @@ Page({
     labelData:[],
     choose_sku_item:[],
     swiperCurrent: 1,
-    slider: [
-    {
-      picUrl: '/images/product.png'
-    },
-    {
-      picUrl: '/images/product.png'
-    },
-    {
-      picUrl: '/images/product.png'
-    },
-    {
-      picUrl: '/images/product.png'
-    },
-   
-    ],
     indicatorDots: true,
     autoplay: true,
     interval: 2000,
@@ -329,19 +314,6 @@ Page({
         }
       }
   },
-  
-
-
-
-
-
-
-
-
-
-
-
-
 
   swiperChange: function (e) {
     //只要把切换后当前的index传给<swiper>组件的current属性即可 
@@ -406,7 +378,13 @@ Page({
       is_choose1:e.currentTarget.dataset.id
     })
   },
-
+  close(){
+    const self = this;
+    self.setData({
+      isShow:false
+    })
+    console.log(self.data.isShow)
+  },
   intoPath(e){
     const self = this;
     api.pathTo(api.getDataSet(e,'path'),'nav');

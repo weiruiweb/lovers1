@@ -4,7 +4,7 @@
         <view class="address_list flex">
             <view class="address_left">
                 <view class="address_icon">
-                    <image src="/images/address.png"></image>
+                    <image src="/images/address1.png"></image>
                     <view class="font24 color2">联系人</view>
                 </view>
             </view>
@@ -15,7 +15,7 @@
         <view class="address_list flex">
             <view class="address_left">
                 <view class="address_icon">
-                    <image src="/images/address.png"></image>
+                    <image src="/images/address2.png"></image>
                     <view class="font24 color2">电话号码</view>
                 </view>
             </view>
@@ -26,7 +26,7 @@
         <view class="address_list flex">
             <view class="address_left">
                 <view class="address_icon">
-                    <image src="/images/address.png"></image>
+                    <image src="/images/address3.png"></image>
                     <view class="font24 color2">选择地区</view>
                 </view>
             </view>
@@ -37,7 +37,7 @@
         <view class="address_list flex">
             <view class="address_left">
                 <view class="address_icon">
-                    <image src="/images/address.png"></image>
+                    <image src="/images/address4.png"></image>
                     <view class="font24 color2">详细地址</view>
                 </view>
             </view>
@@ -48,7 +48,7 @@
         <view class="address_list flex">
             <view class="address_left">
                 <view class="address_icon">
-                    <image src="/images/address.png"></image>
+                    <image src="/images/address5.png"></image>
                     <view class="font24 color2">邮政编码</view>
                 </view>
             </view>
