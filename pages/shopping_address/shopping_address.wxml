@@ -55,7 +55,7 @@
                 </view>
             </view>
             <view class="address_right">
-                <input class="font28" placeholder="所属地区邮政编码" value="{{web_mainData.phone}}"  data-key="phone" bindblur="inputChange"></input>
+                <input class="font28" placeholder="所属地区邮政编码" value="{{web_mainData.city}}"  data-key="city" bindblur="inputChange"></input>
             </view>
         </view>
     </view>

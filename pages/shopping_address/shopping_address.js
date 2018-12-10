@@ -15,6 +15,7 @@ Page({
       longitude:'',
       phone:'',
       detail:'',
+      city:''
     },
     id:'',
   },
@@ -67,6 +68,7 @@ Page({
     self.setData({
       web_sForm:self.data.sForm,
     });  
+    console.log(self.data.sForm)
   },
 
   bindRegionChange: function (e) {
@@ -79,8 +81,6 @@ Page({
       web_region: e.detail.value
     })
   },
-
-
   addressUpdate(){
     const self = this;
     const postData = {};
