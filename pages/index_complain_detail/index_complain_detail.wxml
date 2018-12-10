@@ -38,14 +38,14 @@
             <view class="complain_right">
                 <view class="complain_detail font24 color2"> {{item.content}}</view>
                 <view class="font22 color2 comment_text" style="margin-top: 10rpx;">
-                    <view class="comment_number  flex">
+                     <!-- <view class="comment_number  flex">
                         <image src="/images/comment@3x.png"></image>
                         <view>{{item.comCount.totalCount}}</view>
-                    </view>
-                   <!--  <view class="comment_number flex" bindtap="submitSupport" data-index="{{index}}"  data-id="{{item.id}}" data-log_id="{{item.isPraise.id?item.isPraise.id:''}}">
-                        <image src="{{item.isPraise.id?'/images/Support@3x.png':'/images/Support1@3x.png'}}"></image>
-                        <view>{{item.praiseCount.totalCount}}</view>
                     </view> -->
+                   <view class="comment_number flex" bindtap="submitSupport" data-index="{{index}}"  data-id="{{item.id}}" data-log_id="{{item.isPraise.id?item.isPraise.id:''}}">
+                        <image src="{{item.praiseCount[0]?'/images/Support@3x.png':'/images/Support1@3x.png'}}"></image>
+                        <view>{{item.praiseCount.totalCount}}</view>
+                    </view>
                 </view>
             </view>
         </view>

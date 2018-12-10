@@ -199,6 +199,8 @@ Page({
       }else{
         api.showToast('点赞失败','fail');
       };
+      self.data.comData= [];
+      self.getComData()
     };
     api.logAdd(postData,callback);
   },
@@ -224,13 +226,15 @@ Page({
           self.data.comData[index].isPraise = {};
           self.data.comData[index].praiseCount.totalCount--;
         };
+        wx.hideLoading();
         self.setData({
           web_comData:self.data.comData
         });
       }else{
         api.showToast('点赞失败','fail');
       };
-
+      self.data.comData= [];
+      self.getComData();
     };
     api.logUpdate(postData,callback);
   },
@@ -253,6 +257,7 @@ Page({
       }else{
         self.addLog(message_id,index);
       };
+      wx.hideLoading();
       self.setData({
         web_comData:self.data.comData
       });
@@ -264,6 +269,7 @@ Page({
 
   submitSupport(e){
     const self = this;
+    wx.showLoading();
     var praiseId = api.getDataSet(e,'log_id');
     var index = api.getDataSet(e,'index');
     
