@@ -175,15 +175,6 @@ Page({
     self.setData({
       web_scrollTop:e.detail.scrollTop
     });
-    /*if(!self.data.settimeClock){
-      console.log('scroll')
-      self.data.settimeClock = setTimeout(function(){
-        self.setData({
-          web_scrollTop:e.detail.scrollTop
-        });
-        self.data.settimeClock='';
-      },1000);
-    };*/
      console.log(e.detail.scrollTop);
   },
   hide:function(e) {
